@@ -1,0 +1,8 @@
+POSSIBLE DECISIONS
+- combined subscriptions among tycoons
+- which ways of payment (cash, cards, phones, ..)
+- add / remove tycoons
+- how to store data:
+    concern: tycoons cant see each other subscriptions
+- interface choice
+- optimize subscriptions-based paths
