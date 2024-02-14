@@ -1,0 +1,44 @@
+\section*{Decision 1: Choice of Centralized vs. Decentralized Database}
+
+\subsection*{Status}
+In review.
+
+\subsection*{Architectural Summary}
+In the context of the Train Inter Payment System (TrIP), aimed at unifying the payment process across different railway operators, we faced the challenge of determining the most effective database architecture to manage subscription and payment data. Given the priorities for security, maintainability, and efficient data access, we considered both centralized and decentralized databases. We decided on a centralized database managed by our team due to its advantages in streamlined security management, ease of maintenance, and controlled access for data retrieval.
+
+\subsection*{Concern}
+Ensuring a scalable, secure, and maintainable database architecture that can handle the complexities of managing subscription and payment data across multiple railway operators, while also providing a mechanism for controlled access to this data.
+
+\subsection*{Context}
+This decision pertains to the backend database system that will store all subscription and payment information for the TrIP system, affecting how data is managed, accessed, and secured.
+
+\subsection*{Criteria}
+\begin{itemize}
+    \item Scalability
+    \item Security
+    \item Reliability
+    \item Maintainability
+    \item Controlled Access
+\end{itemize}
+
+\subsection*{Option 1: Centralized Database}
+A single, centralized database provides a unified platform for managing all data, simplifying security protocols, maintenance, and data retrieval processes. This approach allows for efficient resolution of complaints and queries by railway tycoons through controlled access mechanisms, without direct exposure to sensitive customer data.
+
+\subsection*{Option 2: Decentralized Database}
+Distributed databases managed by individual railway operators offer advantages in terms of localized control and potentially faster access within specific domains but complicate the overall system architecture, data consistency, security management, and interoperability.
+
+\subsection*{Decision}
+We chose a Centralized Database due to its alignment with our priorities for security, maintainability, and controlled access. This approach simplifies the system architecture, enhances data security through centralized management, and allows for efficient and controlled data retrieval as needed.
+
+\subsection*{Consequences}
+Positive:
+\begin{itemize}
+    \item Enhanced security and data protection.
+    \item Simplified system maintenance and scalability.
+    \item Efficient, controlled access for resolving tycoon-specific queries.
+\end{itemize}
+Negative:
+\begin{itemize}
+    \item Requires robust, centralized infrastructure and security investments.
+    \item Central point of failure, necessitating comprehensive disaster recovery plans.
+\end{itemize}
