@@ -6,4 +6,4 @@
 *.pdf
 *.toc
 *.out
-!lecture_pdfs/**/*.pdf
+!lecture_materials/lecture_pdfs/**/*.pdf
