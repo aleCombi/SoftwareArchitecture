@@ -47,6 +47,9 @@ QAs: Usability(+)
 15. As a occasional passenger, I want the system to not allow me to pay for temporarily blocked routes, so that I don't have to go through customer service.
 QAs: Usability(+), Modifiability(-), Performance(-)
 
+26. As a station manager, I want the system to offer real-time updates on train schedules and network disruptions so that I can keep passengers informed and manage station flow effectively.
+QAs: Usability(+), Performance(-)
+
 16. As a passenger, I want to be able to purchase a single ticket that allows me to travel across all train networks so that I can travel seamlessly without needing to buy separate tickets for each tycoon's network.
 QAs: Usability(+), Modifiability(-), Performance(-)
 
@@ -75,18 +78,19 @@ QAs: Integrability(+), Modifiability(-), Usability(+), Testability(-)
 
 24. As a tycoon, I want to access analytics and data insights from the payment system to understand passenger behavior and adjust my services accordingly to maximize revenue and improve service.
 QAs: Integrability(+), Modifiability(-)
+    Financial Analysts
+    As a financial analyst for a tycoon, I want the system to provide detailed financial analytics and forecasting tools so that we can optimize pricing strategies and revenue across the shared network.
+    QAs: Availablity(+), Modifiability(-)
+
+28. As a government financial auditor, I want the payment system to include audit trails and compliance reporting features so that we can ensure transparency and accountability in revenue management.
 
 Station Staff
-As a station staff member, I want a simple and fast way to assist passengers with ticket purchases and inquiries across all networks so that I can provide efficient customer service.
-
-As a station manager, I want the system to offer real-time updates on train schedules and network disruptions so that I can keep passengers informed and manage station flow effectively.
+25. As a station staff member, I want a simple and fast way to assist passengers with ticket purchases and inquiries across all networks so that I can provide efficient customer service.
+QAs: Usability(+), Modifiability(-)
 
 Maintenance Teams
-As a maintenance team member, I want the system to allow for temporary fare adjustments or bypass options during maintenance work so that we can minimize inconvenience to passengers.
+26. As a maintenance team member, I want the system to allow for temporary fare adjustments or bypass options during maintenance work so that we can minimize inconvenience to passengers.
+QAs: Availablity(+), Modifiability(-)
 
-As a network maintenance planner, I want the payment system to integrate with maintenance scheduling tools so that I can plan work with minimal disruption to the train service and revenue.
-
-Financial Analysts
-As a financial analyst for a tycoon, I want the system to provide detailed financial analytics and forecasting tools so that we can optimize pricing strategies and revenue across the shared network.
-
-As a government financial auditor, I want the payment system to include audit trails and compliance reporting features so that we can ensure transparency and accountability in revenue management.
+27. As a network maintenance planner, I want the payment system to integrate with maintenance scheduling tools so that I can plan work with minimal disruption to the train service and revenue.
+QAs: Availablity(+), Modifiability(-)
