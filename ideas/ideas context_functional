@@ -20,3 +20,12 @@ Functional Viewpoint
     Customer Support Functions: Defining the system's capabilities for handling customer support and feedback.
     System Administration Features: Outlining the functionalities necessary for system administration and maintenance.
     Fare Policy Management Functions: Deciding on the capabilities required to manage and update fare policies.
+
+POSSIBLE DECISIONS
+- combined subscriptions among tycoons
+- which ways of payment (cash, cards, phones, ..)
+- add / remove tycoons
+- how to store data:
+    concern: tycoons cant see each other subscriptions
+- interface choice
+- optimize subscriptions-based paths

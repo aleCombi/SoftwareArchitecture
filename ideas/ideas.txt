@@ -6,3 +6,53 @@ POSSIBLE DECISIONS
     concern: tycoons cant see each other subscriptions
 - interface choice
 - optimize subscriptions-based paths
+
+subscriptions
+    select tycoons and sub 
+    commuting worker / student single transaction to get all subs needed
+
+pricing
+    pricing optimizer based on 
+    show me the best choice of tycoons for A2B with time freq
+    fastest path
+    existing subscriptions
+    cheapest
+    carbon footprint calculator
+
+Data sharing to governments and tycoons (database)
+    storing data
+
+API
+    api to tycoons
+
+    api from tycoons
+        available roots (consequence in interface fastest path)
+    
+    api to government
+
+    api from government
+        available roots (consequence in interface fastest path)
+
+Account
+    Trip APP
+    Card
+        Trip Card(rechargable or not), family edition or not
+        is there a multi network travel card
+    credit card turnstile
+    do we want an account for TRIP app (is there an app)/terminal, how do we access the account
+    is there a notification system (email, sms, app)
+
+terminal interface 
+    disabled accessibility information
+    voice activated features
+    high contrast view
+    multilingual (external service to provide this service)
+    popular trips section
+    student card access
+
+external services
+    book a taxi
+    sharing mobilities (car sharing)
+    bike
+    car rental
+    metro/subway
