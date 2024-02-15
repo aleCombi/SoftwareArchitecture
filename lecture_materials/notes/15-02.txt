@@ -1,0 +1,2 @@
+write down why you make high level decisions. why a decision has been made should be understandable.
+make decisions obselete if new event comes.
