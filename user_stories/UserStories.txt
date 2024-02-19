@@ -94,3 +94,32 @@ QAs: Availablity(+), Modifiability(-)
 
 27. As a network maintenance planner, I want the payment system to integrate with maintenance scheduling tools so that I can plan work with minimal disruption to the train service and revenue.
 QAs: Availablity(+), Modifiability(-)
+
+IMPORTANT ONES
+
+1. As a frequent traveler, I want to subscribe to a comprehensive monthly pass that includes all three networks so that I can save money on my regular commutes. 
+QAs: Usability
+
+2. As a passenger, I want to be able to check the balance of my multi-network travel card online so that I can easily manage my travel expenses. 
+QAs: Usability
+
+13. As a family, we want to charge train cards from the terminal, so that we can travel when we need without one transaction every time.
+QAs: Usability(+), Modifiability(-)
+
+15. As a occasional passenger, I want the system to not allow me to pay for temporarily blocked routes, so that I don't have to go through customer service.
+QAs: Usability(+), Modifiability(-), Performance(-)
+
+26. As a station manager, I want the system to offer real-time updates on train schedules and network disruptions so that I can keep passengers informed and manage station flow effectively.
+QAs: Usability(+), Performance(-)
+
+16. As a passenger, I want to be able to purchase a single ticket that allows me to travel across all train networks so that I can travel seamlessly without needing to buy separate tickets for each tycoon's network.
+QAs: Usability(+), Modifiability(-), Performance(-)
+
+18. As a government regulator, I want the payment system to adhere to data protection and financial transaction security standards so that passengers' personal and financial information is secure.
+QAs: Security(+), Modifiability(-), Testability(-), Integrability(-)
+
+23. As a tycoon, I want the payment system to integrate with my existing infrastructure with minimal disruption so that I can maintain high service levels during the transition.
+QAs: Integrability(+), Modifiability(-), Usability(+), Testability(-)
+
+27. As a network maintenance planner, I want the payment system to integrate with maintenance scheduling tools so that I can plan work with minimal disruption to the train service and revenue.
+QAs: Availablity(+), Modifiability(-)

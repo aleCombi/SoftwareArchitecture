@@ -1,0 +1,46 @@
+\section*{Decision 3: Calculating the routes and their prices/time}
+
+\subsection*{Status}
+Review
+
+\subsection*{Architectural Summary}
+In developing the TrIP system, we explore subscription model architectures that align railway tycoons' need for flexibility with passengers' demand for simplicity. We assess the trade-offs between unified and tycoon-specific models to enhance both operational autonomy and passenger convenience.
+
+\subsection*{Concern}
+A user wants to know the available tickets from A-B. 
+Connected user stories: 16
+
+\subsection*{Context}
+How the system handles the request by the user of a route. The system has to check the available routes, the prices/time of available routes.
+
+\subsection*{Criteria}
+\begin{itemize}
+\item Ease of use for the passenger.
+\item Multiple route options for the user.
+\item The system returns to user usable options based on price/time/availability/subscription.
+\item Simple integration with the tycoon systems.
+\end{itemize}
+
+\subsection*{Option 1: Terminal communicates with tycoons, our database and a route optimizer module}
+We want to structure our system in 4 modules - Terminal, tycoon, database, route optimizer.
+Insert figure.
+
+\subsection*{Option 2: Terminal communicates with route optimizer and data management module}
+We want to structure our system in 5 modules - Terminal, tycoon, database, database management and route optimizer.
+Insert figure.
+
+\subsection*{Decision}
+We choose option 2.
+Easier integration with tycoons.
+Separation of concerns, having additional database management module is more extendible.
+
+\subsection*{Consequences}
+\textbf{Positive Consequences:}
+\begin{itemize}
+\item Simplifies data flow between the trip system and tycoons.
+\end{itemize}
+\textbf{Negative Consequences:}
+\begin{itemize}
+\item Creating additional module which requires development.
+\end{itemize}
+This approach seeks to balance stakeholder interests, with room for iterative refinement as the system evolves.
