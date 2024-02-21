@@ -1,0 +1,42 @@
+\section*{Decision 5: How to handle quickly filling trains?}
+
+\subsection*{Status}
+Review
+
+\subsection*{Architectural Summary}
+QA scenario (availability): When a route is requested by a passenger to a terminal, the terminal verifies that the trains arent fully booked and then proceeds to
+ask for the payment.
+It could happen that at the same time another passenger buys the last ticket. This is relevant expecially in peak hours, which are typically important for commuters and students.
+
+\subsection*{Concern}
+Passenger wants minimum usability and availability. Also, we (and the tycoons) don't want to have customer service issues.
+Connected user stories: 15 (passenger don't want to pay for unavailable routes)
+
+\subsection*{Context}
+
+
+\subsection*{Criteria}
+\begin{itemize}
+\item Not too many requests to tycoon systems.
+\item Performance, to avoid passenger have a bad user experience.
+\item Don't allow to pay two users for the same spot.
+\end{itemize}
+
+\subsection*{Option 1: }
+We should maintain a database where info about scheduled trains is stored. 
+This database should be updated by the terminal when a ticket has been bought.
+This database should ask periodically to the tycoon systems updates on schedules.
+When the user select that they want to pay for a specific ticket, that ticket should be locked, so that no one else can buy it. 
+If the payment is not ultimated, it can be unlocked.
+
+\subsection*{Option 2: }
+
+\subsection*{Decision}
+
+\subsection*{Consequences}
+\textbf{Positive Consequences:}
+\begin{itemize}
+\end{itemize}
+\textbf{Negative Consequences:}
+\begin{itemize}
+\end{itemize}
