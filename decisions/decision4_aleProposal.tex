@@ -1,0 +1,46 @@
+\section*{Decision 4: How to integrate subscription to route optimization module}
+
+\subsection*{Status}
+Review
+
+\subsection*{Architectural Summary}
+In developing the TrIP system, we explore subscription model architectures that align railway tycoons' need for flexibility with passengers' demand for simplicity. 
+We assess the trade-offs between unified and tycoon-specific models to enhance both operational autonomy and passenger convenience.
+
+\subsection*{Concern}
+A user wants to know the available tickets from A-B. 
+Connected user stories: 16 (passenger want one payment for many trains), 23 (tycoon wants easy integration with their system)
+
+\subsection*{Context}
+When passengers want to go from station A to station B, they want to be able to use all the subscription they have and pay for the trains belonging to tycoons they are not subsribed to.
+The terminal has to communicate with the tycoon systems to verify subscriptions and check routes.
+
+\subsection*{Criteria}
+\begin{itemize}
+\item Ease of use for the passenger.
+\item Multiple route options for the user.
+\item The system returns to user usable options based on price/time/availability/subscription.
+\item Simple integration with the tycoon systems.
+\end{itemize}
+
+\subsection*{Option 1: Introduction of a subscription manager tool, route optimizer needs to take subs into consideration.}
+We want to include a Subscription Manager module to our functional view. 
+Such a module has the responsibility to verify subscriptions, communicating with the tycoon system.
+Furthermore, the Route Optimizer module needs to be able to optimize wrt price given that the passenger holds some subscription.
+The idea is to add an optional initial iteration to the sequence of actions sketched in decision3.
+This requires a way to communicate the subscription to the terminal, be it a QR code, a code or a magnetic card. 
+This should be the topic of another decision.
+
+The functional view schema is in my bag.
+
+\subsection*{Option 2}
+
+\subsection*{Decision}
+
+\subsection*{Consequences}
+\textbf{Positive Consequences:}
+\begin{itemize}
+\end{itemize}
+\textbf{Negative Consequences:}
+\begin{itemize}
+\end{itemize}
