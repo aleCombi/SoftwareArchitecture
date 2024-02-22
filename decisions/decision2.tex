@@ -24,6 +24,9 @@ The database must handle a wide array of data, including user subscriptions, far
 \subsection*{Option 1: SQL Database (e.g., PostgreSQL)}
 A relational database model renowned for its strong consistency, ACID (Atomicity, Consistency, Isolation, and Durability) compliance, and the ability to efficiently handle complex queries and data relationships.
 \textbf{Pro:} High data integrity and robust support for complex relational data structures.
+\textbf{Pro:} We have a highly structured data.
+\textbf{Pro:} More developers are familiar with it, more resources on the topic.
+\textbf{Pro:} Good with concurrency.
 \textbf{Con:} Scalability challenges in horizontally distributed architectures compared to NoSQL options.
 
 \subsection*{Option 2: NoSQL Database (e.g., MongoDB)}
@@ -31,39 +34,20 @@ A distributed database system designed for scalability and flexibility, suitable
 \textbf{Pro:} Offers superior scalability and flexibility for managing unstructured or semi-structured data.
 \textbf{Con:} May compromise transactional integrity and consistency in favor of performance and scalability.
 
-% \subsection*{Decision}
-% After thorough consideration, the decision is to implement an \textbf{SQL database}, specifically PostgreSQL, for the TrIP system. This decision is underpinned by the SQL database's unmatched data integrity, support for complex transactions, and relational data modeling capabilities, which are crucial for the financial transactions and data relationships inherent in the TrIP system.
+\subsection*{Decision}
+After thorough consideration, the decision is to implement an \textbf{SQL database}, specifically PostgreSQL for it being open source, for the TrIP system. This decision is underpinned by the SQL database's unmatched data integrity, support for complex transactions, and relational data modeling capabilities, which are crucial for the financial transactions and data relationships inherent in the TrIP system.
 
-
-% SQL argument
-% \subsection*{Consequences}
-% \textbf{Positive Consequences:}
-% \begin{itemize}
-%     \item Ensures high levels of data integrity and transactional consistency, critical for financial data and user subscriptions.
-%     \item Facilitates complex data queries and relationships, enabling sophisticated data analysis and reporting.
-%     \item Provides robust security features to protect sensitive data and comply with data protection regulations.
-% \end{itemize}
-% \textbf{Negative Consequences:}
-% \begin{itemize}
-%     \item May require additional strategies for scaling horizontally, such as implementing read replicas or sharding, to manage large data volumes and high traffic loads effectively.
-%     \item Could necessitate more intensive resource management and optimization to ensure performance at scale.
-% \end{itemize}
-% Choosing an SQL database aligns with the TrIP system's core requirements for data integrity, relational data handling, and transactional consistency. This foundation will support the system's initial functionality and long-term growth, with a focus on maintaining data accuracy and trustworthiness.
-
-% NoSQL argument
-% \subsection*{Decision}
-% Considering the need for scalability, flexibility in handling diverse data types from multiple railroad tycoons, and the requirement for high performance under peak loads, the decision leans towards adopting a \textbf{NoSQL database}. This choice is motivated by NoSQL's superior scalability and flexibility, which aligns with the dynamic and growing nature of the TrIP system.
-
-% \subsection*{Consequences}
-% \textbf{Positive Consequences:}
-% \begin{itemize}
-%     \item Enhanced ability to scale the system horizontally to manage growing data and user demands efficiently.
-%     \item Greater flexibility in accommodating the diverse and evolving data structures from the tycoon systems.
-%     \item Improved performance for read and write operations across distributed systems.
-% \end{itemize}
-% \textbf{Negative Consequences:}
-% \begin{itemize}
-%     \item Potential challenges in ensuring transactional consistency and integrity across distributed environments.
-%     \item Requirement for additional mechanisms or strategies to handle complex transactions and maintain data consistency.
-% \end{itemize}
-% This decision strategically positions the TrIP system to manage current requirements and future growth effectively, acknowledging the need for ongoing evaluation and adaptation as the system evolves and expands.
+SQL argument
+\subsection*{Consequences}
+\textbf{Positive Consequences:}
+\begin{itemize}
+    \item Ensures high levels of data integrity and transactional consistency, critical for financial data and user subscriptions.
+    \item Facilitates complex data queries and relationships, enabling sophisticated data analysis and reporting.
+    \item Provides robust security features to protect sensitive data and comply with data protection regulations.
+\end{itemize}
+\textbf{Negative Consequences:}
+\begin{itemize}
+    \item May require additional strategies for scaling horizontally, such as implementing read replicas or sharding, to manage large data volumes and high traffic loads effectively.
+    \item Could necessitate more intensive resource management and optimization to ensure performance at scale.
+\end{itemize}
+Choosing an SQL database aligns with the TrIP system's core requirements for data integrity, relational data handling, and transactional consistency. This foundation will support the system's initial functionality and long-term growth, with a focus on maintaining data accuracy and trustworthiness.
