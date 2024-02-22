@@ -4,16 +4,15 @@
 Review
 
 \subsection*{Architectural Summary}
-QA scenario (availability): When a route is requested by a passenger to a terminal, the terminal verifies that the trains arent fully booked and then proceeds to
-ask for the payment.
-It could happen that at the same time another passenger buys the last ticket. This is relevant expecially in peak hours, which are typically important for commuters and students.
 
 \subsection*{Concern}
 Passenger wants minimum usability and availability. Also, we (and the tycoons) don't want to have customer service issues.
 Connected user stories: 15 (passenger don't want to pay for unavailable routes)
 
 \subsection*{Context}
-
+QA scenario (availability): When a route is requested by a passenger to a terminal, the terminal verifies that the trains arent fully booked and then proceeds to
+ask for the payment.
+It could happen that at the same time another passenger buys the last ticket. This is relevant expecially in peak hours, which are typically important for commuters and students.
 
 \subsection*{Criteria}
 \begin{itemize}
@@ -22,7 +21,7 @@ Connected user stories: 15 (passenger don't want to pay for unavailable routes)
 \item Don't allow to pay two users for the same spot.
 \end{itemize}
 
-\subsection*{Option 1: }
+\subsection*{Option 1: Lock the seats before payment}
 We should maintain a database where info about scheduled trains is stored. 
 This database should be updated by the terminal when a ticket has been bought.
 This database should ask periodically to the tycoon systems updates on schedules.
@@ -32,7 +31,8 @@ Note that it can still happend that due to maintenance, a train is cancelled las
 What happens with the customer service? Should we add it to the context view? They will for sure need info from us, like who paid and how much. 
 These should be two future decisions (how to deal with customer service in case of train disruptions, how to keep up to date about disruptions).
 
-\subsection*{Option 2: }
+\subsection*{Option 2: Lock the seats after payment, FCFS, refuse payments if same is booked}
+Advantage, actual person who pays buys, hence you dont lock for no reason.
 
 \subsection*{Decision}
 
