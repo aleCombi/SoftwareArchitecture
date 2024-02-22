@@ -1,24 +1,22 @@
-\section*{Decision 5: How to handle quickly filling trains?}
+\section*{Decision 5: How to Handle Quickly Filling Trains?}
 
 \subsection*{Status}
 Review
 
 \subsection*{Architectural Summary}
+This decision addresses the challenge of managing quickly filling trains, particularly during peak hours, to ensure a seamless and fair ticket purchasing experience for passengers. The decision will consider technological and operational options to mitigate the risk of overbooking and enhance passenger satisfaction.
 
 \subsection*{Concern}
-Passenger wants minimum usability and availability. Also, we (and the tycoons) don't want to have customer service issues.
-Connected user stories: 15 (passenger don't want to pay for unavailable routes)
+Passengers expect a minimum level of usability and availability from the ticketing system, and both the system operators and railroad tycoons aim to minimize customer service issues. Connected user stories highlight passengers' frustrations with paying for unavailable routes.
 
 \subsection*{Context}
-QA scenario (availability): When a route is requested by a passenger to a terminal, the terminal verifies that the trains arent fully booked and then proceeds to
-ask for the payment.
-It could happen that at the same time another passenger buys the last ticket. This is relevant expecially in peak hours, which are typically important for commuters and students.
+In scenarios where demand for train seats spikes, such as during peak commuting hours, the system must efficiently manage the simultaneous requests for the last available seats. This challenge is critical for ensuring a positive experience for commuters and students who rely on timely and available transportation.
 
 \subsection*{Criteria}
 \begin{itemize}
-\item Not too many requests to tycoon systems.
-\item Performance, to avoid passenger have a bad user experience.
-\item Don't allow to pay two users for the same spot.
+    \item Minimize excessive requests to tycoon systems, avoiding system overload.
+    \item Ensure high performance to prevent a negative user experience.
+    \item Prevent multiple users from paying for the same seat, ensuring fairness in ticket sales.
 \end{itemize}
 
 \subsection*{Option 1: Lock the seats before payment}
@@ -31,15 +29,28 @@ Note that it can still happend that due to maintenance, a train is cancelled las
 What happens with the customer service? Should we add it to the context view? They will for sure need info from us, like who paid and how much. 
 These should be two future decisions (how to deal with customer service in case of train disruptions, how to keep up to date about disruptions).
 
-\subsection*{Option 2: Lock the seats after payment, FCFS, refuse payments if same is booked}
-Advantage, actual person who pays buys, hence you dont lock for no reason.
+\subsection*{Option 2: Lock the Seats After Payment, FCFS, Refuse Payments if Seat is Booked}
+Seats are locked only after payment confirmation, adhering to a first-come, first-served (FCFS) approach. This method ensures that seats are sold to passengers who complete the payment process first, minimizing the potential for holding seats unnecessarily.
+
+\subsection*{Option 3: Real-time Seat Availability with Dynamic Allocation}
+This option introduces a system for real-time tracking and dynamic allocation of seats. It involves continuous synchronization with tycoon systems to update seat availability instantly. The system could allow for a slight overbooking based on historical no-show rates, with safeguards in place to manage overbooked scenarios, such as offering alternative transportation options or compensation.
+
+\subsection*{Option 4: Advanced Booking and Peak Time Management}
+Encourage passengers to book in advance through incentives, such as discounted rates for off-peak hours or loyalty points. This strategy aims to distribute demand more evenly throughout the day and reduce pressure on peak times. Additionally, implement a system to increase train frequency during peak times if possible, based on coordination with the tycoons.
 
 \subsection*{Decision}
+The decision will involve evaluating the options against the criteria of system performance, fairness in seat allocation, and overall impact on passenger experience. The chosen option will balance technological feasibility, operational costs, and the potential for enhancing passenger satisfaction.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
 \begin{itemize}
+    \item Improved passenger experience through fair and efficient seat allocation.
+    \item Reduced customer service issues related to overbooking and ticket availability.
+    \item Enhanced system resilience against peak demand scenarios.
 \end{itemize}
 \textbf{Negative Consequences:}
 \begin{itemize}
+    \item Potential increase in system complexity and operational costs.
+    \item Challenges in accurately forecasting demand for dynamic seat allocation or overbooking strategies.
+    \item Possible passenger dissatisfaction in cases of overbooking or changes in train schedules.
 \end{itemize}

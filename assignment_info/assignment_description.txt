@@ -1,0 +1,61 @@
+Group-Assignment
+ 
+Item
+Project: Train Inter Payment SystemProject: Train Inter Payment System
+Three railroad tycoons operate a narrow gauge railway that connects several towns with some industries and a small university. Each tycoon owns their own trains and stations, and have their own subscription fee. Some stations are shared between tycoons, to allow passengers to transfer on their commutes. However, passengers complain already for years that the payment system is cumbersome, especially when transfering, as the tycoons' systems are not interoperable. Therefore, the tycoons have decided to build a joint payment system, under the condition that each tycoon still has its own subscriptions and fees.
+The tycoons join forces in the system, and create a new organization that will build and operate the Trip Inter Payment system (TrIP). The system will be run using smart payment terminals at each station, and needs to communicate with the tycoon whether the passenger has the proper subscription. In case there is no subscription, the passenger automatically pays for a single fare. The system needs to ensure that the travelers are charged correctly.
+Your team is asked to architect the new TrIP system, and to implement a prototype that shows how the system will operate and communicate with the three tycoons. There are two main constraints on the system:
+It is a service-based architecture
+There are at least two types of components: a payment terminal and a tycoon system.
+Item
+StakeholdersStakeholders
+There are three main stakeholders that you need to convince to use your system:
+TriP Owner:
+The owner will build, operate and maintain the TriP system during its lifetime. The owner has the following quality attributes:
+Maintainability (priority 2). The owner wants a minimum amount of effort to maintain and build the system
+Operational costs (priority 2). The operational costs of the system should be as low as possible.
+The three Railroad tycoons:
+The three tycoons operates the trains and stations that passengers use to commute between stations. They want to maintain their own fees and subscription systems. The three tycoons have the following quality attributes:
+Usability (priority 1). The tycoons should be able to easily add or remove payment terminals at each station.
+Reliability (priority 2). Passengers should always be able to pay for their travels.
+Passengers:
+The passengers commute between stations, and sometimes transfer trains at a station to arrive at their desired location. A survey under the passengers resulted in the following quality attributes:
+Usability (priority 2). The payment system is easy to use, and does not require additional actions on their travels.
+Security (priority 1). The system should protect the information of the passenger from unauthorized access.
+Item
+ConcernsConcerns
+The following concerns have been identified for the system:
+A passenger should be able to commute between stations and pay for each trip
+A passenger should be able to have different subscriptions for the three tycoons
+Each of the three tycoon wants to have its own subscription fee system
+Each of the three tycoon should be able to open and close stations, and add and remove payment terminals at each station
+The system should protect the data of the passengers.
+Item
+AssignmentAssignment
+Your team has been asked to architect a system for the three railroad tycoons. The deadlines for the assignment can be found in the schedule. Note that the deadlines are for drafts. That implies that it is not necessary to already have a full system architecture at the first draft. The deadlines are intended to provide you with feedback.
+Item
+Architecture of the SystemArchitecture of the System
+An important aspect of software architecture is the rationale design decisions: why is the architecture as it is? To make well-informed decisions, you need to know what the implications are of each design decision. That is why we will work in rounds in this assignment. Each round is a design decision. A round consists of the following steps:
+Select a (set of) user story / stories to work on
+Discuss within the group different options, and how these affect the different views and perspectives.
+Each team member needs to work out a candidate solution. Each team member sketches their option and analyses how it affects the views and perspectives: what are the pros and cons of this option? The option is documented in the architecture document.
+Discuss within your team the candidate solutions. Choose the best solution, and document the rationale behind that decision.
+Document your decision in the decision document. Follow the provided template!
+Requirements on the architecture document:
+Architect at least the following viewpoints:
+Context
+Functional
+Information
+Concurrency
+Deployment
+Development
+Discuss and analyze at least the following perspectives:
+Performance
+Scalability
+Availability & resilience
+Security & Privacy
+Create a Functional Architecture Model for the system, and connect the user stories to it.
+Document the dynamics of the system in the corresponding viewpoints, using the logical model, scenario overlays, choreographies and the Petri net approach as discussed in the lectures (in week 2 and 3).
+Use the logical model as starting point for the development viewpoint. The assessment criteria will follow later. A template to use for the assignment can be found here
+Use the  template template - Alternative Formats (provided as a Word-file. Creating your own LaTeX document is allowed, as long as you follow the template).
+The assessment criteria will follow later.

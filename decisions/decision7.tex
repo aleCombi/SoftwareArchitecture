@@ -1,30 +1,54 @@
-\section*{Decision 7: How and what to communicate to customer service?}
+\section*{Decision 7: Strategic Communication Protocols with Customer Service}
 
 \subsection*{Status}
+In Review
 
 \subsection*{Architectural Summary}
-
+This decision outlines the strategy for communication between the TrIP system and customer service teams to facilitate rapid and effective resolution of customer issues.
 
 \subsection*{Concern}
-
+The primary concern is to ensure that customer service representatives have access to accurate and timely information to address passenger queries and resolve issues efficiently, without compromising data privacy.
 
 \subsection*{Context}
-
+Customer service teams require real-time access to passenger data, ticketing information, and system status to provide informed support. The chosen communication strategy must balance the need for information accessibility with system security and data privacy regulations.
 
 \subsection*{Criteria}
 \begin{itemize}
+    \item Timeliness and accuracy of information communicated.
+    \item Data privacy and security compliance.
+    \item Ease of access for customer service representatives.
+    \item Minimization of system complexity and maintenance.
+    \item Integration with existing customer service platforms.
+    \item Cost-effectiveness of the communication solution.
 \end{itemize}
 
-\subsection*{Option 1: }
+\subsection*{Option 1: Direct Access to Live Data}
+Grant customer service representatives direct access to the live operational database with appropriate read-only permissions and privacy safeguards in place.
 
-\subsection*{Option 2: }
+\subsection*{Option 2: Periodic Data Sync to a Dedicated Customer Service Database}
+Regularly synchronize relevant data from the operational database to a separate customer service database designed for query efficiency and tailored access control.
+
+\subsection*{Option 3: On-Demand Data Retrieval via Secure API}
+Implement a secure API that allows customer service representatives to retrieve necessary data on-demand while maintaining strict access controls and audit trails.
+
+\subsection*{Option 4: Automated Reporting System}
+Develop an automated reporting system that provides customer service representatives with pre-defined reports and dashboards, reducing the need for direct data access.
 
 \subsection*{Decision}
+The decision will involve evaluating the options against the criteria, taking into account the current infrastructure, data sensitivity, and customer service requirements. The chosen solution must facilitate effective customer service interactions while maintaining data integrity and security.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
 \begin{itemize}
+    \item Option 1: Immediate access to data allows for quick customer service responses.
+    \item Option 2: Data syncing provides a stable environment tailored for customer service needs.
+    \item Option 3: Secure API ensures data privacy and minimizes unnecessary data exposure.
+    \item Option 4: Automated reports streamline the information delivery process.
 \end{itemize}
 \textbf{Negative Consequences:}
 \begin{itemize}
+    \item Option 1: Direct access to live data could pose security risks if not managed correctly.
+    \item Option 2: Data syncing could lead to delays in information relay if not frequent enough.
+    \item Option 3: On-demand retrieval may introduce latency and requires robust API management.
+    \item Option 4: Automated reporting may not cover all ad-hoc queries from customer service representatives.
 \end{itemize}

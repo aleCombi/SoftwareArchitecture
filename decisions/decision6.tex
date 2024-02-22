@@ -1,30 +1,54 @@
-\section*{Decision 6: How to handle train disruptions?}
+\section*{Decision 6: How to Handle Train Disruptions?}
 
 \subsection*{Status}
+In Review
 
 \subsection*{Architectural Summary}
-
+This decision involves establishing a protocol within the TrIP system for managing and mitigating the impact of train disruptions on passengers and service operations.
 
 \subsection*{Concern}
-
+The main concern is to ensure minimal inconvenience to passengers during train disruptions while maintaining transparent communication and providing alternative solutions.
 
 \subsection*{Context}
-
+Train disruptions can occur due to various reasons such as maintenance issues, accidents, or natural events. The system needs to be able to quickly respond to such incidents, inform affected passengers, and offer alternatives to ensure continued service.
 
 \subsection*{Criteria}
 \begin{itemize}
+    \item Rapid detection and response to disruptions.
+    \item Clear and timely communication with passengers.
+    \item Provision of alternative transport options.
+    \item Integration with existing operational and communication systems.
+    \item Minimization of negative impact on passenger experience.
+    \item Compliance with safety and regulatory standards.
 \end{itemize}
 
-\subsection*{Option 1: }
+\subsection*{Option 1: Real-Time Alert System}
+Implement a real-time alert system that notifies passengers of disruptions via mobile app notifications, SMS, and updates on digital displays at stations.
 
-\subsection*{Option 2: }
+\subsection*{Option 2: Proactive Disruption Management}
+Develop a proactive disruption management system that not only alerts passengers but also automatically rebooks them onto alternative services or refunds the affected part of their journey.
+
+\subsection*{Option 3: Manual Intervention Protocol}
+Establish a manual intervention protocol where customer service teams are promptly informed of disruptions to assist passengers with rebooking and provide personalized travel advice.
+
+\subsection*{Option 4: Integrated Mobility Platform}
+Create an integrated mobility platform that connects with other transportation services, allowing passengers to choose alternative modes of transport such as buses or car-sharing in the event of a train disruption.
 
 \subsection*{Decision}
+The decision will be made after an in-depth analysis of each option against the set criteria. It will consider the current infrastructure's capabilities, passenger needs, and the potential for seamless integration with other transportation modes.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
 \begin{itemize}
+    \item Option 1: Ensures passengers are quickly informed about disruptions.
+    \item Option 2: Automates the process of managing the effects of disruptions on passengers.
+    \item Option 3: Provides a personalized response to passenger issues during disruptions.
+    \item Option 4: Offers flexible travel alternatives through an integrated transportation network.
 \end{itemize}
 \textbf{Negative Consequences:}
 \begin{itemize}
+    \item Option 1: Requires passengers to actively check for updates and take action.
+    \item Option 2: May be complex to implement and require significant changes to existing systems.
+    \item Option 3: Could be resource-intensive and slow during large-scale disruptions.
+    \item Option 4: Depends on partnerships with other transport service providers and may face interoperability challenges.
 \end{itemize}
