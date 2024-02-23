@@ -1,7 +1,7 @@
 \subsection{Decision 1: Principles and Frameworks Guiding the User Interface and Experience}
 
 \subsection*{Status}
-In Review
+Accepted.
 
 \subsection*{Architectural Summary}
 % In the context of designing an intuitive and engaging user interface for the TrIP system terminals, we face the challenge of selecting guiding principles and frameworks that will shape the user experience and interaction design.
@@ -24,44 +24,55 @@ The decision will be guided by the following criteria:
 
 \subsection*{Option 1: Use of Standardized UI Components}
 This approach involves adopting a comprehensive design system, such as Google's Material Design or IBM’s Carbon Design System, which offers a robust set of standardized UI components. These components include buttons, forms, toggles, navigation patterns, and more, all designed with consistency and usability in mind. By utilizing these pre-designed components, the development process can be significantly accelerated, as developers and designers will not need to create common UI elements from scratch. This ensures a cohesive look and feel across the entire application, enhancing the user's ability to intuitively navigate the system.
-\textbf{Pro:} Significantly reduces development time and ensures UI consistency.
-\textbf{Pro:} Also open source (google).
-\textbf{Con:} May limit unique branding opportunities and design customization.
+\begin{itemize}
+    \item \textbf{Pro:} Significantly reduces development time and ensures UI consistency.
+    \item \textbf{Pro:} Both Google's Material Design and IBS's Carbon Design System are open source, hence they would allow developers to easily debug the interface, identify possible bugs, seek for contributions online or even contribute themselves.
+    \item \textbf{Con:} May limit unique branding opportunities and design customization. 
+    \item \textbf{Con:} Some developers may consider it a limit for their creativity. 
+\end{itemize}
 
 \subsection*{Option 2: Custom Designed Interactive Interfaces}
 This option focuses on creating bespoke interactive interfaces from the ground up, specifically tailored to the unique needs and brand identity of the TrIP system. This could involve developing custom animations, unique layout designs, and interactive elements that engage users in a novel way. By focusing on custom designs, the TrIP system can distinguish itself from competitors and provide a unique user experience that directly addresses specific user needs and preferences.
-\textbf{Pro:} Allows for full creative freedom and the opportunity to innovate.
-\textbf{Pro:} Less operational cost, and higher maintainability.
-\textbf{Con:} More time-consuming and expensive due to the bespoke nature of the design and development process.
-\textbf{Con:} Expertise is needed, more developers.
+\begin{itemize}
+    \item \textbf{Pro:} Allows for full creative freedom and the opportunity to innovate.
+    \item \textbf{Pro:} Less operational cost, and higher maintainability.
+    \item \textbf{Con:} More time-consuming and expensive due to the bespoke nature of the design and development process.
+    \item \textbf{Con:} Expertise within the developing team is needed, possibly more developers. This might offset the lower operational cost.
+\end{itemize}
 
 \subsection*{Option 3: Open Source Frameworks}
 Utilizing open-source UI frameworks such as Bootstrap, Foundation, or Vue.js offers a middle ground between complete customization and strict standardization. These frameworks are supported by large communities of developers, ensuring that the frameworks are well-documented, frequently updated, and robust against common web development challenges. They come with a variety of UI components that can be easily modified to fit the system’s needs, providing both speed in development and a degree of customization.
-\textbf{Pro:} Combines rapid development with the flexibility of customization.
-\textbf{Con:} Might still require significant effort to stand out from the default "framework look."
-\textbf{Con:} Possible discontinuation.
+\begin{itemize}
+    \item \textbf{Pro:} Combines rapid development with the flexibility of customization.
+    \item \textbf{Con:} Might still require significant effort to stand out from the default "framework look."
+    \item \textbf{Con:} Possible discontinuation.
+\end{itemize}
 
 \subsection*{Option 4: Proprietary High-End Frameworks}
 Choosing proprietary frameworks such as Telerik, DevExpress, or Adobe XD’s design systems offers access to a suite of advanced features, including sophisticated data visualization tools, complex UI components, and comprehensive support services. These frameworks are often optimized for performance and come with extensive documentation and professional support, ensuring that the development team can create a high-quality user interface while potentially saving time on troubleshooting and problem-solving.
-\textbf{Pro:} Provides a wide range of advanced features and dedicated support.
-\textbf{Con:} Incurs additional costs due to licensing fees and may lock the project into a specific vendor or technology stack.
-\textbf{Con:} Train system doesn't have to be that compilacated, high-end products can be redundant, also we want to keep it simple.
+\begin{itemize}
+    \item \textbf{Pro:} Provides a wide range of advanced features and dedicated support.
+    \item \textbf{Con:} Incurs additional costs due to licensing fees and may lock the project into a specific vendor or technology stack.
+    \item \textbf{Con:} Train system doesn't have to be that compilicated, high-end products can be redundant, also the passengers want us to keep it simple.
+\end{itemize}
 
 \subsection*{Decision}
-Option 1 is chosen.
+Option 1 is chosen. This option lifts a lot of weight from the development team. This reduces operational cost and enhances maintenability, which are the main concerns of the TrIP owner. Furthermore, these interfaces are well tested and user-friendly, making them a natural choice to satisfy the need for usability of the passengers and the reliability requested by the tycoons. 
+Generally speaking, user interfaces for train systems are not sophisticated enough to require more expensive and complicated set-ups. 
+A careful user testing is strongly adviced, to choose a suitable setup.
 
 \subsection*{Consequences}
-% \textbf{Positive Consequences:}
-% \begin{itemize}
-%     \item Access to a broad community for support and troubleshooting.
-%     \item Cost savings by avoiding licensing fees associated with proprietary software.
-%     \item Rich ecosystem of plugins and extensions to enhance functionality.
-%     \item Frequent updates and a large pool of developers familiar with the frameworks.
-% \end{itemize}
-% \textbf{Negative Consequences:}
-% \begin{itemize}
-%     \item Potential dependency on external communities for critical updates and support.
-%     \item Risk of choosing a framework that may not align with long-term technology trends or become obsolete.
-%     \item Need for rigorous selection to ensure accessibility and responsiveness standards are met.
-% \end{itemize}
+\textbf{Positive Consequences:}
+\begin{itemize}
+    \item Access to a broad community for support and troubleshooting.
+    \item Cost savings by avoiding licensing fees associated with proprietary software.
+    \item Rich ecosystem of plugins and extensions to enhance functionality.
+    \item Frequent updates and a large pool of developers familiar with the frameworks.
+\end{itemize}
+\textbf{Negative Consequences:}
+\begin{itemize}
+    \item Potential dependency on external communities for critical updates and support. Some of these might require expensive professional support.
+    \item Risk of choosing a framework that may not align with long-term technology trends or become obsolete. Information sourcing about the future of the chosen project is crucial.
+    \item Need for rigorous selection to ensure accessibility and responsiveness standards are met. This would be a consequence of any of the choices listed.
+\end{itemize}
 

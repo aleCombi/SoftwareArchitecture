@@ -1,7 +1,7 @@
 \subsection{Decision 2: Selecting the Database Technology}
 
 \subsection*{Status}
-In Review
+Accepted.
 
 \subsection*{Architectural Summary}
 In developing the TrIP system, tasked with unifying the payment and subscription management across three railroad tycoons' operations, we are faced with the decision of choosing an appropriate database technology. This choice hinges on our need to ensure data integrity, support complex queries for transaction processing, and maintain scalability and security.
@@ -23,21 +23,31 @@ The database must handle a wide array of data, including user subscriptions, far
 
 \subsection*{Option 1: SQL Database (e.g., PostgreSQL)}
 A relational database model renowned for its strong consistency, ACID (Atomicity, Consistency, Isolation, and Durability) compliance, and the ability to efficiently handle complex queries and data relationships.
-\textbf{Pro:} High data integrity and robust support for complex relational data structures.
-\textbf{Pro:} We have a highly structured data.
-\textbf{Pro:} More developers are familiar with it, more resources on the topic.
-\textbf{Pro:} Good with concurrency.
-\textbf{Con:} Scalability challenges in horizontally distributed architectures compared to NoSQL options.
+\begin{itemize}
+    \item \textbf{Pro:} High data integrity and robust support for complex relational data structures.
+    \item \textbf{Pro:} We have a highly structured data.
+    \item \textbf{Pro:} More developers are familiar with it, more resources on the topic. It has a strong community and over 30 years of active development.
+    \item \textbf{Pro:} Good with concurrency.
+    \item \textbf{Pro:} Open source and free.
+    \item \textbf{Con:} Scalability challenges in horizontally distributed architectures compared to NoSQL options.
+    \item \textbf{Con:} Requires accurate upfront planning of the data model due to its structured nature, thereby limiting flexibility.
+\end{itemize}
 
 \subsection*{Option 2: NoSQL Database (e.g., MongoDB)}
 A distributed database system designed for scalability and flexibility, suitable for handling large volumes of diverse data types.
-\textbf{Pro:} Offers superior scalability and flexibility for managing unstructured or semi-structured data.
-\textbf{Con:} May compromise transactional integrity and consistency in favor of performance and scalability.
+\begin{itemize}
+    \item \textbf{Pro:} Offers superior scalability and flexibility for managing unstructured or semi-structured data.
+    \item \textbf{Pro:} Enhances performance for non-structured data.
+    \item \textbf{Con:} May compromise transactional integrity and consistency in favor of performance and scalability.
+\end{itemize}
 
 \subsection*{Decision}
-After thorough consideration, the decision is to implement an \textbf{SQL database}, specifically PostgreSQL for it being open source, for the TrIP system. This decision is underpinned by the SQL database's unmatched data integrity, support for complex transactions, and relational data modeling capabilities, which are crucial for the financial transactions and data relationships inherent in the TrIP system.
+After thorough consideration, the decision is to implement an \textbf{SQL database}, specifically PostgreSQL for it being open source, for the TrIP system. This decision is underpinned by the SQL database's unmatched data integrity, support for complex transactions, and relational data modeling capabilities, which are crucial for the financial transactions and data relationships inherent in the TrIP system. Furthermore, train payment data are by nature very structured, don't give much creativity to the passengers, thus a relational database seems a more natural choice. Given the higher familiarity of developers, this choice is good for the QAs favoured by the TrIP owner, such as:
+\begin{itemize}
+    \item Maintainability (priority 2). The owner wants a minimum amount of effort to maintain and build the system
+    \item Operational costs (priority 2). The operational costs of the system should be as low as possible.
+\end{itemize}
 
-SQL argument
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
 \begin{itemize}
