@@ -33,8 +33,18 @@ This should be the topic of another decision.
 
 The functional view schema is in my bag.
 
-\subsection*{Option 2: }
-
+\subsection*{Option 2: Integrated Subscription-Route Optimization Service}
+The Integrated Subscription-Route Optimization Service (IS-ROS) combines the functionality of subscription management and route optimization into a single service. 
+\subsubsection*{Pros}
+\begin{itemize}[noitemsep]
+    \item \textbf{Performance} Streamlines the process by combining two functionalities, potentially reducing response time for route optimization.
+    \item \textbf{Reduced Interactions between systems} Simplifies the architecture by reducing the number of interactions between separate systems.
+\end{itemize}
+\subsubsection*{Cons}
+\begin{itemize}[noitemsep]
+    \item \textbf{Increased Complexity within Single Module} Increases complexity within a single system, which may require more resources to develop and maintain.
+    \item \textbf{Failures have larger impact} May lead to higher dependency on a single system, which can be a point of failure if the system goes down.
+\end{itemize}
 
 \subsection*{Decision}
 
