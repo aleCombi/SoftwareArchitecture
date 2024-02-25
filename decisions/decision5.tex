@@ -121,9 +121,10 @@ The Two-Phase Commit (2PC) protocol is a distributed transaction protocol that e
 \subsection*{Decision}
 In light of the trade-off analysis performed for each Option listed above, we decided to take Option 1. 
 This Option ensures a solution to \textbf{User Story 15}, by effectively preventing two users to buy the same tickets. 
-It is also good for reliability, a focus of the tycoons and for the usability required by the passengers, as they don't have to restart the booking procedure in case of failed payment.
+It is also good for reliability, a focus of the tycoons and for the usability required by the passengers, as they don't have to restart the booking procedure in case of failed payment. It seems to satisfy all the listed criteria.
 Other options can lead to overbooking, which is unwanted given the concerns of passengers and tycoons.
 Option 4 can be useful if the system is decentralized, but introduces unwanted complexity.
+
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
