@@ -4,13 +4,29 @@
 Review
 
 \subsection*{Architectural Summary}
+\textit{[Provide a brief summary of the architectural context and the specific system components affected by this decision.]}
 
 \subsection*{Concern}
-Passengers expect a minimum level of usability and availability from the ticketing system, and both the system operators and railroad tycoons aim to minimize customer service issues. Connected user stories highlight passengers' frustrations with paying for unavailable routes.
+Ensuring a high level of usability and availability in the ticketing system is paramount. System operators and railroad tycoons aim to minimize customer service issues arising from passengers' frustrations with paying for unavailable routes.
+\begin{itemize}
+    \item \textbf{User Story 15}: Concerns about paying for unavailable routes.
+    \item \textbf{User Story 26}: The need for real-time updates on train schedules.
+    \item \textbf{User Story 27}: Integration with maintenance scheduling for minimal service disruption.
+\end{itemize}
 
 \subsection*{Context}
-This decision addresses the challenge of managing quickly filling trains, particularly during peak hours, to ensure a seamless and fair ticket purchasing experience for passengers. The decision will consider technological and operational options to mitigate the risk of overbooking and enhance passenger satisfaction.
-In scenarios (QA scenario: availability) where demand for train seats spikes, such as during peak commuting hours, the system must efficiently manage the simultaneous requests for the last available seats. This challenge is critical for ensuring a positive experience for commuters and students who rely on timely and available transportation.
+This decision seeks to address challenges associated with quickly filling trains, especially during peak hours, to offer a seamless and fair ticket purchasing experience. Mitigating the risk of overbooking and enhancing passenger satisfaction are central goals. It's critical to efficiently manage simultaneous requests for the last available seats to ensure a positive experience for commuters and students who rely on timely and available transportation.
+
+\subsubsection*{QA scenario}
+The following outlines a Quality Attribute (QA) scenario focusing on the real-time seat availability and booking process during peak hours. This scenario is structured to evaluate the system's usability and performance under conditions of high demand.
+\paragraph{Source} Passenger interacting with a payment terminal (or any other way of booking tickets, e.g. an app or a website).
+\paragraph{Stimulus} Two passengers try to buy the same ticket.
+\paragraph{Artifact} The \textit{data management system}, \textit{database maintaining seat availability information} and the \textit{user interface} the passenger interacts with.
+\paragraph{Response} Upon receiving the stimulus, the system's response is to immediately check the current availability of the selected seat, lock the seat for the passenger if it is available (thus preventing other bookings), and provide real-time feedback to the passenger regarding the seat's status (e.g., locked for purchase, already taken). If the seat is available and locked for the passenger, the system then proceeds with the payment process.
+\paragraph{Response Measure}[\textit{After the decision is taken}] The effectiveness of the system's response is measured as follows:
+\begin{itemize}
+    \item Percentage of purchases ending with passengers buying the same ticket. This can be measured by a customer service.
+\end{itemize}
 
 \subsection*{Criteria}
 \begin{itemize}
@@ -19,25 +35,95 @@ In scenarios (QA scenario: availability) where demand for train seats spikes, su
     \item Prevent multiple users from paying for the same seat, ensuring fairness in ticket sales.
 \end{itemize}
 
-\subsection*{Option 1: Lock the seats before payment}
-We should maintain a database where info about scheduled trains is stored. 
-This database should be updated by the terminal when a ticket has been bought.
-This database should ask periodically to the tycoon systems updates on schedules.
-When the user select that they want to pay for a specific ticket, that ticket should be locked, so that no one else can buy it. 
-If the payment is not ultimated, it can be unlocked.
-Note that it can still happend that due to maintenance, a train is cancelled last minute. 
-What happens with the customer service? Should we add it to the context view? They will for sure need info from us, like who paid and how much. 
-These should be two future decisions (how to deal with customer service in case of train disruptions, how to keep up to date about disruptions).
+\subsection*{Option 1: Lock the Seats Before Payment}
+We should maintain a database where info about scheduled trains is stored. This database should be updated by the terminal when a ticket has been bought. The database should ask periodically for updates on schedules from the tycoon systems. When a user selects that they want to pay for a specific ticket, that ticket should be locked, so that no one else can buy it. If the payment is not ultimated, it can be unlocked. Note that it can still happen that due to maintenance, a train is cancelled last minute. 
+
+% TODO: What happens with the customer service? Should we add it to the context view? They will for sure need info from us, like who paid and how much. These should be two future decisions (how to deal with customer service in case of train disruptions, how to keep up to date about disruptions).
+
+\subsubsection*{Pros}
+\begin{itemize}[noitemsep]
+    \item \textbf{Fairness} (Usability, Availability): Ensures that once a customer selects a ticket, it is reserved for them, preventing others from buying it.
+    \item \textbf{Reduced System Load} (Performance, Efficiency): By locking seats before payment, it reduces the chances of multiple users attempting to pay for the same seat, thereby reducing system load.
+\end{itemize}
+\subsubsection*{Cons}
+\begin{itemize}[noitemsep]
+    \item \textbf{Potential for Seat Hoarding} (Usability, Efficiency): Customers might lock seats without completing the purchase, leading to temporarily reduced availability.
+    \item \textbf{Increased Complexity} (Maintainability, Scalability): Managing locked seats, especially determining when to release them if payment is not completed, adds complexity.
+\end{itemize}
+\subsubsection*{User stories}
+\begin{itemize}
+    \item Directly addresses \textbf{User Story 15} by preventing payments for unavailable seats.
+    \item Indirectly supports \textbf{User Stories 26 and 27} by contributing to system usability and reducing overbooking, though it does not directly offer real-time updates or integration with maintenance scheduling.
+\end{itemize}
 
 \subsection*{Option 2: Lock the Seats After Payment, FCFS, Refuse Payments if Seat is Booked}
 Seats are locked only after payment confirmation, adhering to a first-come, first-served (FCFS) approach. This method ensures that seats are sold to passengers who complete the payment process first, minimizing the potential for holding seats unnecessarily.
 
+\subsubsection*{Pros}
+\begin{itemize}[noitemsep]
+    \item \textbf{Efficiency} (Performance): Minimizes the time seats are unnecessarily held, as they are only locked upon payment completion.
+    \item \textbf{Simplicity} (Maintainability): Easier to implement and maintain than preemptive locking mechanisms.
+\end{itemize}
+\subsubsection*{Cons}
+\begin{itemize}[noitemsep]
+    \item \textbf{User Experience} (Usability): Customers may go through the payment process only to find out the seat has been taken, leading to frustration.
+    \item \textbf{Race Conditions} (Reliability): Higher risk of race conditions where multiple users complete payments for the last seat simultaneously.
+\end{itemize}
+
+\subsubsection*{User stories}
+\begin{itemize}
+    \item Aims to ensure fairness in seat allocation (\textbf{User Story 15}) by adhering to a first-come, first-served basis, reducing the risk of paying for unavailable seats.
+    \item Does not directly address \textbf{User Stories 26 and 27}, but supports system performance and minimizes unnecessary seat holds.
+\end{itemize}
+
 \subsection*{Option 3: Real-time Seat Availability with Dynamic Allocation}
 This option introduces a system for real-time tracking and dynamic allocation of seats. It involves continuous synchronization with tycoon systems to update seat availability instantly. The system could allow for a slight overbooking based on historical no-show rates, with safeguards in place to manage overbooked scenarios, such as offering alternative transportation options or compensation.
 
-\subsection*{Decision}
-we are choosing lock the seats before payment.
+\subsubsection*{Pros}
+\begin{itemize}[noitemsep]
+    \item \textbf{Real-time Updates} (Availability, Usability): Enhances user experience by providing immediate feedback on seat availability.
+    \item \textbf{Adaptability} (Scalability, Reliability): Can dynamically adjust to changing conditions, like cancellations or no-shows.
+\end{itemize}
+\subsubsection*{Cons}
+\begin{itemize}[noitemsep]
+    \item \textbf{Complex System Integration} (Maintainability, Operability): Requires continuous synchronization with external systems, increasing complexity.
+    \item \textbf{Potential for Overbooking} (Usability, Reliability): While overbooking can be managed, it may lead to negative customer experiences.
+\end{itemize}
+\subsubsection*{User stories}
+\begin{itemize}
+    \item Directly solves \textbf{User Story 15}'s issue by ensuring passengers only pay for available seats and addresses \textbf{User Story 26} by providing real-time updates on train schedules.
+    \item Supports \textbf{User Story 27} through dynamic allocation that can adjust to maintenance schedules, minimizing service disruptions.
+\end{itemize}
 
+\subsection*{Option 4: 2PC Protocol}
+The Two-Phase Commit (2PC) protocol is a distributed transaction protocol that ensures all parts of a transaction across multiple systems either complete successfully or fail altogether. It is particularly useful in environments requiring strong consistency and atomicity, such as train terminal payment systems handling ticket purchases.
+
+\subsubsection*{Pros}
+\begin{itemize}[noitemsep]
+    \item \textbf{Atomicity and Consistency} (Reliability, Consistency): 2PC guarantees that a transaction across distributed components either fully commits or fully aborts, maintaining the integrity and consistency of the database.
+    \item \textbf{Fault Tolerance} (Availability, Reliability): By ensuring that all components agree on a transaction's outcome, 2PC enhances the system's ability to recover from partial failures without losing data integrity.
+    \item \textbf{Coordination} (Integrity, Consistency): 2PC effectively coordinates complex transactions across multiple systems, ensuring that all parts of the transaction are synchronized.
+\end{itemize}
+
+\subsubsection*{Cons}
+\begin{itemize}[noitemsep]
+    \item \textbf{Performance Overhead} (Performance, Efficiency): The two-phase nature of the protocol can introduce latency, as it requires all participants to lock resources and wait for global commit or abort decisions.
+    \item \textbf{Resource Locking} (Availability, Scalability): 2PC requires resources to be locked during the transaction, which can decrease system availability and limit scalability due to locking contention.
+    \item \textbf{Complexity} (Maintainability, Operability): Implementing and maintaining a 2PC system introduces complexity, requiring robust failure and recovery mechanisms, and can complicate system operations and maintenance.
+    \item \textbf{Risk of Blocking} (Availability): In cases where the coordinator fails after initiating the transaction but before completing it, participants can be left in a blocking state, waiting indefinitely for a decision and thus affecting system availability.
+\end{itemize}
+\subsubsection*{User stories}
+\begin{itemize}
+    \item Indirectly supports \textbf{User Story 15} by ensuring transactional integrity, which is foundational for reliable seat booking but does not directly address usability concerns.
+    \item Does not directly address \textbf{User Stories 26 and 27}, but by ensuring consistent and reliable transactions, it lays the groundwork for future enhancements that could.
+\end{itemize}
+
+\subsection*{Decision}
+In light of the trade-off analysis performed for each Option listed above, we decided to take Option 1. 
+This Option ensures a solution to \textbf{User Story 15}, by effectively preventing two users to buy the same tickets. 
+It is also good for reliability, a focus of the tycoons and for the usability required by the passengers, as they don't have to restart the booking procedure in case of failed payment.
+Other options can lead to overbooking, which is unwanted given the concerns of passengers and tycoons.
+Option 4 can be useful if the system is decentralized, but introduces unwanted complexity.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
