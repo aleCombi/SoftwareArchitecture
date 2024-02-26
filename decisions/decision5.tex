@@ -22,7 +22,7 @@ The following outlines a Quality Attribute (QA) scenario focusing on the real-ti
 \paragraph{Source} Passenger interacting with a payment terminal (or any other way of booking tickets, e.g. an app or a website).
 \paragraph{Stimulus} Two passengers try to buy the same ticket.
 \paragraph{Artifact} The \textit{data management system}, \textit{database maintaining seat availability information} and the \textit{user interface} the passenger interacts with.
-\paragraph{Response} Upon receiving the stimulus, the system's response is to immediately check the current availability of the selected seat, lock the seat for the passenger if it is available (thus preventing other bookings), and provide real-time feedback to the passenger regarding the seat's status (e.g., locked for purchase, already taken). If the seat is available and locked for the passenger, the system then proceeds with the payment process.
+\paragraph{Response}[\textit{After the decision is taken}] Upon receiving the stimulus, the system's response is to immediately check the current availability of the selected seat, lock the seat for the passenger if it is available (thus preventing other bookings), and provide real-time feedback to the passenger regarding the seat's status (e.g., locked for purchase, already taken). If the seat is available and locked for the passenger, the system then proceeds with the payment process.
 \paragraph{Response Measure}[\textit{After the decision is taken}] The effectiveness of the system's response is measured as follows:
 \begin{itemize}
     \item Percentage of purchases ending with passengers buying the same ticket. This can be measured by a customer service.
@@ -124,7 +124,6 @@ This Option ensures a solution to \textbf{User Story 15}, by effectively prevent
 It is also good for reliability, a focus of the tycoons and for the usability required by the passengers, as they don't have to restart the booking procedure in case of failed payment. It seems to satisfy all the listed criteria.
 Other options can lead to overbooking, which is unwanted given the concerns of passengers and tycoons.
 Option 4 can be useful if the system is decentralized, but introduces unwanted complexity.
-
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
