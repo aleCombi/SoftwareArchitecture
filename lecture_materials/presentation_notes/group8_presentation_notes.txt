@@ -1,0 +1,68 @@
+Presenter: Group 8
+------------------
+Starts with context view.
+Local government added, related to security.
+First event, added scalibility.
+
+Context model.
+
+Bank card is the main decision. 
+Scan it - subscription management or single fare management - price, route management - tycoon management (log, authorize, add/remove station/terminal)
+
+Payment management handles your payment with the bank.
+
+Contestant:
+-------------------
+Group 7:
+Nice new events are added
+How sub management is done on the card, seems impossible to travel without card lets say just cash?
+Answer: For now only card is allowed, abstracted in sub management, maybeit has to beextended. Sub is linked to bank card.
+
+Context model, two type of data models, why they are not in functional model?
+Answer: Still needs to be added. Price, route data is separated, still needs to be added.
+
+What is price management exactly, authorizations involved?
+Answer: Price, route management interacts with each other. To be in tycoon management there should be authorizations.
+
+Group 11:
+Context view points:
+What stakeholders put and get out of the system? 
+Answer: Good point to think about.
+
+Passanger deposits money to the bank, but it doesn't go into the system, there is not process linking it back to the system.
+Answer: Bank, trip system is linked.
+Would be nice to think about authorizations
+
+Defendants:
+-------------------
+Group 9:
+Cloud is positive. Easily maintainable separate parts of the system.
+
+Solution for the new event is simple. Good its visualized in functional view.
+
+Group 10:
+All components are independently working with each other, it is scalable. In the event where tycoon wents bankrupt you can easily implement it.
+
+Use of the bank card is really useful, since passanger doesn't have to carry extra. Single payment is nice.
+
+Additional discussions:
+-----------------------
+Scan card for payment temrinal, don't you have to know where your travel has to start. How do you know if you getting on or off the train?
+Answer: Information view should clarify it.
+Many possible hidden choices how to do it.
+
+Price, route management are separate, can they exist separately?
+Answer: Single principle, if route is calculated differently, price is calculated with a simple way then makes sense to separate it.
+
+Tourist, no bank card what to do?
+More payments can be added for tourists.
+
+Bank card how to assure data is safe?
+Answer: Protocol has to be clarified on our side.
+Answer: Bank handles most of the security.
+
+Tycoon sets the price, it doens't have information flow to routes? There should be flow to tycoon - route (most likely).
+
+System can be overloaded. Route won't change that often.
+Answer: Caching can be used.
+Important to add deployment model, queing model can be added.
