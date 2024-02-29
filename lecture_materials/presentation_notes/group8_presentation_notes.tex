@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+
+\title{System Design Discussion}
+\author{Presenter: Group 8}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+The session begins with a contextual view. The local government, which is related to security. The first event introduced scalability.
+
+\subsection{Context Model}
+The bank card is identified as a critical decision point. It facilitates functions such as subscription management or single fare management, price and route management, and tycoon management, which includes logging, authorization, and the addition or removal of stations or terminals. Payment management is responsible for handling transactions with the bank.
+
+\section{Contestants}
+
+\subsection{Group 7}
+\begin{description}
+  \item[\textbf{Q:}] Nice new events are added. How is subscription management done on the card? It seems impossible to travel without a card, say, just with cash.
+  \item[\textbf{A:}] Currently, only card usage is permitted, which is abstracted in subscription management. This might need to be extended. The subscription is linked to the bank card.
+  
+  \item[\textbf{Q:}] In the context model, there are two types of data models. Why are they not included in the functional model?
+  \item[\textbf{A:}] They still need to be incorporated. Price and route data are separated but require integration.
+  
+  \item[\textbf{Q:}] What exactly is price management? Are authorizations involved?
+  \item[\textbf{A:}] Price and route management are interconnected. Authorizations must be included to be a part of tycoon management.
+\end{description}
+
+\subsection{Group 11}
+\begin{description}
+  \item[\textbf{Q:}] What do stakeholders contribute to and derive from the system?
+  \item[\textbf{A:}] This is a significant point that warrants further reflection.
+  
+  \item[\textbf{Q:}] Passengers deposit money into the bank, but it doesn't integrate back into the system. There's no process linking it.
+  \item[\textbf{A:}] The bank and the trip system are interconnected, which highlights an area for potential consideration of authorizations.
+\end{description}
+
+\section{Defendants}
+
+\subsection{Group 9}
+The cloud's utilization is viewed positively, as it allows for easily maintainable, separate parts of the system. The solution for addressing new events is simple and is well represented in the functional view.
+
+\subsection{Group 10}
+All system components operate independently, ensuring scalability. In the event of a tycoon's bankruptcy, the system's design allows for straightforward implementation. The use of bank cards is extremely beneficial, as it means passengers do not need to carry additional items. The single payment functionality is also well-received.
+
+\section{Additional Discussions}
+\begin{description}
+  \item[\textbf{Q:}] When scanning a card for payment at a terminal, must you not know where your journey starts? How do you determine if you are getting on or off the train?
+  \item[\textbf{A:}] The information view should provide clarification, though there are many hidden choices regarding implementation.
+  
+  \item[\textbf{Q:}] Price and route management are separate; can they exist independently?
+  \item[\textbf{A:}] They can exist separately, based on the principle that if the route is calculated differently, the price can be calculated in a simpler manner, justifying their separation.
+  
+  \item[\textbf{Q:}] What if a tourist has no bank card?
+  \item[\textbf{A:}] Additional payment methods could be introduced for tourists.
+  
+  \item[\textbf{Q:}] How can we ensure that bank card data is secure?
+  \item[\textbf{A:}] The security protocol must be clarified on our side, with the bank handling most of the security aspects.
+  
+  \item[\textbf{Q:}] The tycoon sets the price but doesn't have an information flow to routes. Shouldn't there be a flow from tycoon to route?
+  \item[\textbf{A:}] This aspect likely needs to be addressed.
+  
+  \item[\textbf{Q:}] The system can become overloaded, but routes won't change that often.
+  \item[\textbf{A:}] Caching strategies could be employed. It's crucial to add a deployment model, and incorporating a queuing model could be beneficial.
+\end{description}
+
+\end{document}
