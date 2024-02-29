@@ -28,6 +28,16 @@ Implement a real-time alert system that notifies passengers of disruptions via m
 \subsection*{Option 2: Manual Intervention Protocol}
 Establish a manual intervention protocol where customer service teams are promptly informed of disruptions to assist passengers with rebooking and provide personalized travel advice.
 
+\subsection*{Option 3}
+We set a minimum delay threshold. Not rerun the computations if below threshold. If above, rerun optimization.
+Not inform passengers, all the info is on the terminal.
+Rerank the best routes based on delays. (can it be that all best routes go though the same interrupted rail?? YES, if so what?)
+% TODO
+\subsection*{Option 4}
+Rerun the computations for every delay. If above, rerun optimization.
+Not inform passengers, all the info is on the terminal.
+Maybe rerun computations every hour and tell times might not be correct.
+
 \subsection*{Decision}
 The decision will be made after an in-depth analysis of each option against the set criteria. It will consider the current infrastructure's capabilities, passenger needs, and the potential for seamless integration with other transportation modes.
 
