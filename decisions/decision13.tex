@@ -1,0 +1,40 @@
+\subsection{Decision 12: How do we handle data update from tycoons/station management?}
+
+\subsection*{Status}
+
+\subsection*{Architectural Summary}
+
+
+\subsection*{Concern}
+\subsubsection*{User stories}
+
+\subsection*{Context}
+
+\subsubsection*{QA Scenario} % not always needed I believe
+
+\subsection*{Criteria}
+\begin{itemize}
+\end{itemize}
+
+\subsection*{Option 1: We impose the tycoons an API and ask them to give updates, which we store in a database}
+Pro: you can precompute optimized routes.
+Pro: if database is updated often enough by tycoons, info is almost realtime
+Con: database needs to be managed
+
+\subsection*{Option 2: We ask information on the fly and impose a queryable format or implement an API for each of them}
+Pro: almost real-time update
+Con: can't precompute
+
+\subsection*{Decision}
+We want db:
+- performance (=> usability)
+- availability 
+- integrability
+
+\subsection*{Consequences}
+\textbf{Positive Consequences:}
+\begin{itemize}
+\end{itemize}
+\textbf{Negative Consequences:}
+\begin{itemize}
+\end{itemize}

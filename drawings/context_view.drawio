@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="WAPi4k_sqjxxMD7cqRkw" name="Page-1">
-        <mxGraphModel dx="1905" dy="2398" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1086" dy="1844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -53,7 +53,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" value="&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; font-size: 16px; font-weight: 700; text-align: justify;&quot;&gt;tycoons&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1190" y="100" width="120" height="40" as="geometry"/>
+                    <mxGeometry x="1470" y="290" width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="24" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="23" target="2" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -86,13 +86,13 @@
                     <mxGeometry x="1580" y="40" width="110" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="37" value="&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; font-size: 16px; font-weight: 700; text-align: justify;&quot;&gt;general purpose tycoon&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1080" y="170" width="120" height="40" as="geometry"/>
+                    <mxGeometry x="1400" y="365" width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="38" value="&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; font-size: 16px; font-weight: 700; text-align: justify;&quot;&gt;small specific customer profile&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1210" y="170" width="120" height="40" as="geometry"/>
+                    <mxGeometry x="1530" y="365" width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="39" value="&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; font-size: 16px; font-weight: 700; text-align: justify;&quot;&gt;tycoons that connect other tycoons&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1330" y="170" width="120" height="50" as="geometry"/>
+                    <mxGeometry x="1650" y="365" width="120" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="44" value="&lt;ul style=&quot;font-family: arial, helvetica, sans-serif; letter-spacing: normal; margin: 1em 0px; padding: 0px 0px 0px 40px; border: 0px; outline: 0px; font-weight: 400; font-style: normal; font-size: 13.3333px; list-style: disc; color: rgb(0, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 244, 244); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; text-shadow: none !important;&quot;&gt;&lt;li style=&quot;font-family: arial, helvetica, sans-serif; text-shadow: none !important; letter-spacing: normal !important; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 13.3333px; display: list-item; list-style-position: outside; list-style-type: inherit;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; text-shadow: none !important; letter-spacing: normal !important; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12pt;&quot;&gt;Maintainability (priority 2). The owner wants a minimum amount of effort to maintain and build the system&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;font-family: arial, helvetica, sans-serif; text-shadow: none !important; letter-spacing: normal !important; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 13.3333px; display: list-item; list-style-position: outside; list-style-type: inherit;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; text-shadow: none !important; letter-spacing: normal !important; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12pt;&quot;&gt;Operational costs (priority 2). The operational costs of the system should be as low as possible.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="760" y="370" width="430" height="130" as="geometry"/>
@@ -147,8 +147,14 @@
                         <mxPoint x="1" as="offset"/>
                     </mxGeometry>
                 </mxCell>
+                <mxCell id="135" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="60" target="133">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="60" target="134">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="60" value="&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; font-size: 16px; font-weight: 700; text-align: justify;&quot;&gt;tycoons&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1340" y="-730" width="120" height="40" as="geometry"/>
+                    <mxGeometry x="1275" y="-720" width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="61" value="&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; font-size: 16px; font-weight: 700; text-align: justify;&quot;&gt;stakeholders&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="640" y="-1040" width="120" height="30" as="geometry"/>
@@ -262,6 +268,21 @@
                 </mxCell>
                 <mxCell id="130" value="disabled&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry y="110" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="132" value="&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; font-size: 16px; font-weight: 700; text-align: justify;&quot;&gt;bus tycoon(s)&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1270" y="365" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="133" value="&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; font-size: 16px; font-weight: 700; text-align: justify;&quot;&gt;customer service&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1140" y="-610" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="134" value="&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; font-size: 16px; font-weight: 700; text-align: justify;&quot;&gt;financial analysts&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1310" y="-610" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="137" value="&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; font-size: 16px; font-weight: 700; text-align: justify;&quot;&gt;customer service&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1780" y="365" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="&lt;span style=&quot;font-family: &amp;quot;times new roman&amp;quot;, times, serif; font-size: 16px; font-weight: 700; text-align: justify;&quot;&gt;financial analysts&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1910" y="365" width="120" height="40" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
