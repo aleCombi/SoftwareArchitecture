@@ -5,3 +5,4 @@ HOMEWORK
 3) Make stakeholders view nicer (CA)
 4) Clean decisions (AC)
 5) check if decisions match functional viewpoint (e.g. turnstiles) (AC)
+6) Clarify Info, Concurrency, Deployment view
