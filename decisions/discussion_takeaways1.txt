@@ -1,0 +1,20 @@
+DISCUSSION 1
+
+Context
+- account, personal data management
+- ticket format
+- proof of payment
+
+Functional
+- account management separated from sub management?
+- credit management
+- one ticket management (why separe)
+- payment management
+- check-in validation
+
+Decisions
+- what payment method?
+
+JM questions
+- How does a travel looks like for a passenger? (enters at the station, go to terminal etc.)
+- different views of the same model + consistency of these views
