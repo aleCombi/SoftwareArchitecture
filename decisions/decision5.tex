@@ -1,4 +1,4 @@
-\subsection{Decision 5: Concurrent payments?}
+\subsection{Decision 5: Concurrent payments / booking management}
 
 \subsection*{Status}
 Accepted
@@ -37,6 +37,7 @@ The following outlines a Quality Attribute (QA) scenario focusing on the real-ti
 
 \subsection*{Option 1: Lock the Seats Before Payment}
 We should maintain a database where info about scheduled trains is stored. This database should be updated by the terminal when a ticket has been bought. The database should ask periodically for updates on schedules from the tycoon systems. When a user selects that they want to pay for a specific ticket, that ticket should be locked, so that no one else can buy it. If the payment is not ultimated, it can be unlocked. Note that it can still happen that due to maintenance, a train is cancelled last minute. 
+Add a booking management module that updates the DB about locking, releasing and booking seats.
 
 % TODO: What happens with the customer service? Should we add it to the context view? They will for sure need info from us, like who paid and how much. These should be two future decisions (how to deal with customer service in case of train disruptions, how to keep up to date about disruptions).
 

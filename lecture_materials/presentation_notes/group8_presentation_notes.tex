@@ -10,45 +10,55 @@
 \maketitle
 
 \section{Introduction}
-The session begins with a contextual view. The local government, which is related to security. The first event introduced scalability.
+The session begins with a description of the context view. The local government, which is related to security. 
 
-\subsection{Context Model}
-The bank card is identified as a critical decision point. It facilitates functions such as subscription management or single fare management, price and route management, and tycoon management, which includes logging, authorization, and the addition or removal of stations or terminals. Payment management is responsible for handling transactions with the bank.
+\subsection{Context Viewpoint}
+Stakeholder were listed and connected to QAs.
+The local government is listed as a stakeholder, which is related to security.
+
+The first event introduced a focus on scalability.
+
+\subsection{Functional Viewpoint}
+The use of bank cards instead of dedicated cards is identified as a critical decision point.
+It facilitates functions such as subscription management or single fare management.
+Price and route management, and tycoon management are included in the functional view.
+The latter includes logging, authorization, and the addition or removal of stations or terminals. Payment management is responsible for handling transactions with the bank.
 
 \section{Contestants}
 
 \subsection{Group 7}
 \begin{description}
-  \item[\textbf{Q:}] Nice new events are added. How is subscription management done on the card? It seems impossible to travel without a card, say, just with cash.
-  \item[\textbf{A:}] Currently, only card usage is permitted, which is abstracted in subscription management. This might need to be extended. The subscription is linked to the bank card.
+  \item[\textbf{Q:}] Appreciate the event was taken into account. Asks how subscription management can be done with just bank cards. Underline how users with just cash cannot travel.
+  \item[\textbf{A:}] Currently, only card usage is permitted, which serves as a unique authentication method to handle subscription management. This might need to be extended. The subscription is linked to the bank card.
   
   \item[\textbf{Q:}] In the context model, there are two types of data models. Why are they not included in the functional model?
   \item[\textbf{A:}] They still need to be incorporated. Price and route data are separated but require integration.
   
-  \item[\textbf{Q:}] What exactly is price management? Are authorizations involved?
+  \item[\textbf{Q:}] What exactly is price management? Are payment authorizations involved?
   \item[\textbf{A:}] Price and route management are interconnected. Authorizations must be included to be a part of tycoon management.
 \end{description}
 
 \subsection{Group 11}
 \begin{description}
-  \item[\textbf{Q:}] What do stakeholders contribute to and derive from the system?
+  \item[\textbf{Q:}] How do stakeholders contribute to and get information from the system?
   \item[\textbf{A:}] This is a significant point that warrants further reflection.
   
   \item[\textbf{Q:}] Passengers deposit money into the bank, but it doesn't integrate back into the system. There's no process linking it.
-  \item[\textbf{A:}] The bank and the trip system are interconnected, which highlights an area for potential consideration of authorizations.
+  \item[\textbf{A:}] The bank and the trip system are interconnected, which highlights an area for potential consideration of dedicated protocols.
 \end{description}
 
 \section{Defendants}
 
 \subsection{Group 9}
 The cloud's utilization is viewed positively, as it allows for easily maintainable, separate parts of the system. The solution for addressing new events is simple and is well represented in the functional view.
+Recognize the importance of including local government in stakeholder engagement.
 
 \subsection{Group 10}
 All system components operate independently, ensuring scalability. In the event of a tycoon's bankruptcy, the system's design allows for straightforward implementation. The use of bank cards is extremely beneficial, as it means passengers do not need to carry additional items. The single payment functionality is also well-received.
 
 \section{Additional Discussions}
 \begin{description}
-  \item[\textbf{Q:}] When scanning a card for payment at a terminal, must you not know where your journey starts? How do you determine if you are getting on or off the train?
+  \item[\textbf{Q:}] When scanning a card for payment at a terminal (or turnstile?), must you not know where your journey starts? How do you determine if you are getting on or off the train?
   \item[\textbf{A:}] The information view should provide clarification, though there are many hidden choices regarding implementation.
   
   \item[\textbf{Q:}] Price and route management are separate; can they exist independently?
