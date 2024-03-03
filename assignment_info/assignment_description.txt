@@ -8,7 +8,7 @@ Your team is asked to architect the new TrIP system, and to implement a prototyp
 It is a service-based architecture
 There are at least two types of components: a payment terminal and a tycoon system.
 Item
-StakeholdersStakeholders
+Stakeholders
 There are three main stakeholders that you need to convince to use your system:
 TriP Owner:
 The owner will build, operate and maintain the TriP system during its lifetime. The owner has the following quality attributes:
@@ -23,7 +23,7 @@ The passengers commute between stations, and sometimes transfer trains at a stat
 Usability (priority 2). The payment system is easy to use, and does not require additional actions on their travels.
 Security (priority 1). The system should protect the information of the passenger from unauthorized access.
 Item
-ConcernsConcerns
+Concerns
 The following concerns have been identified for the system:
 A passenger should be able to commute between stations and pay for each trip
 A passenger should be able to have different subscriptions for the three tycoons
@@ -31,10 +31,10 @@ Each of the three tycoon wants to have its own subscription fee system
 Each of the three tycoon should be able to open and close stations, and add and remove payment terminals at each station
 The system should protect the data of the passengers.
 Item
-AssignmentAssignment
+Assignment
 Your team has been asked to architect a system for the three railroad tycoons. The deadlines for the assignment can be found in the schedule. Note that the deadlines are for drafts. That implies that it is not necessary to already have a full system architecture at the first draft. The deadlines are intended to provide you with feedback.
 Item
-Architecture of the SystemArchitecture of the System
+Architecture of the System
 An important aspect of software architecture is the rationale design decisions: why is the architecture as it is? To make well-informed decisions, you need to know what the implications are of each design decision. That is why we will work in rounds in this assignment. Each round is a design decision. A round consists of the following steps:
 Select a (set of) user story / stories to work on
 Discuss within the group different options, and how these affect the different views and perspectives.

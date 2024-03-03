@@ -4,12 +4,13 @@
 Accepted.
 
 \subsection*{Architectural Summary}
-In the context of enhancing the TrIP system's ability to provide optimized travel options, we face the challenge of efficiently querying multiple tycoon systems to gather route information that aligns with passenger preferences and existing subscriptions.
+% TODO
 
 \subsection*{Concern}
 The concern is to facilitate a seamless travel planning experience for passengers by ensuring the system can accurately and efficiently gather available route options from various tycoon systems and present them based on the user's criteria of price, time, and subscription status.
 
 \subsection*{Context}
+In the context of enhancing the TrIP system's ability to provide optimized travel options, we face the challenge of efficiently querying multiple tycoon systems to gather route information that aligns with passenger preferences and existing subscriptions.
 The decision is centered on the system's interface with tycoon systems to retrieve and optimize route data, which impacts the functionality and performance of the terminal's route planning features for the passengers.
 
 \subsection*{Criteria}
@@ -22,7 +23,7 @@ The key criteria for the decision include:
 \end{itemize}
 
 \subsection*{Option 1: Direct Tycoon Integration}
-Terminals directly interface with each tycoon system and the central database to collate route options. The route optimizer processes this data to present optimal travel solutions.
+Terminals directly interface with each tycoon system and the central database to collate route options. The route optimizer processes this data to present optimal travel solutions. This requires our system to have APIs to query each of the tycoons systems.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{drawings/decision3_drawings/direct.png}
@@ -30,17 +31,17 @@ Terminals directly interface with each tycoon system and the central database to
     \label{fig:direct-data-interface}
 \end{figure}
 
-\subsection*{Option 2: Centralized Data Management Interface}
-A central data management module acts as an intermediary between terminals and tycoon systems, standardizing and aggregating data before it is processed by the route optimizer.
+\subsection*{Option 2: Centralized Route Management Module}
+A central route data management module acts as an intermediary between terminals and tycoon systems, standardizing and aggregating data before it is processed by the route optimizer. A database containing the timetables will be kept up to date by the tycoon (possibly though an API, this will be the focus of a later decision). The route data management system might cache optimized routes, in order to minimize database requests. A module specialized in running optimizations with the data it is provided with interacts solely with the Route Management Module.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{drawings/decision3_drawings/centralized.png}
-    \caption{Centralized Data Management Interface}
+    \caption{Centralized Route Management Module. Dashed lines represents steps to be explained in future decisions.}
     \label{fig:centralized-data-interface}
 \end{figure}
   
 \subsection*{Decision}
-We have decided to proceed with Option 2: Centralized Data Management Interface. This decision is based on the module's ability to simplify the data flow between systems and to effectively manage the complexity of integrating with multiple tycoon systems. The introduction of a separate data management module will allow for greater flexibility and scalability.
+We have decided to proceed with Option 2: Centralized Route Management Module. This decision is based on the module's ability to simplify the data flow between systems and to effectively manage the complexity of integrating with multiple tycoon systems. The introduction of a separate data management module will allow for greater flexibility and scalability.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
