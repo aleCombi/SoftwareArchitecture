@@ -54,13 +54,23 @@ How does the turnstile communicate with the system to verify if the passenger ha
     \item Allow balance check for charged cards.
 \end{itemize}
 
-\subsection*{Option 1: }
+\subsection*{Option 1: Add a ticket checker and a user state modules to authorize user}
+After scanning a ticket or badge, the user state should be updated, in order to calculate the fare price for fillable card holders or for the scanning of bank cards (debit credit).
+The ticket or badge should be checked by the single ticket checker module or by the account management to insure consistency.
+In case of the scanning of bank cards, the user state module needs to communicate with payment management, in order to proceed with the actual payment.
+The scanning of bank cards and fillable cards create the needs for a calculation of appropriate revenue share between different tycoon. This should be the topic of a future decision or might be incorporated in this one.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_draft2/functional_view turnstiles.png}
     \caption{Interaction with a ticket scanner.}
     \label{fig:ticket_scanner}
 \end{figure}
+
+\subsection*{Option 2: Allow fillable cards, account cards and tickets, not bank cards}
+Not allowing bank cards at turnstiles simplifies the job of turnstiles.
+Also, how can a controller check if the traveller have scanned a bank card when entering the turnstile?
+We can have the turnstile print a ticket with a barcode or QR code.
+
 \subsection*{Decision}
 
 \subsection*{Consequences}
