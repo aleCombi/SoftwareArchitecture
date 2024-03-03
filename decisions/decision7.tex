@@ -1,7 +1,7 @@
 \subsection{Decision 7: Customer Service}
 
 \subsection*{Status}
-Open
+Review.
 
 \subsection*{Architectural Summary}
 
@@ -9,8 +9,7 @@ Open
 The primary concern is to ensure that customer service representatives have access to accurate and timely information to address passenger queries and resolve issues efficiently, without compromising data privacy.
 
 \subsection*{Context}
-This decision outlines the strategy for communication between the TrIP system and customer service teams to facilitate rapid and effective resolution of customer issues.
-Customer service teams require real-time access to passenger data, ticketing information, and system status to provide informed support. The chosen communication strategy must balance the need for information accessibility with system security and data privacy regulations.
+This decision outlines the strategy for communication between the TrIP system and customer service teams to facilitate rapid and effective resolution of customer issues. Customer service teams require real-time access to passenger data, ticketing information, and system status to provide informed support. The chosen communication strategy must balance the need for information accessibility with system security and data privacy regulations.
 
 \subsection*{Criteria}
 \begin{itemize}
@@ -24,32 +23,64 @@ Customer service teams require real-time access to passenger data, ticketing inf
 
 \subsection*{Option 1: Direct Access to Live Data}
 Grant customer service representatives direct access to the live operational database with appropriate read-only permissions and privacy safeguards in place.
+\subsubsection*{Pros}
+\begin{itemize}
+    \item Immediate access to data allows for quick customer service responses.
+\end{itemize}
+\subsubsection*{Cons}
+\begin{itemize}
+    \item Direct access to live data could pose security risks if not managed correctly.
+\end{itemize}
 
 \subsection*{Option 2: Periodic Data Sync to a Dedicated Customer Service Database}
 Regularly synchronize relevant data from the operational database to a separate customer service database designed for query efficiency and tailored access control.
+\subsubsection*{Pros}
+\begin{itemize}
+    \item Data syncing provides a stable environment tailored for customer service needs.
+\end{itemize}
+\subsubsection*{Cons}
+\begin{itemize}
+    \item Data syncing could lead to delays in information relay if not frequent enough.
+\end{itemize}
 
 \subsection*{Option 3: On-Demand Data Retrieval via Secure API}
 Implement a secure API that allows customer service representatives to retrieve necessary data on-demand while maintaining strict access controls and audit trails.
+\subsubsection*{Pros}
+\begin{itemize}
+    \item Secure API ensures data privacy and minimizes unnecessary data exposure.
+\end{itemize}
+\subsubsection*{Cons}
+\begin{itemize}
+    \item On-demand retrieval may introduce latency and requires robust API management.
+\end{itemize}
 
 \subsection*{Option 4: Automated Reporting System}
 Develop an automated reporting system that provides customer service representatives with pre-defined reports and dashboards, reducing the need for direct data access.
+\subsubsection*{Pros}
+\begin{itemize}
+    \item Automated reports streamline the information delivery process.
+\end{itemize}
+\subsubsection*{Cons}
+\begin{itemize}
+    \item Automated reporting may not cover all ad-hoc queries from customer service representatives.
+\end{itemize}
 
 \subsection*{Decision}
-Option 3 is chosen: not enough requests to justify the burden of an additional db. option4 requires to much work from us. Option 1 doesnt seem secure enough.
+Option 3 is chosen: not enough requests to justify the burden of an additional database. Option 4 requires too much work from us. Option 1 doesn't seem secure enough.
+
+
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
-\begin{itemize}
-    \item Option 1: Immediate access to data allows for quick customer service responses.
-    \item Option 2: Data syncing provides a stable environment tailored for customer service needs.
-    \item Option 3: Secure API ensures data privacy and minimizes unnecessary data exposure.
-    \item Option 4: Automated reports streamline the information delivery process.
+\begin{itemize}[noitemsep]
+    \item \textbf{Security and Privacy:} The secure API maintains strict access controls and audit trails, enhancing the protection of sensitive passenger data and ensuring compliance with data privacy regulations.
+    \item \textbf{Flexibility:} Allows for flexible, on-demand data retrieval, which can be easily adapted or expanded to meet evolving requirements, providing a scalable solution for future needs.
+    \item \textbf{Integration Capabilities:} Facilitates easier integration with existing or future customer service platforms, making the option highly scalable and versatile for a range of services.
 \end{itemize}
+
 \textbf{Negative Consequences:}
-\begin{itemize}
-    \item Option 1: Direct access to live data could pose security risks if not managed correctly.
-    \item Option 2: Data syncing could lead to delays in information relay if not frequent enough.
-    \item Option 3: On-demand retrieval may introduce latency and requires robust API management.
-    \item Option 4: Automated reporting may not cover all ad-hoc queries from customer service representatives.
+\begin{itemize}[noitemsep]
+    \item \textbf{Latency and Performance:} The on-demand nature of data retrieval may introduce latency, requiring robust API management and performance optimization to ensure timely customer service responses.
+    \item \textbf{Complexity in API Management:} Managing the API adds a layer of complexity, including version control, access management, and security updates, which necessitates dedicated resources.
+    \item \textbf{Dependence on External Systems:} Reliance on external services or platforms for the API functionality can pose risks related to their availability and performance, necessitating contingency planning for high availability and redundancy.
 \end{itemize}
-% TODO: move options pros and cons to the options subsections.
