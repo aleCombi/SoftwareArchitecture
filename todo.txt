@@ -1,8 +1,8 @@
 HOMEWORK
 
-1) Viewpoints to png to tex (CA)
-2) Create viewpoint descriptions (CA)
-3) Make stakeholders view nicer (CA)
+1) Viewpoints to png to tex (CA) (DONE)
+2) Create viewpoint descriptions (CA) (DONE)
+3) Make stakeholders view nicer (CA) (DONE)
 4) Clean decisions (AC): 
     - decision 1-5 are complete. (DONE)
     - decision 6 (db scope) still needs to be done (I added an option), but everything except the actual decision (and consequences) is ready
