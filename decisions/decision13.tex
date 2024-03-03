@@ -1,42 +1,50 @@
-\subsection{Decision 13: How do we handle data update from tycoons/station management?}
+\subsection{Decision 13: Serverless vs. Servers for Calculations}
 
 \subsection*{Status}
+Open
 
 \subsection*{Architectural Summary}
-
+This decision examines the computational approach for the TrIP system, specifically whether to adopt a serverless architecture or to maintain dedicated servers for processing calculations related to ticketing, route optimization, and other system functionalities.
 
 \subsection*{Concern}
-\subsubsection*{User stories}
+The primary concern is to select a computational architecture that balances scalability, cost, performance, and data privacy for processing passenger data and transactional information.
 
 \subsection*{Context}
-
-\subsubsection*{QA Scenario} % not always needed I believe
+The computational backbone of the TrIP system must handle variable workloads efficiently, especially during peak hours when route calculations and payment processing are at their highest demand. Additionally, the system must maintain data privacy and adhere to regulatory compliance.
 
 \subsection*{Criteria}
 \begin{itemize}
+    \item Scalability to handle peak and off-peak loads.
+    \item Cost-effectiveness, including operational and maintenance costs.
+    \item Performance in terms of latency and throughput.
+    \item Data privacy and control.
+    \item Compliance with data protection and privacy laws.
+    \item Ease of maintenance and updates.
 \end{itemize}
 
-\subsection*{Option 1: We impose the tycoons an API and ask them to give updates, which we store in a database}
-Pro: you can precompute optimized routes.
-Pro: if database is updated often enough by tycoons, info is almost realtime
-Con: database needs to be managed
+\subsection*{Option 1: Serverless}
+Adopting a serverless architecture where the service provider dynamically manages the allocation of machine resources. Benefits include automatic scaling, no server management, and a pay-per-use pricing model which can potentially lead to cost savings during periods of low usage.
 
-\subsection*{Option 2: We ask information on the fly and impose a queryable format or implement an API for each of them}
-Pro: almost real-time update
-Con: can't precompute
+\subsection*{Option 2: Dedicated Servers}
+Using dedicated servers, either on-premises or hosted, to handle all computations. This option offers full control over the server environment, which can be configured for optimal performance and enhanced data privacy since data will not be shared with third-party service providers.
+
+\subsection*{Option 3: Hybrid Approach}
+Implementing a hybrid system that uses a combination of serverless architecture for less sensitive and highly variable workloads, and dedicated servers for more predictable workloads and data-intensive tasks requiring stringent privacy controls.
 
 \subsection*{Decision}
-We want db:
-- performance (=> usability)
-- availability 
-- integrability
+The decision will be based on a cost-benefit analysis of each option, considering the trade-offs between control, cost, and scalability. The chosen approach must align with the overall system requirements for performance, privacy, and regulatory compliance.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
 \begin{itemize}
+    \item Serverless: Cost efficiency during low usage, no need for server maintenance, and automatic scaling.
+    \item Servers: Greater control over data, potentially better performance, and consistent availability.
+    \item Hybrid: Balances the benefits of both serverless and dedicated servers, providing scalability while maintaining data privacy for sensitive operations.
 \end{itemize}
 \textbf{Negative Consequences:}
 \begin{itemize}
+    \item Serverless: Potential for increased latency, less control over data, and possible security concerns.
+    \item Servers: Higher upfront costs, requires dedicated IT staff for maintenance, and might be underutilized during off-peak times.
+    \item Hybrid: Increased complexity in managing two different environments and potential for higher operational costs.
 \end{itemize}
-
-% TODO: merge with 12
+% TODO: move options pros and cons to the options subsections.

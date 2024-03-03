@@ -1,4 +1,4 @@
-\subsection{Decision 9: Turnstiles interaction with the payment system}
+\subsection{Decision 9: Account management and authentication}
 
 \subsection*{Status}
 Open
@@ -6,57 +6,36 @@ Open
 
 
 \subsection*{Concern}
-Passengers want a seamless travel experience, without being mistakenly blocked at the turnstiles.
-Tycoons want to admit only paying passengers in trains, avoiding controllers costs.
-Turnstiles need to communicate with the system to ensure correct and quick verification of the requisites to be allowed in the station.
-
-\subsubsection{User Stories}
-The decision on how turnstiles interact with the payment system is integral to ensuring a seamless travel experience and securing access to train areas. Below, we detail specific user stories connected to this architectural decision, highlighting the requirements and expectations from various stakeholders.
-
-\begin{enumerate}[noitemsep]
-    \item \textbf{User Story 1 (Frequent Traveler's Monthly Pass)}: A comprehensive monthly pass needs to be recognized by the turnstiles, necessitating a system that supports seamless access for subscribers.
-    
-    \item \textbf{User Story 2 (Online Balance Check for Multi-Network Travel Card)}: The system requires turnstiles to accurately read and verify travel card balances to prevent entry issues, emphasizing the need for an integrated payment system.
-    
-    \item \textbf{User Story 15 (Prevention of Payment for Temporarily Blocked Routes)}: This story underscores the importance of turnstiles having up-to-date information on route availability to avoid mistakenly blocking passengers.
-    
-    \item \textbf{User Story 16 (Single Ticket for All Train Networks)}: Turnstiles must effectively communicate with the payment system to recognize and approve tickets valid across different networks, ensuring seamless travel.
-    
-    \item \textbf{User Story 26 (Real-time Updates for Station Managers)}: The technology supporting real-time updates can also enhance turnstile interactions, ensuring entry permissions reflect current ticketing information based on schedules and disruptions.
-    
-    \item \textbf{User Story 27 (Integration with Maintenance Scheduling)}: Turnstiles must adapt to maintenance schedules, allowing for adjustments in access permissions, which suggests the need for a flexible and responsive payment system.
-    
-    \item \textbf{User Story 23 (Payment System Integration for Tycoons)}: The story relates to the seamless integration of turnstiles with updated payment systems, crucial for maintaining high service levels and secure access.
-\end{enumerate}
-
-These user stories collectively highlight the diverse requirements for the turnstile and payment system interaction, from seamless access and real-time information integration to flexibility in handling various ticketing formats and system updates.
+\subsubsection*{User stories}
 
 \subsection*{Context}
-
-Most stations, expecially the big ones, have turnstiles to avoid people without tickets to enter the trains area.
-The turnstiles should communicate with the system to ensure this. A decision should be taken on who to admit in the station.
-This logic could be provided by the station manager or by the tycoons, or even by TrIP managment.
-How do the passenger input its ticket or subscription or prepaid card to the turnstile?
-How does the turnstile communicate with the system to verify if the passenger has the right to enter the station?
-
+\subsubsection*{QA Scenario} % not always needed I believe
 \subsection*{Criteria}
-\begin{itemize}
-    \item Allow users to scan tickets or multiplatform travel cards (if they exists) at turnstiles.
-    \item Don't allow people without the appropriate tickets or subscriptions or cards.
-    \item Possibly allow people to scan when they enter and when they exit and calculate a fare (this might depend on agreements between tycoons). 
-    \item Possibly communicate station usage data to the system.
-    \item Possibly allow credit/debit card scan.
-    \item Allow balance check for charged cards.
-\end{itemize}
+% \begin{itemize}
+% \end{itemize}
 
-\subsection*{Option 1: }
+Get online account, how to open account (at terminal, online, app), how to make the turnstile/controller know that you have the account (anonymous card, bank card, nominal card, nfc).
 
+\subsection*{Option 1: anonymous card}
+\subsection*{Option 2: bank credit card}
+\subsection*{Option 3: phone app}
+You can payonline and create accounts, you can scan qr code from the app or nfc (google wallet) at turnstiles.
+
+\subsection*{Option 4: nominal card}
+Pay at terminal, get account and card, scan it at turnstiles. Access online account via browser. (possibly mix with opt 3)
+
+\subsection*{Option 5: NFC reader/google wallet}
+
+
+\subsubsection*{User Stories}
 \subsection*{Decision}
-
+app (with nfc, connected to bank account) + fillable card (for tourists, anoymous) + physical nominal card.
+Deciding to have everything can require a lot of work: is it justified?
+% TODO: discussion about pros/cons and user stories, depending on given prios of stakeholders and previous decision.
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
-\begin{itemize}
-\end{itemize}
+% \begin{itemize}
+% \end{itemize}
 \textbf{Negative Consequences:}
-\begin{itemize}
-\end{itemize}
+% \begin{itemize}
+% \end{itemize}
