@@ -1,4 +1,4 @@
-\subsection{Decision 8: Turnstiles interaction with the payment system}
+\subsection{Decision 8: Interaction with ticket scanners}
 
 \subsection*{Status}
 Open
@@ -30,6 +30,11 @@ The decision on how turnstiles interact with the payment system is integral to e
 \end{enumerate}
 
 These user stories collectively highlight the diverse requirements for the turnstile and payment system interaction, from seamless access and real-time information integration to flexibility in handling various ticketing formats and system updates.
+The problem can be made more abstract, as the interaction with the turnstile can be similar to the following interactions:
+\begin{itemize}
+    \item interaction with a controller who scans the ticket or any proof of subscription.
+    \item interaction with a scanner onboard a bus.
+\end{itemize}
 
 \subsection*{Context}
 
@@ -50,7 +55,12 @@ How does the turnstile communicate with the system to verify if the passenger ha
 \end{itemize}
 
 \subsection*{Option 1: }
-
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{drawings/views_draft2/functional_view turnstiles.png}
+    \caption{Interaction with a ticket scanner.}
+    \label{fig:ticket_scanner}
+\end{figure}
 \subsection*{Decision}
 
 \subsection*{Consequences}

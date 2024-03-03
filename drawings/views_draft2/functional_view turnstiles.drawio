@@ -1,0 +1,103 @@
+<mxfile host="65bd71144e">
+    <diagram id="ZQF833xw1EoGUe7-4v3m" name="Page-1">
+        <mxGraphModel dx="1718" dy="925" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="278" value="" style="whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=0;opacity=50;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="1240" width="590" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="173" value="scans" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.371;exitY=1.038;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="266" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="60" y="1500" as="sourcePoint"/>
+                        <mxPoint x="220" y="1460" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="182" y="1430"/>
+                            <mxPoint x="220" y="1430"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="176" value="request / &lt;br&gt;grant authorization" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="264" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="520" y="1500" as="sourcePoint"/>
+                        <mxPoint x="670" y="1500" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="231" value="allows / denies" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.164;exitY=-0.012;exitDx=0;exitDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;entryX=0.55;entryY=1.025;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" parent="1" source="264" target="266" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-10" y="1460" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="350" y="1459"/>
+                            <mxPoint x="350" y="1420"/>
+                            <mxPoint x="207" y="1420"/>
+                        </Array>
+                        <mxPoint x="450" y="1460" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="244" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;labelBackgroundColor=#080808;strokeColor=#000000;fontColor=#FCFCFC;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="264" target="179" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="610" y="1580" as="targetPoint"/>
+                        <mxPoint x="520" y="1520" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="174" value="scanned" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="265" target="264" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="290" y="1500" as="sourcePoint"/>
+                        <mxPoint x="380" y="1500" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="196" value="Request/&lt;br&gt;grant authorization" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="272" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="810" y="1500" as="sourcePoint"/>
+                        <mxPoint x="990" y="1500" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="179" value="Accounts (Subs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;gradientColor=#b3b3b3;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="1580" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="245" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;request /&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;grant authorization&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontColor=#FCFCFC;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="1550" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="257" value="Accounts (Subs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;gradientColor=#b3b3b3;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="1580" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="289" value="&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Update / authorize&lt;/span&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;labelBackgroundColor=#907a7a;strokeColor=#000000;fontColor=#000000;startArrow=none;startFill=0;entryX=0.007;entryY=0.625;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="264" target="267" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="400" y="1340" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="264" value="turnstile (controller device, bus scanner)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="330" y="1460" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="265" value="fillable card, bank card, ticket, phone, OV card" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="1460" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="266" value="&lt;b&gt;User&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=80;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="1270" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="288" value="&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Updates&lt;/span&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;labelBackgroundColor=#907a7a;strokeColor=#000000;fontColor=#000000;startArrow=none;startFill=0;" parent="1" source="267" target="272" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="267" value="User state" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="1300" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="268" value="ticket checker (similar role as the account manager)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="1460" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="269" value="Accounts (Subs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="1580" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="272" value="Database" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="940" y="1460" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="282" value="&lt;h1&gt;Functional View - Scanning Procedure&lt;/h1&gt;" style="text;strokeColor=none;align=left;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="1090" width="670" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="290" value="&lt;h1 style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#080808&quot;&gt;TRIP SYSTEM&lt;/font&gt;&lt;/b&gt;&lt;/h1&gt;" style="text;whiteSpace=wrap;html=1;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="970" y="1240" width="190" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

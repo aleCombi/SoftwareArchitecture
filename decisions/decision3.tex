@@ -26,7 +26,7 @@ The key criteria for the decision include:
 Terminals directly interface with each tycoon system and the central database to collate route options. The route optimizer processes this data to present optimal travel solutions. This requires our system to have APIs to query each of the tycoons systems.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{drawings/decision3_drawings/direct.png}
+    \includegraphics[width=\textwidth]{drawings/decision3_drawings/direct.png}
     \caption{Direct Data Management Interface}
     \label{fig:direct-data-interface}
 \end{figure}
@@ -35,7 +35,7 @@ Terminals directly interface with each tycoon system and the central database to
 A central route data management module acts as an intermediary between terminals and tycoon systems, standardizing and aggregating data before it is processed by the route optimizer. A database containing the timetables will be kept up to date by the tycoon (possibly though an API, this will be the focus of a later decision). The route data management system might cache optimized routes, in order to minimize database requests. A module specialized in running optimizations with the data it is provided with interacts solely with the Route Management Module.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{drawings/decision3_drawings/centralized.png}
+    \includegraphics[width=\textwidth]{drawings/decision3_drawings/centralized.png}
     \caption{Centralized Route Management Module. Dashed lines represents steps to be explained in future decisions.}
     \label{fig:centralized-data-interface}
 \end{figure}
