@@ -13,3 +13,4 @@ HOMEWORK
     - decision 13 (server/serverless) can be reserved for later, but info about the options is there and the format is decent.
 5) check if decisions match functional viewpoint (e.g. turnstiles) (AC) (DONE)
 6) Clarify Info, Concurrency, Deployment view
+7) Prepare for architectural debate
