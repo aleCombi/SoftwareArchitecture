@@ -4,14 +4,12 @@ HOMEWORK
 2) Create viewpoint descriptions (CA)
 3) Make stakeholders view nicer (CA)
 4) Clean decisions (AC): 
-    - decision 1-5 are complete.
+    - decision 1-5 are complete. (DONE)
     - decision 6 (db scope) still needs to be done (I added an option), but everything except the actual decision (and consequences) is ready
     - decision 7 (customer service) can be reviewed in the text and some info can be added, but it is fundamentally ready.
-    - decision 8 (turnstiles) need to be done, using what we decided drawing the interactions.
+    - decision 8 (turnstiles) need to be done, options are there.
     - decision 9 and 10 (Account management and authentication / db update) are only sketched.
     - decisions 11 and 12 might be merged. All info is there, but a decision has to be made.
     - decision 13 (server/serverless) can be reserved for later, but info about the options is there and the format is decent.
-5) check if decisions match functional viewpoint (e.g. turnstiles) (AC)
-    - done for account management, booking management and db division of concerns.
-    - todo for turnstiles
+5) check if decisions match functional viewpoint (e.g. turnstiles) (AC) (DONE)
 6) Clarify Info, Concurrency, Deployment view
