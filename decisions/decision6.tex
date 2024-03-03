@@ -1,55 +1,32 @@
-\subsection{Decision 6: Disruptions and route updates}
+\subsection{Decision 6: Database scope}
 
 \subsection*{Status}
-Open
 
 \subsection*{Architectural Summary}
-This decision involves establishing a protocol within the TrIP system for managing and mitigating the impact of train disruptions on passengers and service operations.
+
 
 \subsection*{Concern}
-The main concern is to ensure minimal inconvenience to passengers during train disruptions while maintaining transparent communication and providing alternative solutions.
+\subsubsection*{User stories}
 
 \subsection*{Context}
-Train disruptions can occur due to various reasons such as maintenance issues, accidents, or natural events. The system needs to be able to quickly respond to such incidents, inform affected passengers, and offer alternatives to ensure continued service.
+Which info do we keep in the database? 
+Do we need more databases?
+How do we handle data protection?
+How do we handle data update from tycoons/station management? (maybe for another decision?)
 
+\subsubsection*{QA Scenario} % not always needed I believe
 \subsection*{Criteria}
 \begin{itemize}
-    \item Rapid detection and response to disruptions.
-    \item Clear and timely communication with passengers.
-    \item Provision of alternative transport options.
-    \item Integration with existing operational and communication systems.
-    \item Minimization of negative impact on passenger experience.
-    \item Compliance with safety and regulatory standards.
 \end{itemize}
 
-\subsection*{Option 1: Real-Time Alert System}
-Implement a real-time alert system that notifies passengers of disruptions via mobile app notifications, SMS, and updates on digital displays at stations.
-
-\subsection*{Option 2: Manual Intervention Protocol}
-Establish a manual intervention protocol where customer service teams are promptly informed of disruptions to assist passengers with rebooking and provide personalized travel advice.
-
-\subsection*{Option 3}
-We set a minimum delay threshold. Not rerun the computations if below threshold. If above, rerun optimization.
-Not inform passengers, all the info is on the terminal.
-Rerank the best routes based on delays. (can it be that all best routes go though the same interrupted rail?? YES, if so what?)
-% TODO
-\subsection*{Option 4}
-Rerun the computations for every delay. If above, rerun optimization.
-Not inform passengers, all the info is on the terminal.
-Maybe rerun computations every hour and tell times might not be correct.
+\subsection*{Option 1: Store }
 
 \subsection*{Decision}
-The decision will be made after an in-depth analysis of each option against the set criteria. It will consider the current infrastructure's capabilities, passenger needs, and the potential for seamless integration with other transportation modes.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
 \begin{itemize}
-    \item Option 1: Ensures passengers are quickly informed about disruptions.
-    \item Option 2: Automates the process of managing the effects of disruptions on passengers.
 \end{itemize}
 \textbf{Negative Consequences:}
 \begin{itemize}
-    \item Option 1: Requires passengers to actively check for updates and take action.
-    \item Option 2: May be complex to implement and require significant changes to existing systems.
 \end{itemize}
-% TODO: move options pros and cons to the options subsections.
