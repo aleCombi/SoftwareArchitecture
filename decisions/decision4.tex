@@ -47,7 +47,12 @@ Furthermore, the Route management module needs to be able to optimize with respe
 The idea is to add an optional initial iteration to the sequence of actions sketched in decision 3.
 This requires a way to communicate the subscription to the terminal, be it a QR code, a code or a magnetic card. 
 This should be the topic of another decision.
-
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{drawings/decision4_drawings/account_functional.png}
+    \caption{Account Management Interaction for single-ticket.}
+    \label{fig:account_management_ticket}
+\end{figure}
 \subsection*{Pros}
 
 \begin{itemize}[noitemsep]
@@ -64,7 +69,6 @@ This should be the topic of another decision.
     \item \textbf{Integration Complexity:} Ensuring seamless communication and data consistency between different modules can introduce additional complexity in system integration and require more sophisticated coordination mechanisms.
     \item \textbf{Higher Overhead:} Managing separate systems for subscription and route optimization may lead to higher operational overhead in terms of both system resources and administrative efforts to maintain multiple components.
 \end{itemize}
-% The functional view schema is in my bag. TODO
 
 \subsection*{Option 2: Integrated Subscription-Route Optimization Service}
 The Integrated Subscription-Route Optimization Service (IS-ROS) combines the functionality of subscription management and route optimization into a single service. 
@@ -102,3 +106,5 @@ With our option, we still have the flexibility to assign more computational or d
     \item \textbf{Data Consistency Challenges:} Requires robust synchronization mechanisms to ensure data consistency across modules.
 \end{itemize}
 
+The account management module is included in the functional view of the system, communicating with the tycoons to updated them on new subscriptions, with the database to keep the account data up to date and with the terminal to allow 
+the purchase of new subscriptions and the verification via magnetic card or other means.

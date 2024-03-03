@@ -4,7 +4,6 @@
 Accepted
 
 \subsection*{Architectural Summary}
-\textit{[Provide a brief summary of the architectural context and the specific system components affected by this decision.]}
 
 \subsection*{Concern}
 Ensuring a high level of usability and availability in the ticketing system is paramount. System operators and railroad tycoons aim to minimize customer service issues arising from passengers' frustrations with paying for unavailable routes.
@@ -16,12 +15,13 @@ Ensuring a high level of usability and availability in the ticketing system is p
 
 \subsection*{Context}
 This decision seeks to address challenges associated with quickly filling trains, especially during peak hours, to offer a seamless and fair ticket purchasing experience. Mitigating the risk of overbooking and enhancing passenger satisfaction are central goals. It's critical to efficiently manage simultaneous requests for the last available seats to ensure a positive experience for commuters and students who rely on timely and available transportation.
+It is relevant only for trains where seats must (or can) be booked.
 
 \subsubsection*{QA scenario}
 The following outlines a Quality Attribute (QA) scenario focusing on the real-time seat availability and booking process during peak hours. This scenario is structured to evaluate the system's usability and performance under conditions of high demand.
 \paragraph{Source} Passenger interacting with a payment terminal (or any other way of booking tickets, e.g. an app or a website).
 \paragraph{Stimulus} Two passengers try to buy the same ticket.
-\paragraph{Artifact} The \textit{data management system}, \textit{database maintaining seat availability information} and the \textit{user interface} the passenger interacts with.
+\paragraph{Artifact} The \textit{booking management module}, the \textit{database} maintaining seat availability information and the \textit{user interface} the passenger interacts with.
 \paragraph{Response}[\textit{After the decision is taken}] Upon receiving the stimulus, the system's response is to immediately check the current availability of the selected seat, lock the seat for the passenger if it is available (thus preventing other bookings), and provide real-time feedback to the passenger regarding the seat's status (e.g., locked for purchase, already taken). If the seat is available and locked for the passenger, the system then proceeds with the payment process.
 \paragraph{Response Measure}[\textit{After the decision is taken}] The effectiveness of the system's response is measured as follows:
 \begin{itemize}
@@ -36,8 +36,10 @@ The following outlines a Quality Attribute (QA) scenario focusing on the real-ti
 \end{itemize}
 
 \subsection*{Option 1: Lock the Seats Before Payment}
-We should maintain a database where info about scheduled trains is stored. This database should be updated by the terminal when a ticket has been bought. The database should ask periodically for updates on schedules from the tycoon systems. When a user selects that they want to pay for a specific ticket, that ticket should be locked, so that no one else can buy it. If the payment is not ultimated, it can be unlocked. Note that it can still happen that due to maintenance, a train is cancelled last minute. 
-Add a booking management module that updates the DB about locking, releasing and booking seats.
+We should maintain a database where info about scheduled trains is stored. 
+We should also a booking management module that updates the database about booked seats or booking cancellations.
+
+This database should be updated when a ticket has been bought at a terminal. The database should ask periodically for updates on schedules from the tycoon systems. When a user selects that they want to pay for a specific ticket, that ticket should be locked, so that no one else can buy it. If the payment is not ultimated, it can be unlocked. Note that it can still happen that due to maintenance, a train is cancelled last minute. 
 
 % TODO: What happens with the customer service? Should we add it to the context view? They will for sure need info from us, like who paid and how much. These should be two future decisions (how to deal with customer service in case of train disruptions, how to keep up to date about disruptions).
 
