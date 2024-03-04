@@ -1,7 +1,7 @@
 \subsection{Decision 6: Database scope and organization}
 
 \subsection*{Status}
-Open.
+Review.
 
 \subsection*{Architectural Summary}
 
@@ -74,7 +74,9 @@ We divide the following:
 
 \subsection*{Option 2: Unified Centralized Database System}
 
-This option proposes a centralized database architecture that consolidates all necessary information into a single, unified database system. It incorporates robust access control layers to manage data access based on module or user roles, ensuring that each part of the system accesses only the data it needs for operation. This model simplifies data management, enhances security through centralized control mechanisms, and facilitates easier updates and integrations.
+This option proposes a centralized database architecture that consolidates all necessary information into a single, unified database system. It incorporates robust access control layers to manage data access based on module or user roles, ensuring that each part of the system accesses only the data it needs for operation. This model simplifies data management, enhances security through centralized control mechanisms, and facilitates easier updates and integrations. This model can be improved with having accounts database as a separate component, and keeping the rest of the databases central. In this way accounts data will be secure, and the rest of the systems will access accounts data anonymously via ids. Manage permissions for eacsh tycoon, on which info they can access (they shouldn't be able to connect name to bank account). In this way we can keep everything in the same place, but each tycoon api will have specificed access protocols. Tycoons can only update timetables and prices.
+
+We can keep bookings data a DaaS, since it needs to be updated regularly and concurrently. Rest can be a server based database. Since we can cache routes we don't want cloud services for these. 
 
 \subsubsection*{Pros}
 \begin{itemize}[noitemsep]
@@ -90,12 +92,47 @@ This option proposes a centralized database architecture that consolidates all n
     \item \textbf{Complexity in Ensuring Data Protection} (Security, Privacy): Protecting a large, centralized repository of sensitive information poses significant challenges, requiring robust security measures to prevent unauthorized access and data breaches.
 \end{itemize}
 
+\subsection*{Option 3: Database per tycoon or not}
+
+\subsubsection*{Pros}
+\begin{itemize}[noitemsep]
+    \item \textbf{Tycoon specific features} 
+    \item \textbf{Tycoon access permissions are automatically managed} 
+\end{itemize}
+
+\subsubsection*{Cons}
+\begin{itemize}[noitemsep]
+    \item \textbf{Hard to manage the database} 
+    \item \textbf{Shared data is potentially doubled} 
+\end{itemize}
+
+\subsection*{Option 4: Hybrid cloud storage}
+Crucial data stored in cloud (timetables, and prices and bookings). Non-crucial data (accounts, payments) gets stored in non-cloud database one per tycoon, such that they can only access their own customer data.
+
+\subsubsection*{Pros}
+\begin{itemize}[noitemsep]
+    \item \textbf{Tycoon specific access for accounts data} 
+    \item \textbf{Secure and qucik access to data crucial data} 
+    \item \textbf{Cheap storage for non-crucial data} 
+\end{itemize}
+
+\subsubsection*{Cons}
+\begin{itemize}[noitemsep]
+    \item \textbf{Can get expensive} 
+    \item \textbf{Implementation of two different database types and their interactions setup}
+\end{itemize}
+
 \subsection*{Decision}
-The decision seems to be between having complexity in the database management or in the functional modules to access a single database.
+We choose Hybrid cloud storage System, increased Availability which is important for event 2 which requirees less stringent Maintainability and cost requirements. Cloud increased cost and interaction between databases increase Maintainability compared to single database.
 \subsection*{Consequences}
-% \textbf{Positive Consequences:}
-% \begin{itemize}
-% \end{itemize}
-% \textbf{Negative Consequences:}
-% \begin{itemize}
-% \end{itemize}
+\textbf{Positive Consequences:}
+\begin{itemize}
+    \item \textbf{database as a service}: Single point of failure is reduced, scalable.
+    \item \textbf{}: Single point of failure is reduced, scalable.
+\end{itemize}
+\textbf{Negative Consequences:}
+\begin{itemize}
+    \item \textbf{Tycoon permission management} : More complextiy, we need to restrict access for each tycoon.
+    \item \textbf{Single point of failure} : If database fails, everything fails.(bad for availablity)[maybe a solution is backup database].
+    \item \textbf{database as a service}: Expensive.
+\end{itemize}
