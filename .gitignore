@@ -9,3 +9,4 @@
 *.bbl
 !lecture_materials/lecture_pdfs/**/*.pdf
 !lecture_materials/papers/**/*.pdf
+!books/*.pdf
