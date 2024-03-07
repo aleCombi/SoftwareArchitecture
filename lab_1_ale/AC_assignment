@@ -1,0 +1,38 @@
+DEPLOYMENT VIEW 
+
+CONCERNS
+1. Runtime Platform Required 
+    - board hardware, phones, servers, databases
+    - network requirements-> firewall
+    - clouds?
+    - mapping to the functional element (images loader, board interface, problems retriever, UI, 
+    gyms API, statistics calculator, shop, contacts management)
+    - software specs
+2. Specification and Quantity of Hardware 
+or Hosting Required
+    - quantity of hardware
+    - SLAs
+    - hardware specs
+3. Third-Party Software Requirements
+    - operating  systems,  programming  libraries,  messaging  systems,  application
+servers, databases, data movement products, Web servers
+4. Technology Compatibility
+    - For example, a database interface library
+may require a particular OS network library in order to function
+correctly,  or  a  disk  array  may  require  a  particular  type  of  interface  in  the
+machines that will access it.
+5. Network Requirements
+    - consequence of the mapping with functional view   
+6. Network Capacity Required
+7. Physical Constraints
+8. Stakeholder Concerns
+
+MODELS
+1. Runtime Platform Models (hardware nodes + network connections)
+    - Processing nodes (server) -> User auth, climbing problem storage and retrieval, file servers for static data, 
+    - Client nodes (phones, laptops of users)
+    - Runtime containers (software application server or a client virtual machine)
+    - Online storage hardware (capacity and speed)
+    - Offline storage hardware (maybe backup), (type, capacity, speed, and location)
+    - Network links (links between your hardware nodes)
+    - Runtime element-to-node mapping (mapping to functional view)
