@@ -1,0 +1,30 @@
+DECISION ON SCANNING
+- user state module
+- what do we scan?
+    - on method correspond to one authorization processes
+    - QR can work for tickets/physical cards/app
+    - bank card need bank plugin
+    - NFC auth is fancy but might add complications (maybe same tech as tapping card?)
+
+- Decision:
+    - QR for ticket/app/fillable/nominal + bank cards + NFC if it doesnt add too much complication (TODO)
+
+- Consequences:
+    - we consider an ID linked to account or signle ticket or fillable card -> just one module for account management
+    - data storage for those account or signle ticket or fillable card are different:
+        - single ticket are temporary (create/destroy records quickly) -> exploit that we know when a ticket expires
+        - fillable cards are anoymous 
+        - balance on accounts
+
+DECISION ON PAYMENT
+- fillable card/ account with balance -> balance manager separated from actual payment
+- interaction with bank:
+    - refill
+    - bank card when you exit the turnstile (if credit you can take some money as collateral) -> needs external authentication, more communication with the bank
+    - single pay at terminal
+
+
+STATE MANAGEMENT
+- turnstiles need to allow exit or not
+
+INFORMATION DIAGRAM

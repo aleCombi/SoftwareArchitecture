@@ -1,7 +1,7 @@
 \subsection{Decision 9: Account management and authentication}
 
 \subsection*{Status}
-Open
+Review
 \subsection*{Architectural Summary}
 
 
@@ -18,6 +18,7 @@ Get online account, how to open account (at terminal, online, app), how to make 
 
 \subsection*{Option 1: anonymous card}
 \subsection*{Option 2: bank credit card}
+Pay at the terminal
 \subsection*{Option 3: phone app}
 You can payonline and create accounts, you can scan qr code from the app or nfc (google wallet) at turnstiles.
 
@@ -31,6 +32,10 @@ Pay at terminal, get account and card, scan it at turnstiles. Access online acco
 \subsection*{Decision}
 app (with nfc, connected to bank account) + fillable card (for tourists, anoymous) + physical nominal card.
 Deciding to have everything can require a lot of work: is it justified?
+
+We want to scan either credit cards or QR code at scanning devices:
+    - bank plugin that gives an ID of the card (connected to account or not) 
+    - qr code on a ticket / TRIP card / app generated / fillable card
 % TODO: discussion about pros/cons and user stories, depending on given prios of stakeholders and previous decision.
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
