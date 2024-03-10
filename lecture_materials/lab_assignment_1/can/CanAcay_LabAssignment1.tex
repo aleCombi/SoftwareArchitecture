@@ -155,6 +155,95 @@ Comprehensive monitoring and logging should be implemented to ensure the reliabi
     \label{fig:Deployment Diagram of Mathpix}
 \end{figure}
 
+\section{Diagram Description}
+\subsection{Client Application}
+\textbf{Components:}
+\begin{itemize}
+    \item Web Application: A browser-based interface for users to access OCR services.
+    \item Mobile UI: A mobile user interface designed for accessing services on smartphones.
+    \item Desktop Application: A standalone application for desktop computers.
+\end{itemize}
+
+\subsection{Authenticator Service}
+\textbf{Components:}
+\begin{itemize}
+    \item Identity and Access Management: Manages user credentials and access rights.
+\end{itemize}
+
+\subsection{API Gateway}
+\textbf{Components:}
+\begin{itemize}
+    \item Request Router: Directs incoming API requests to appropriate services.
+    \item Rate Limiter: Prevents overuse of resources by limiting request rates.
+    \item Response Cache: Temporarily stores responses to improve performance.
+    \item Aggregation: Combines data from multiple services for a single response.
+\end{itemize}
+
+\subsection{Load Balancer}
+\textbf{Components:}
+\begin{itemize}
+    \item Distribution Engine: Distributes incoming traffic across servers efficiently.
+\end{itemize}
+
+\subsection{OCR Service}
+\textbf{Components:}
+\begin{itemize}
+    \item Image Preprocessing: Enhances images for better OCR results.
+    \item Image PostProcessing: Refines OCR results for accuracy.
+    \item Training: Improves OCR accuracy by machine learning from new data.
+\end{itemize}
+\textbf{Artifacts:}
+\begin{itemize}
+    \item OCR Training and Update Pipelines: Processes for updating the OCR models.
+\end{itemize}
+
+\subsection{LaTeX Rendering}
+\textbf{Components:}
+\begin{itemize}
+    \item LaTeX Rendering Engine: Converts text to LaTeX format.
+    \item Rendering Queue: Manages the order in which rendering tasks are processed.
+    \item Cache System: Stores frequently accessed data to improve performance.
+\end{itemize}
+
+\subsection{User Database}
+\textbf{Components:}
+\begin{itemize}
+    \item Account Information: Stores user profiles and authentication data.
+\end{itemize}
+
+\subsection{Monitoring \& Analytics Server}
+\textbf{Components:}
+\begin{itemize}
+    \item Data Collector: Gathers data on system use and performance.
+    \item Log Processor: Analyzes log files to extract useful information.
+    \item Metrics Aggregator: Compiles various metrics into a unified view.
+    \item Alert Manager: Manages alerts for system events and issues.
+    \item Analysis Engine: Performs deep analysis of collected data.
+    \item Reporting Tool: Generates reports on analytics and metrics.
+\end{itemize}
+
+\subsection{Metrics \& Logs Database}
+\textbf{Components:}
+\begin{itemize}
+    \item System Health and Performance Data: Contains metrics on system performance.
+    \item OCR \& Rendering Logs: Stores logs specific to OCR and LaTeX rendering tasks.
+\end{itemize}
+
+\subsection{Analytics Database}
+\textbf{Components:}
+\begin{itemize}
+    \item User Behaviour Data: Information on how users interact with the system.
+    \item System Usage Data: Records of how the system resources are used.
+\end{itemize}
+
+\subsection{Input Database}
+\textbf{Components:}
+\begin{itemize}
+    \item Processed Images and Text Database: Stores images after OCR processing and the extracted text.
+    \item Symbols, Fonts, LaTeX Database: Repository of symbols and fonts used for LaTeX rendering.
+    \item Training Data Database: Contains data used to train the OCR system.
+\end{itemize}
+
 \section{Report}
 \subsection{Analysis Summary}
 The deployment of the Mathpix system has been carefully designed to ensure high performance, scalability, reliability, and security. The system follows a microservices architecture pattern, which allows for the decomposition of the system into smaller, loosely coupled services. This approach promotes modularity, flexibility, and maintainability, as each microservice can be developed, deployed, and scaled independently based on its specific requirements.
