@@ -31,6 +31,38 @@
 \section{Software System Selection}
 Mathpix is an OCR (Optical Character Recognition) service designed to extract textual information from images. Its purpose is to accurately convert images of typed or handwritten math problems into editable text and render LaTeX code for mathematical expressions. Key functionalities include image preprocessing, text recognition, LaTeX rendering, and handling user interactions through various client applications.
 
+\section{Quality Attributes and System Requirements}
+The Mathpix system should be designed to meet the following key quality attributes and system requirements:
+
+\subsection{Performance}
+\begin{itemize}
+\item The OCR service should process images and generate LaTeX code within an acceptable response time, typically under 2 seconds for average-sized images.
+\item The system should be able to handle a high volume of concurrent requests without significant performance degradation.
+\item Caching mechanisms should be implemented to improve response times for frequently accessed results.
+\end{itemize}
+
+\subsection{Scalability}
+\begin{itemize}
+\item The system should be designed to scale horizontally, allowing the addition of more instances to handle increased traffic and processing demands.
+\item The microservices architecture should enable independent scaling of individual components based on their specific resource requirements.
+\item The system should be able to accommodate a growing user base and increasing usage without compromising performance or availability.
+\end{itemize}
+
+\subsection{Reliability}
+\begin{itemize}
+\item The system should have high availability, with a minimum uptime of 99.9% to ensure uninterrupted service to users.
+\item Fault tolerance mechanisms should be implemented to handle component failures gracefully, without impacting the overall system functionality.
+\item Regular backups and disaster recovery procedures should be in place to minimize data loss and enable quick recovery in case of failures.
+\end{itemize}
+
+\subsection{Security}
+\begin{itemize}
+\item User authentication and authorization should be enforced to protect user data and prevent unauthorized access.
+\item Secure communication protocols (HTTPS) should be used for all data transmissions between components and client applications.
+\item Sensitive user information and processed data should be encrypted at rest and in transit to maintain confidentiality.
+\item Regular security audits and vulnerability assessments should be conducted to identify and mitigate potential security risks.
+\end{itemize}
+
 \section{Component Identification}
 Mathpix is built with a range of components that work together to provide a robust service:
 
@@ -116,19 +148,56 @@ Caching can be implemented at various levels to improve the performance and redu
 \subsection{Monitoring and Logging}
 Comprehensive monitoring and logging should be implemented to ensure the reliability and observability of the Mathpix system. The Monitoring \& Analytics Server can collect metrics and logs from various components and store them in the Metrics \& Logs Database. This allows for real-time monitoring of system health, performance, and usage. Tools like Prometheus and Grafana can be used for collecting and visualizing metrics, while the ELK stack (Elasticsearch, Logstash, Kibana) can be employed for centralized logging and analysis. Alerts can be set up based on predefined thresholds to proactively identify and resolve issues.
 
-\section{Deployment Diagram}
-\subsection{Creating the Diagram}
-Explain the process of creating the deployment diagram. Note: You can include the actual diagram using the \texttt{\textbackslash includegraphics} command.
-\subsection{Diagram Description}
-Provide a detailed description of the deployment diagram, covering how components are deployed onto the chosen models and nodes, and how this incorporates the chosen patterns, styles, and tactics.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{deployment_diagram.png}
+    \caption{Deployment Diagram of Mathpix}
+    \label{fig:Deployment Diagram of Mathpix}
+\end{figure}
 
 \section{Report}
 \subsection{Analysis Summary}
-Summarize the analysis performed, including the rationale for choosing specific deployment patterns, styles, and tactics.
-\subsection{Alignment with System Requirements and Quality Attributes}
-Discuss how these choices align with the system requirements and quality attributes.
+The deployment of the Mathpix system has been carefully designed to ensure high performance, scalability, reliability, and security. The system follows a microservices architecture pattern, which allows for the decomposition of the system into smaller, loosely coupled services. This approach promotes modularity, flexibility, and maintainability, as each microservice can be developed, deployed, and scaled independently based on its specific requirements.
 
-\section{Conclusion}
-Summarize the key findings of your analysis and any conclusions drawn from the deployment viewpoint of the chosen software system.
+The client applications, such as the web, mobile, and desktop apps, interact with the system through the API Gateway, which serves as the single entry point for all client requests. The API Gateway acts as a reverse proxy, routing requests to the appropriate microservices based on the request path or parameters. It also handles cross-cutting concerns such as authentication, rate limiting, and caching, simplifying client communication and providing a unified API for the Mathpix system.
+
+To ensure high availability and scalability, the API Gateway, OCR Service, and LaTeX Rendering components are deployed across multiple instances using a load balancer. The load balancer distributes incoming traffic evenly among the instances, allowing the system to handle increased loads and ensuring optimal performance. Horizontal scaling is employed to dynamically adjust the number of instances based on the demand, enabling the system to accommodate a growing user base and increasing usage without compromising performance or availability.
+
+The deployment diagram showcases a clear separation between the public-facing components (client applications and API Gateway) and the internal microservices and databases. The public-facing components are deployed on a public cloud infrastructure, providing easy access for users and enabling seamless interaction with the Mathpix service. On the other hand, the core microservices and databases, such as the OCR Service, LaTeX Rendering, Image Processing, and various databases, are deployed on a private cloud or dedicated servers. This deployment approach enhances security and control over sensitive data and critical processing tasks.
+
+To further improve performance and reduce the load on backend services, caching mechanisms are implemented at various levels. The API Gateway includes a response cache to store frequently accessed results, such as rendered LaTeX code or recognized text. This eliminates the need to process the same requests repeatedly, significantly reducing response times. Additionally, the LaTeX Rendering service maintains a cache of rendered expressions, allowing for quick retrieval of previously rendered content.
+
+
+To ensure the reliability and observability of the Mathpix system, comprehensive monitoring and logging mechanisms are implemented. The Monitoring \& Analytics Server collects metrics and logs from various components and stores them in the Metrics \& Logs Database. This enables real-time monitoring of system health, performance, and usage. Tools like Prometheus and Grafana are employed for collecting and visualizing metrics, while the ELK stack (Elasticsearch, Logstash, Kibana) is used for centralized logging and analysis. Alerts are set up based on predefined thresholds to proactively identify and resolve any issues, minimizing downtime and ensuring a smooth user experience.
+
+\subsection{Rationale for Deployment Patterns, Styles, and Tactics}
+The deployment patterns, styles, and tactics chosen for the Mathpix system are based on a careful consideration of the system requirements and desired quality attributes.
+
+The microservices architecture pattern is selected to achieve modularity, scalability, and maintainability. By breaking down the system into smaller, loosely coupled services, each component can be developed, deployed, and scaled independently. This allows for faster development cycles, easier updates, and the ability to scale individual components based on their specific resource requirements.
+
+The client-server pattern is employed to establish a clear separation between the client applications and the server-side components. This separation allows for better security, as the server-side components can be deployed on a private cloud or dedicated servers, protecting sensitive data and critical processing tasks.
+
+The API Gateway pattern is chosen to provide a single entry point for all client requests and to handle cross-cutting concerns. It simplifies client communication, enables request routing, and allows for the implementation of common functionalities such as authentication, rate limiting, and caching.
+
+The database per service pattern is selected to ensure data isolation and allow each microservice to have its own optimized data model and schema. This approach prevents data coupling between services and enables independent scaling and evolution of each service's data storage.
+
+Horizontal scaling and load balancing are employed to achieve high performance and availability. By distributing the load across multiple instances of the API Gateway, OCR Service, and LaTeX Rendering components, the system can handle increased traffic and ensure optimal response times. Horizontal scaling allows for dynamic adjustment of resources based on demand, ensuring the system can accommodate a growing user base and increasing usage.
+
+Caching is implemented to improve performance and reduce the load on backend services. By caching frequently accessed results, such as rendered LaTeX code or recognized text, the system can serve requests faster and minimize unnecessary processing.
+
+Monitoring and logging are crucial for ensuring the reliability and observability of the system. By collecting metrics and logs from various components and storing them in a centralized database, the system can be proactively monitored for any issues or anomalies. Real-time monitoring and alerting enable quick identification and resolution of problems, minimizing downtime and ensuring a smooth user experience.
+
+\subsection{Alignment with System Requirements and Quality Attributes}
+The deployment choices made for the Mathpix system align well with the identified system requirements and desired quality attributes.
+
+Performance is achieved through horizontal scaling, load balancing, and caching. By distributing the load across multiple instances and caching frequently accessed results, the system can handle a high volume of concurrent requests and deliver fast response times.
+
+Scalability is addressed through the microservices architecture and horizontal scaling. The system can easily scale individual components based on their specific resource requirements, allowing it to accommodate a growing user base and increasing usage without compromising performance or availability.
+
+Reliability is ensured through the separation of concerns between public-facing and internal components, as well as comprehensive monitoring and logging. By deploying critical services on a private cloud or dedicated servers and implementing real-time monitoring and alerting, the system can proactively identify and resolve issues, minimizing downtime and ensuring a reliable user experience.
+
+Security is enhanced by deploying the Authenticator Service on a separate, secure server and using secure communication protocols and data encryption. The separation of public-facing and internal components further protects sensitive data and critical processing tasks.
+
+In conclusion, the deployment patterns, styles, and tactics chosen for the Mathpix system align well with the system requirements and desired quality attributes. The microservices architecture, client-server pattern, API Gateway, database per service pattern, horizontal scaling, caching, monitoring, and logging all contribute to achieving high performance, scalability, reliability, and security. By carefully designing the deployment architecture and selecting appropriate patterns and tactics, the Mathpix system is well-positioned to deliver a robust and efficient OCR service to its users.
 
 \end{document}
