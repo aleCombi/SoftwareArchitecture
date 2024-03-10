@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{graphicx} % For including images
+\usepackage{hyperref} % For hyperlinks
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{booktabs} % For professional looking tables
+\usepackage{float} % For improved control over floating environments
+
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+}
+
+\title{Laboratory Assignment 1: Deployment View of Mathpix}
+\author{Can Acay}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Software System Selection}
+Mathpix is an OCR (Optical Character Recognition) service designed to extract textual information from images. Its purpose is to accurately convert images of typed or handwritten math problems into editable text and render LaTeX code for mathematical expressions. Key functionalities include image preprocessing, text recognition, LaTeX rendering, and handling user interactions through various client applications.
+
+\section{Component Identification}
+Mathpix is built with a range of components that work together to provide a robust service:
+
+\begin{itemize}
+    \item \textbf{Client Applications}: Interfaces include a web application, a mobile app, and a desktop program, each designed to meet different user needs.
+    \item \textbf{Input Handlers}: Tools to handle various types of inputs, including keyboard for text, images for scanning, handwriting recognition, and PDF text extraction.
+    \item \textbf{Authenticator Service}: Ensures users can securely access their accounts.
+    \item \textbf{API Gateway}: Serves as the hub for all client requests, efficiently managing traffic and optimizing system response.
+    \item \textbf{Rate Limiter and Response Cache}: Helps maintain system stability by controlling the flow of requests and caching data to speed up responses.
+    \item \textbf{Monitoring \& Analytics Server}: Keeps an eye on system health and gathers data to help improve the service.
+    \item \textbf{Databases}: Stores various types of data, including user information, input records, performance metrics, and cached LaTeX renderings.
+    \item \textbf{OCR Service}: Recognizes text in images and converts it into an editable format.
+    \item \textbf{LaTeX Rendering}: Takes the text from the OCR and turns it into LaTeX format, ready for use in academic and scientific documents.
+\end{itemize}
+
+
+\section{Deployment Models and Nodes}
+\begin{enumerate}
+    \item \textbf{Client Application (Public Cloud or User Devices):}
+    The client applications, such as web, mobile, or desktop apps, should be deployed on public cloud platforms or run directly on user devices. This allows easy access for users to interact with the Mathpix service.
+    
+    \item \textbf{API Gateway (Public Cloud):}
+    The API Gateway should be deployed on a public cloud to handle incoming requests from client applications. It acts as the entry point for the system, routing requests to the appropriate services.
+
+    \item \textbf{Load Balancer (Public Cloud):}
+    The load balancer should be deployed on a public cloud to distribute incoming traffic across multiple instances of the API Gateway, OCR Service, and LaTeX Rendering components.
+    
+    \item \textbf{Authenticator Service (Private Cloud or Dedicated Server):}
+    The Authenticator Service should be deployed on a private cloud or dedicated server to ensure the security of user authentication and authorization processes. Keeping it separate from public-facing components adds an extra layer of security.
+    
+    \item \textbf{OCR Service (Private Cloud or Dedicated Server):}
+    The OCR Service, which performs the core functionality of image processing and text recognition, should be deployed on a private cloud or dedicated server. This ensures better control over the processing resources and allows for scalability and performance optimization.
+    
+    \item \textbf{Input Database (Private Cloud or Dedicated Server):}
+    The Input Database, which stores the processed images and extracted text, should be deployed on a private cloud or dedicated server. This keeps the data secure and allows for efficient access by the OCR Service.
+    
+    \item \textbf{Monitoring \& Analytics Server (Private Cloud or Dedicated Server):}
+    The Monitoring \& Analytics Server should be deployed on a private cloud or dedicated server to collect and process system metrics and logs. This allows for centralized monitoring and analysis of the system's performance and usage.
+    
+    \item \textbf{Metrics \& Logs Database (Private Cloud or Dedicated Server):}
+    The Metrics \& Logs Database should be deployed on a private cloud or dedicated server to store the collected metrics and logs. This ensures data security and allows for efficient querying and analysis.
+    
+    \item \textbf{Analytics Database (Private Cloud or Dedicated Server):}
+    The Analytics Database, which stores user behavior and system usage data, should be deployed on a private cloud or dedicated server. This keeps the data secure and allows for efficient access by the Analytics Server.
+    
+    \item \textbf{LaTeX Rendering (Private Cloud or Dedicated Server):}
+    The LaTeX Rendering component should be deployed on a private cloud or dedicated server to handle the rendering of mathematical expressions into LaTeX code. This ensures better control over the rendering process and allows for scalability.
+    
+    \item \textbf{User Database (Private Cloud or Dedicated Server):}
+    The User Database, which stores user account information, should be deployed on a private cloud or dedicated server to ensure the security and privacy of user data.
+    
+    \item \textbf{Image Processing (Private Cloud or Dedicated Server):}
+    The Image Processing component, which performs tasks like noise reduction, binarization, and normalization, should be deployed on a private cloud or dedicated server. This allows for efficient processing and scalability of the image preprocessing tasks.
+\end{enumerate}
+
+\section{Deployment Patterns and Styles Analysis}
+Based on the identified components and the chosen deployment models and nodes, the following deployment patterns and styles can be applied to the Mathpix system:
+
+\subsection{Client-Server Pattern}
+The Mathpix system can follow a client-server pattern, where the client applications (web, mobile, and desktop) interact with the server-side components through the API Gateway. The client applications send requests to the server, which processes them and returns the appropriate responses. This pattern allows for a clear separation of concerns between the client and server, enabling scalability and maintainability.
+
+\subsection{Microservices Architecture}
+The Mathpix system can be designed using a microservices architecture, where the system is decomposed into smaller, loosely coupled services. Each component, such as the OCR Service, LaTeX Rendering, Image Processing, and various databases, can be developed and deployed as independent microservices. This architecture promotes modularity, flexibility, and scalability, as each microservice can be scaled and updated independently based on the specific requirements.
+
+\subsection{API Gateway Pattern}
+The API Gateway acts as the entry point for all client requests and serves as a single interface to the underlying microservices. It handles request routing, composition, and protocol translation. The API Gateway can also implement cross-cutting concerns such as authentication, rate limiting, and caching. This pattern simplifies client communication and provides a unified API for the Mathpix system.
+
+\subsection{Database per Service Pattern}
+Each microservice in the Mathpix system can have its own dedicated database, following the Database per Service pattern. This allows each service to have its own data model and schema, optimized for its specific requirements. The User Database, Input Database, Metrics \& Logs Database, and Analytics Database can be deployed separately and accessed by their respective services, ensuring data isolation and scalability.
+
+\subsection{Event-Driven Architecture}
+The Mathpix system can incorporate an event-driven architecture to enable asynchronous communication between microservices. Events can be used to trigger actions and data flow between services. For example, when an image is processed by the OCR Service, it can publish an event containing the extracted text. The LaTeX Rendering service can subscribe to this event and render the LaTeX code asynchronously. This pattern promotes loose coupling and enables scalability and fault tolerance.
+
+\section{Deployment Tactics Evaluation}
+To achieve specific quality attributes in the Mathpix system, the following deployment tactics can be evaluated:
+
+\subsection{Horizontal Scaling}
+Horizontal scaling can be applied to improve the performance and scalability of the Mathpix system. The API Gateway, OCR Service, and LaTeX Rendering components can be deployed across multiple instances, with a load balancer distributing the incoming requests among them. This allows the system to handle increased traffic and ensures high availability. Kubernetes or other container orchestration platforms can be used to manage the deployment and scaling of these components.
+
+\subsection{Caching}
+Caching can be implemented at various levels to improve the performance and reduce the load on the backend services. The API Gateway can include a response cache to store frequently accessed results, such as rendered LaTeX code or recognized text. This reduces the need to process the same requests repeatedly. Additionally, the LaTeX Rendering service can maintain a cache of rendered expressions to serve them quickly for subsequent requests. Caching can significantly improve response times and reduce the overall system load.
+
+\subsection{Monitoring and Logging}
+Comprehensive monitoring and logging should be implemented to ensure the reliability and observability of the Mathpix system. The Monitoring \& Analytics Server can collect metrics and logs from various components and store them in the Metrics \& Logs Database. This allows for real-time monitoring of system health, performance, and usage. Tools like Prometheus and Grafana can be used for collecting and visualizing metrics, while the ELK stack (Elasticsearch, Logstash, Kibana) can be employed for centralized logging and analysis. Alerts can be set up based on predefined thresholds to proactively identify and resolve issues.
+
+\section{Deployment Diagram}
+\subsection{Creating the Diagram}
+Explain the process of creating the deployment diagram. Note: You can include the actual diagram using the \texttt{\textbackslash includegraphics} command.
+\subsection{Diagram Description}
+Provide a detailed description of the deployment diagram, covering how components are deployed onto the chosen models and nodes, and how this incorporates the chosen patterns, styles, and tactics.
+
+\section{Report}
+\subsection{Analysis Summary}
+Summarize the analysis performed, including the rationale for choosing specific deployment patterns, styles, and tactics.
+\subsection{Alignment with System Requirements and Quality Attributes}
+Discuss how these choices align with the system requirements and quality attributes.
+
+\section{Conclusion}
+Summarize the key findings of your analysis and any conclusions drawn from the deployment viewpoint of the chosen software system.
+
+\end{document}
