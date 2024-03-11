@@ -133,7 +133,7 @@ These services will be allocated each in their own environment and possibly in d
     \item \textbf{Physical Board software}: this is just a software that can interface with the climbers phone app via bluetooth, receive a problems data and light LED lights accordingly. In the future this could become a full-fledged service, allowing for a board interface, real-time problem sharing and perhaps network connection, instead of bluetooth.
 \end{itemize}
 
-\subsection*{Database per Service}
+\subsection{Database per Service}
 As a consequence of choosing a microservices architecture is the loose coupling of services. Some services might require querying datas related with other services, and different services might require diffrent data storage methods.
 The \textit{Database per Service} pattern solves these problem by prescribing the following:
 \begin{itemize}
@@ -149,16 +149,18 @@ Consistently with the choice of using serverless computing, we can also use serv
 
 In this Section tactics for managing the deployment pipeline and the deployed system are discussed.
 
-\subsection*{Deployment Pipeline tactic: Scale rollouts}[\textit{Related QA:  Deployability}]
+\subsection{Deployment Pipeline tactic: Scale rollouts}[\textit{Related QA:  Deployability}]
 This tactic involves deploying a new version of a service gradually, to a subset of the population rather than to the entire user base, without explicitely notifying them. As a consequence, the effect of the update can be monitored and in case rolled back. This ensures a lower impact when realising a malfunctioning or bugged update of a service. As such it can improve \textit{deployability} without sacrificing \textit{availability} and \textit{usability} for the whole user base.
 It can also be used to collect feedback from the user experimenting the new version.
-\subsection*{Deployed System management tactic:Feature toggle}[\textit{Related QA: Deployability}]
+
+\subsection{Deployed System management tactic: Feature toggle}[\textit{Related QA: Deployability}]
 This tactic consist of integrating a "kill switch" into the application, in order to deactived a feature in the system at runtime, without having to restart the deployment. It reliefs some of the responsibilities from testing.
-\subsection*{Encapsulation}[\textit{Related QA: Integrability}]
+
+\subsection{Encapsulation}[\textit{Related QA: Integrability}]
 Encapsulation consist of having an explicit interface to an element and ensuring that any access to the element goes through the interface. It ensures internal parts of an element are not exposed and allows for similar elements to be seamlessy integrated in the system, provided that they implement the same interface. It also allows to expose different part of an element to different external accessors (if the element implements many interfaces).
 
 \section{Deployment model}
-\subsection*{Deployment nodes}
+\subsection{Deployment nodes}
 In this Section we list the deployment nodes of the system. As discuss in the previous section, each service should have its own FaaS environment dedicated, and each one its corresponding database (one or more).
 First the processing nodes are listed:
 \begin{itemize}
@@ -180,7 +182,7 @@ The client nodes can be the following:
     \item Laptops: the application can also be accessed by laptop, also from Gyms.
 \end{itemize}
 
-\subsection*{Deployment diagram}
+\subsection{Deployment diagram}
 
 The list of elements in the below diagram is in the previous section. The requirements of the environments are not listed, as they are able to scale according to needs and are handled directly by the cloud provider.
 While infrastructure is managed by the cloud provider, some function configurations are needed in FaaS, such as:
