@@ -1,13 +1,13 @@
 DECISION ON SCANNING
 - user state module
 - what do we scan?
-    - on method correspond to one authorization processes
+    - one method correspond to one authorization processes
     - QR can work for tickets/physical cards/app
-    - bank card need bank plugin
-    - NFC auth is fancy but might add complications (maybe same tech as tapping card?)
+    - bank card tapping need tokenization services
+    - NFC auth is fancy but might add complications (same tech as tapping card => we want it)
 
 - Decision:
-    - QR for ticket/app/fillable/nominal + bank cards + NFC if it doesnt add too much complication (TODO)
+    - QR for ticket/app/fillable/nominal + bank cards / NFC (tapping)
 
 - Consequences:
     - we consider an ID linked to account or signle ticket or fillable card -> just one module for account management
@@ -26,5 +26,21 @@ DECISION ON PAYMENT
 
 STATE MANAGEMENT
 - turnstiles need to allow exit or not
-
+- entry turnstiles communicate with the user state module which alert all the exit turnstiles
+- option1: every entry turnstile updates the user state instantaneously, every turnstile queries the user state modul upon exit
+- option2: for every station there is an intermediary server which gets updated and updates only the turnstiles in a particular station. The user state module is used to mediate communication between different station and dont need instantaneous updates (only every x minutes: minimum time between two stations) 
+- how many turnstiles per intermediary (on average or in the peak hours)? 2 per second per turnstile => if it is 1000 requests per second per server => maximum of 500 turnstiles per intermediary 
+- choice depends on estimate if the user state server can handle the number of requests per second
 INFORMATION DIAGRAM
+
+GRANULARITY IN CONTEXT: do we have it?
+MAPPING BETWEEN CONTEXT AND FUNCTIONAL: is it clear?
+
+- Assumption are killing: who does what
+- cloud communication (what if no connection) => tactics (redundancy: keeping backups locally...)
+- waiting times
+- cloning of cards?
+- customer journey?
+- correlation between views: are they consistent?
+- most important Decision
+- storyline in presentation
