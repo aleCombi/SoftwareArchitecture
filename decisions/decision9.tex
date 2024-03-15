@@ -2,45 +2,69 @@
 
 \subsection*{Status}
 Review
-\subsection*{Architectural Summary}
 
+\subsection*{Architectural Summary}
+The system will offer multiple options for account management and authentication to accommodate the preferences and needs of diverse user groups, including commuters, tourists, and casual riders. This strategy aims to streamline the user experience while enhancing security and operational efficiency.
 
 \subsection*{Concern}
-\subsubsection*{User stories}
+Ensuring a secure, user-friendly, and efficient process for account creation, management, and authentication for a variety of users, while maintaining data privacy and system integrity.
 
 \subsection*{Context}
-\subsubsection*{QA Scenario} % not always needed I believe
+The TrIP system requires a flexible and secure method for user authentication that accommodates various levels of user interaction and convenience. The chosen solution must integrate seamlessly with the existing ticketing and payment infrastructure and support a range of devices and technologies used by passengers.
+
 \subsection*{Criteria}
-% \begin{itemize}
-% \end{itemize}
+\begin{itemize}
+    \item Secure storage and handling of personal and financial data.
+    \item Ease of account creation and management for users.
+    \item Seamless integration with existing turnstile and payment systems.
+    \item Flexibility to support different methods of authentication, including cards and digital wallets.
+    \item High availability and reliability of the authentication system.
+\end{itemize}
 
-Get online account, how to open account (at terminal, online, app), how to make the turnstile/controller know that you have the account (anonymous card, bank card, nominal card, nfc).
+\subsection*{Option 1: Anonymous card}
+\begin{itemize}
+    \item \textbf{Pro:} Ensures user privacy and quick adoption for casual users.
+    \item \textbf{Con:} Limited capabilities for account management and tracking user history.
+\end{itemize}
 
-\subsection*{Option 1: anonymous card}
-\subsection*{Option 2: bank credit card}
-Pay at the terminal
-\subsection*{Option 3: phone app}
-You can payonline and create accounts, you can scan qr code from the app or nfc (google wallet) at turnstiles.
+\subsection*{Option 2: Bank credit card}
+\begin{itemize}
+    \item \textbf{Pro:} Streamlines payment process by integrating with existing financial systems.
+    \item \textbf{Con:} Relies on external systems, which may pose integration challenges and dependency risks.
+\end{itemize}
 
-\subsection*{Option 4: nominal card}
-Pay at terminal, get account and card, scan it at turnstiles. Access online account via browser. (possibly mix with opt 3)
+\subsection*{Option 3: Phone app}
+\begin{itemize}
+    \item \textbf{Pro:} Provides a versatile platform for account management, payments, and ticket validation via QR codes or NFC.
+    \item \textbf{Con:} Requires smartphone access, possibly excluding certain user demographics.
+\end{itemize}
 
-\subsection*{Option 5: NFC reader/google wallet}
+\subsection*{Option 4: Nominal card}
+\begin{itemize}
+    \item \textbf{Pro:} Offers a physical, personalized token for account access and ticket validation.
+    \item \textbf{Con:} May introduce additional costs for production and distribution of cards.
+\end{itemize}
 
+\subsection*{Option 5: NFC reader/Google Wallet}
+\begin{itemize}
+    \item \textbf{Pro:} Leverages existing NFC technology in smartphones for easy tap-and-go access at turnstiles.
+    \item \textbf{Con:} Implementation cost and required NFC-capable turnstiles may be high.
+\end{itemize}
 
-\subsubsection*{User Stories}
 \subsection*{Decision}
-app (with nfc, connected to bank account) + fillable card (for tourists, anoymous) + physical nominal card.
-Deciding to have everything can require a lot of work: is it justified?
+The decision is to implement a hybrid approach, integrating a phone app (with NFC capabilities and linked to bank accounts) for regular users, along with an anonymous fillable card for tourists and a physical nominal card for those who prefer or require a physical token. The hybrid approach balances convenience with coverage for all user types.
 
-We want to scan either credit cards or QR code at scanning devices:
-    - bank plugin that gives an ID of the card (connected to account or not) 
-    - qr code on a ticket / TRIP card / app generated / fillable card
-% TODO: discussion about pros/cons and user stories, depending on given prios of stakeholders and previous decision.
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
-% \begin{itemize}
-% \end{itemize}
+\begin{itemize}
+    \item Provides a comprehensive solution covering the needs of various user groups, increasing system accessibility and user satisfaction.
+    \item Enhances security by offering multiple authentication methods, each with its own set of security protocols.
+    \item Encourages digital transformation and supports a move towards a more contactless, efficient user experience.
+\end{itemize}
 \textbf{Negative Consequences:}
-% \begin{itemize}
-% \end{itemize}
+\begin{itemize}
+    \item May increase complexity and cost of the system, both in development and maintenance.
+    \item The need to support multiple authentication methods can complicate infrastructure and operational processes.
+    \item Potential resistance from users who are less technologically adept or prefer traditional methods.
+\end{itemize}
+This decision supports the TRIP system's objective to provide a secure, convenient, and inclusive environment for all types of users while recognizing the need to manage operational and development complexities.
