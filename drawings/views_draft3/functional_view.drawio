@@ -5,10 +5,10 @@
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="241" value="" style="whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=0;opacity=50;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
-                    <mxGeometry x="280" y="380" width="860" height="560" as="geometry"/>
+                    <mxGeometry x="280" y="270" width="860" height="670" as="geometry"/>
                 </mxCell>
                 <mxCell id="45" value="&lt;b&gt;User&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=80;" parent="1" vertex="1">
-                    <mxGeometry x="130" y="340" width="90" height="610" as="geometry"/>
+                    <mxGeometry x="130" y="270" width="90" height="680" as="geometry"/>
                 </mxCell>
                 <mxCell id="217" value="Complaints verification" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=classic;endFill=1;startArrow=classic;startFill=1;" parent="1" source="85" target="114" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -129,16 +129,18 @@
                     <mxGeometry x="437.5" y="980" width="702.5" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="114" value="Customer service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=80;" parent="1" vertex="1">
-                    <mxGeometry x="280" y="250" width="140" height="80" as="geometry"/>
+                    <mxGeometry x="280" y="155" width="140" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="216" value="Updates timetable / requests data for analysis" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="215" target="85" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="216" value="Updates timetable / requests data for analysis" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" target="85" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="790" y="360" as="sourcePoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="215" value="&lt;b&gt;Tycoon&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=80;" parent="1" vertex="1">
-                    <mxGeometry x="437.5" y="250" width="702.5" height="80" as="geometry"/>
+                    <mxGeometry x="438.75" y="155" width="702.5" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="238" value="&lt;h1&gt;Functional view - TRIP System&lt;/h1&gt;" style="text;strokeColor=none;align=left;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="130" y="180" width="670" height="30" as="geometry"/>
+                    <mxGeometry x="130" y="100" width="670" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="243" value="&lt;h1&gt;&lt;b&gt;&lt;font color=&quot;#080808&quot;&gt;TRIP SYSTEM&lt;/font&gt;&lt;/b&gt;&lt;/h1&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="1" vertex="1" connectable="0">
                     <mxGeometry x="1065" y="900" as="geometry">
@@ -167,6 +169,12 @@
                 </mxCell>
                 <mxCell id="297" value="Single Tickets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="718.75" y="620" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="303" value="Updates timetable / requests data for analysis" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=block;startFill=1;" edge="1" parent="1" source="301" target="215">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="301" value="Tycoon API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="718.75" y="280" width="140" height="80" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
