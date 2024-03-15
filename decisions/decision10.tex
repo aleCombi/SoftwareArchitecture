@@ -27,10 +27,10 @@ The system also need to give acces to some information to the tycoon, with prope
     \item data from the turnstiles scanners. 
 \end{itemize}
 
-Scalability here is an important concern, as this data needs to be provided, required and stored by the system for different tycoons.
+Scalability here is an important concern, as this data needs to be provided, requested and stored by the system for different tycoons.
 After Event 1, the priority for \textit{Scalability} has been set to two, so the system needs to be flexible enough to easily access new tycoons also from different kind of transport.
 
-Also \textit{security} and \textit{privacy} here are paramount, as only the scrictly necessary and allowed information can be exposed.
+Also \textit{security} and \textit{privacy} here are paramount, as only the strictly necessary and allowed information can be exposed.
 
 \subsubsection*{User stories}
 
@@ -107,6 +107,6 @@ Also availability is can be better with option 1, as we cannot ensure high avail
 \textbf{Negative Consequences:}
 \begin{itemize}
     \item Potential resistance from some tycoons (we could mitigate by providing technical support);
-    \item API stabiliy: updates to our API might require changes from many tycoons, therefore the API will be by definition difficult to modify. Also here a proper technical support could be provided to mitigate the issue.
+    \item API stability: updates to our API might require changes from many tycoons, therefore the API will be by definition difficult to modify. Also here a proper technical support could be provided to mitigate the issue.
     \item Data management overhead: we need data storage and backup and security concerns. Storing payment data can be done in an anonymized way using tokenization services.
 \end{itemize}
