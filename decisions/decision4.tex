@@ -83,11 +83,18 @@ The Integrated Subscription-Route Optimization Service (IS-ROS) combines the fun
     \item \textbf{Failures have larger impact} May lead to higher dependency on a single system, which can be a point of failure if the system goes down.
 \end{itemize}
 
+\subsection*{Option 3: Include a Single-Ticket management module}
+Abstractly, a single ticket can be seen as an account that expires once the journey is completed. As an account, it is linked to a user via its personal data, if it is related to a booking or via 
+an anonymous user ID if it is not.
+Its temporary nature though causes different needs for information storage and flow, as updates for single tickets occurs often.
+Hence the need for a separated module and a related database.
+
 \subsection*{Decision}
 We decided to pick Option 1. The increased concern for scalability, caused by event 1, points clearly to the listed pros of this option. Furthermore, the focus on modularity
 gives us easy maintenability, which is important for the TRIP owner.
 Performance in this case doesn't seem to be that central, as optimization of routes should be precomputed and cached, given that timetables should not change often and that subscription have relatively long lasting periods.
 With our option, we still have the flexibility to assign more computational or data access resources to the module who needs them the most.
+We also include Option 3, as we think Single Tickets remain central to achieve the Usability required by stakeholders who are less familiar with technology such as smartphone apps or are travelling only occasionally.
 
 \subsection*{Consequences}
 \subsection*{Positive Consequences}
@@ -96,6 +103,7 @@ With our option, we still have the flexibility to assign more computational or d
     \item \textbf{Enhanced Scalability:} Modular design facilitates easy scaling and integration of new features.
     \item \textbf{Improved Maintainability:} Simplifies updates and troubleshooting, allowing for technology-specific optimizations within each module.
     \item \textbf{Reduced System-wide Failure Risk:} Isolates failures to individual modules, enhancing overall system reliability.
+    \item \textbf{Enhanced Usability for Single-Ticket buyers:} A specific module allows good handling of their needs with a high performance DB.
 \end{itemize}
 
 \subsection*{Negative Consequences}

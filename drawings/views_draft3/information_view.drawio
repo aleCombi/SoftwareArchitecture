@@ -153,6 +153,9 @@
                 <mxCell id="348" value="Tickets DB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
                     <mxGeometry x="920" y="400" width="150" height="80" as="geometry"/>
                 </mxCell>
+                <mxCell id="399" value="&lt;h1&gt;Information View&lt;/h1&gt;" style="text;strokeColor=none;align=left;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="110" width="670" height="30" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
