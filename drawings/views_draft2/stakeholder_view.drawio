@@ -181,7 +181,7 @@
                 <mxCell id="278" value="Testability" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="465" y="-386" width="160" height="45" as="geometry"/>
                 </mxCell>
-                <mxCell id="279" value="Accesibility" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
+                <mxCell id="279" value="Accessibility" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="465" y="-326" width="160" height="45" as="geometry"/>
                 </mxCell>
                 <mxCell id="282" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;startArrow=none;startFill=0;endArrow=none;endFill=0;fillColor=#d80073;strokeColor=#A50040;" parent="1" source="268" edge="1">
