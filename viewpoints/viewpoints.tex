@@ -62,7 +62,7 @@
     1 & User & End-users of the TRIP SYSTEM who interact with various system components to manage their travel experience. \\
     2 & Customer Service & The interface for users to make inquiries or complaints and receive assistance with bookings or account issues. \\
     3 & Tycoon & The administrative or business logic module that updates timetables and analyzes system data for improvements or reporting. \\
-    4 & Database & The central repository that stores all system data including user accounts, bookings, and payment information. \\
+    4 & Database & An abstraction for the set of databases that stores all system data including user accounts, bookings, and payment information. Detailed information about how different databases are handled is detailed in the Information View.\\
     5 & Bookings & The system component where users can inquire about seat availability and make reservations. \\
     6 & Accounts (Subs) & The system managing user accounts and subscriptions, responsible for authorization checks and account data logging. 
     It is is also responsible for single tickets and fillable cards, as they can be seen as temporary and anonymous accounts. \\
@@ -95,7 +95,7 @@
     4 & User State & A system component that maintains the current state of the user within the system, including authorization and access rights, which is updated upon user interaction with the turnstile. \\
     5 & Ticket Checker (Account Manager) & An agent or system role similar to the account manager that requests or grants authorization for user access, potentially by checking the user state against the database. \\
     6 & Accounts (Subs) & The subsystem managing user accounts and subscriptions, which may interact with the turnstile and ticket checker to verify and update user access rights. \\
-    7 & Database & The central storage for the trip system, which records user states, transactions, and account details. It receives updates from various system components and provides information to authorize user access. \\
+    7 & Database & An abstraction for the set of databases that stores all system data including user accounts, bookings, and payment information. Detailed information about how different databases are handled is detailed in the Information View.\\
     \bottomrule
     \end{tabular}
     \caption{Glossary of elements for the Functional View - Turnstiles, detailing the components and their roles in user access and authorization within the TRIP SYSTEM.}
