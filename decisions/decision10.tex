@@ -6,36 +6,107 @@ Open.
 
 
 \subsection*{Concern}
-Scalability is a concern, a data update can also be the addition of a tycoon.
+The system needs to receive information and updates from the tycoons. 
+This can be for instance:
+\begin{itemize}
+    \item train or buses time tables;
+    \item static data like stations ownership and connections (static meaning that it changes less often than other information);
+    \item last-minute updates like disruptions, delays, interruptions.
+\end{itemize}
+The information above are necessary for the following quality attributes:
+\begin{itemize}
+    \item \textit{reliability} of the system required by the tycoons (priority 2), as passengers needs to always be able to pay for their travels (hence updated timetables are important);
+    \item \textit{usability} of the system for the passengers (priority 2), who wants as few actions on their own initiative as possible;
+\end{itemize}
+
+The system also need to give acces to some information to the tycoon, with proper care to not expose information from other tycoons:
+\begin{itemize}
+    \item payment received by subscribers;
+    \item bought tickets;
+    \item booking information;
+    \item data from the turnstiles scanners. 
+\end{itemize}
+
+Scalability here is an important concern, as this data needs to be provided, required and stored by the system for different tycoons.
+After Event 1, the priority for \textit{Scalability} has been set to two, so the system needs to be flexible enough to easily access new tycoons also from different kind of transport.
+
+Also \textit{security} and \textit{privacy} here are paramount, as only the scrictly necessary and allowed information can be exposed.
+
 \subsubsection*{User stories}
 
 \subsection*{Context}
-Databases and APIs are concerned.
+The systems keeps data stored on multiple databases. 
+Some of them needs to give some degree of access to the tycoons and the customer service of the TRIP system:
+\begin{itemize}
+    \item Tickets database;
+    \item Payments database;
+    \item Accounts and subscriptions database;
+\end{itemize}
+
+Others needs to let the tycoon feed them, such as the Timetable databases, which holds information about train schedules,
+prices and bookings.
+
 \subsubsection*{QA Scenario} % not always needed I believe
 Consider the scenario of adding/removing a tycoon, adding/removing routes and stations.
 \subsection*{Criteria}
-% \begin{itemize}
-% \end{itemize}
+\begin{itemize}
+    \item Data correctness in the system, expecially after event 2.
+    \item Ease of use from the tycoons to update the system and get data for analytics.
+    \item Performance and availability: data should flow into the system with reasonable speed.
+    \item Adding new tycoons should be easy.
+\end{itemize}
 
-\subsection*{Option 1: We impose the tycoons an API and ask them to give updates, which we store in a database}
-Pro: you can precompute optimized routes.
-Pro: if database is updated often enough by tycoons, info is almost realtime
-Con: database needs to be managed
+\subsection*{Option 1: Tycoon API for interactions with databases}
 
-\subsection*{Option 2: We ask information on the fly and impose a queryable format or implement an API for each of them}
-Pro: almost real-time update
-Con: can't precompute
+We can add a layer between the TRIP system and the Tycoons, as an API which gives a set of querying rights to tycoons to export the data they need and forces them a format of data to be provided.
 
-\subsection*{Decision}[\textit{Sketch}]
-We want db:
-- performance (=> usability)
-- availability 
-- integrability
+Forcing tycoons to a certain format is possible because both bus and train system can be abstracted to a graph, where nodes are stations and edges are connections.
+They both have times for connections and prices to submit, together with bookings availabilities.
+\subsubsection*{Pros}
+\begin{itemize}[noitemsep]
+    \item \textbf{Scalability}: by forcing a format of queries and data submission, we abstract away from the specifics of a way tycoons provide their connection services.
+    \item \textbf{Maintainability}: we let our system have its own independent and unique data representation, ensuring a common data format.
+    \item \textbf{Performance}: Routes optimization can be precompute with timetables and only updated when new information come from the tycoond.
+\end{itemize}
+\subsubsection*{Cons}
+\begin{itemize}[noitemsep]
+    \item \textbf{Usability} for the tycoon: Interfacing with an API needs some work from the tycoons IT department, to ensure the TRIP system is properly updated.
+    \item \textbf{Operational cost}: storing lots of information on the TRIP system requires the management of multiple databases.
+\end{itemize}
+
+
+\subsection*{Option 2: Real time information requests to tycoon systems and tycoon-specific API}
+Also asking data from tycoons periodically from the system is a possibility. In this case the TRIP system is
+responsible for the data querying and feeding, thus it should be able to interact with each tycoon system with a specific API.
+\subsubsection*{Pros}
+\begin{itemize}[noitemsep]
+    \item \textbf{Usability}: The system can provide almost real-time to users, only limited by the technical capabilities of tycoons systems.
+    \item \textbf{Operational costs}: The system doesn't need to store as much information, as it can pass it to the tycoons, let them store it and then cancel it.
+\end{itemize}
+\subsubsection*{Cons}
+\begin{itemize}[noitemsep]
+    \item \textbf{Maintainability} and \textbf{Scalability}: This requre a lot of implementation every time a new tycoon enters.
+\end{itemize}
+
+\subsection*{Decision}
+As the importance of scalability has been increased by event 1, Option 1 seems the most natural.
+Furthermore, operational cost has reduced importance after event 2, which limits the cons of option 1.
+It ensures high integrability of the system with the tycoons and customer services systems.
+Also availability is can be better with option 1, as we cannot ensure high availability of tycoon system, while we can deploy tactics to ensure our own databases availabiliy. The specific choice of tactics will require a future decision.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
-% \begin{itemize}
-% \end{itemize}
+\begin{itemize}
+    \item Adding new tycoons would be easy for the TRIP system.
+    \item Standardized data is exchanged and managed.
+    \item Load management efficiency: the TRIP system is responsible for its own load management, instead of relying on tycoons systems.
+    \item High accuracy of data thanks to standardization.
+    \item Tycoons can potentially share analytical tools, having all the same interface.
+    \item API acts as a gatekeeper, to keep tycoons from accessing to unwanted information. This should be reflected on future decisions meant at defining specific tactics.
+\end{itemize}
 \textbf{Negative Consequences:}
-% \begin{itemize}
-% \end{itemize}
+\begin{itemize}
+    \item Potential resistance from some tycoons (we could mitigate by providing technical support);
+    \item API stabiliy: updates to our API might require changes from many tycoons, therefore the API will be by definition difficult to modify. Also here a proper technical support could be provided to mitigate the issue.
+    \item Data management overhead: we need data storage and backup and security concerns. Storing payment data can be done in an anonymized way using tokenization services.
+\end{itemize}
