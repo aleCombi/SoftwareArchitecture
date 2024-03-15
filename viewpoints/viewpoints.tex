@@ -102,7 +102,7 @@
     \label{tab:glossary_turnstiles}
 \end{table}
 
-\section*{Information Viewpoint}
+\section{Information Viewpoint}
 
 \begin{figure}[H]
     \centering
@@ -110,25 +110,29 @@
     \caption{Information view.}
     \label{fig:information_view}
 \end{figure}
-\begin{table}[ht]
-\centering
-\begin{tabular}{@{}llp{10cm}@{}}
-\toprule
-\textbf{Id} & \textbf{Name} & \textbf{Description} \\
-\midrule
-1 & Bookings & Component responsible for managing booking requests and tracking the number of spots left for each train. \\
-2 & Tycoon & Module that determines the timetable and prices for specific routes and interacts with the bookings database for updates. \\
-3 & Routes & Component that manages route information and calculates prices for the services offered. \\
-4 & Accounts (subs) & System managing account and subscription info, handling requests or updates in the accounts/subscribers database. \\
-5 & Payments & Component processing payment transactions and handling requests or updates in the payments database. \\
-6 & Timetable + Prices + Bookings DB & A database storing timetables, pricing, and current bookings for services. \\
-7 & Optimized Routes DB & A database containing the optimized routes cached after being calculated by the Routes Optimization Module. \\
-8 & Accounts/Subs DB & A database containing info about the accounts and their subscriptions. \\
-9 & Payments DB & A database recording completed payments, accessible for queries such as complaints or refunds. \\
-\bottomrule
+\begin{table}[H]
+    \centering
+    \caption{Legend for the Information View of the TRIP SYSTEM.}
+    \label{tab:information_view_legend}
+    \begin{tabular}{@{}llp{10cm}@{}}
+    \toprule
+    \textbf{Id} & \textbf{Name} & \textbf{Description} \\
+    \midrule
+    1 & Timetable + Prices + Bookings DB & The database where travel schedules, prices, and booking details are stored. \\
+    2 & Bookings & Interface for users to manage their booking requests and view current bookings. \\
+    3 & Terminal / App / Website & User interfaces for accessing booking, route, and payment information. \\
+    4 & Routes & Component that contains information about the travel routes and helps in finding the optimal routes. \\
+    5 & Optimized routes DB & Database storing the most efficient travel routes available. \\
+    6 & Accounts/Subs DB & Database for managing user accounts and subscription details. \\
+    7 & Tickets DB & Database where ticket purchases are recorded. \\
+    8 & Payments DB & Database that records and processes payment transactions. \\
+    9 & Accounts (Subs) & Management system for user accounts and subscriptions. \\
+    10 & Single-Ticket & Interface for purchasing individual tickets. \\
+    11 & Periodic payments & System handling regular subscription fee transactions. \\
+    12 & Payments & System that processes immediate payment transactions. \\
+    13 & Processed payments & Record of all completed payment transactions. \\
+    \bottomrule
 \end{tabular}
-\caption{Glossary of elements for the Functional View - Databases, detailing the components and databases of the TRIP SYSTEM.}
-\label{tab:glossary_elements}
 \end{table}
 
 \begin{figure}[H]
@@ -137,6 +141,23 @@
     \caption{Information view related to the scanning procedure.}
     \label{fig:information_view_scanning}
 \end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{Legend for the Scanning Procedure in the Information View of the TRIP SYSTEM.}
+    \label{tab:scanning_procedure_legend}
+    \begin{tabular}{@{}llp{10cm}@{}}
+    \toprule
+    \textbf{Id} & \textbf{Name} & \textbf{Description} \\
+    \midrule
+    1 & User & The starting point representing the individual using the TRIP SYSTEM. \\
+    2 & Turnstile & The physical or virtual entry point where the user scans to gain access. \\
+    3 & Update / Authorize & The process that updates the system and authorizes the user to proceed. \\
+    4 & User State & The current status of the user within the system, which is updated after scanning. \\
+    5 & User State DB & The database that records the state information of the user. \\
+    \bottomrule
+\end{tabular}
+\end{table}
 
 \section*{Concurrency Viewpoint}
 
