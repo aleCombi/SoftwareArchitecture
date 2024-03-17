@@ -1,0 +1,18 @@
+Intro 
+
+Context view
+
+- show the drawing
+- main elements: tycoons, customer service, tycoon financial analysts, bank, trip owner,
+scanners (turnstiles, controllers), terminals (physical, web app, phone app), banks, physical infrastructure
+
+- main decisions:
+    - insert financial analysts to stress a need tycoon might have
+    - abstract turnstiles as anything that scans tickets / cards (might be controller), as they need interaction with the same functional elements (user state)
+    - abstract terminals as any means of buying tickets, handle subs/accounts (can be app, website, terminal, ticket office)
+
+Functional view
+
+Information view
+
+Deployment view
