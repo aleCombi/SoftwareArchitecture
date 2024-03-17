@@ -13,6 +13,22 @@ scanners (turnstiles, controllers), terminals (physical, web app, phone app), ba
 
 Functional view
 
+- show the drawing 
+
+- elements: accounts, single-tickets, routes, payments, tycoons api, databases, bank, tycoon, user state
+- main decisions:
+    - remove the word management
+    - separated main view with turnstiles view
+    - in-house route optimization with precomputing
+    - abstracted data storing in this view
+    - let bank cards be scanned at turnstiles
+
 Information view
+
+- show the drawing
+- elements: same as functional + payments, tickets, accounts, optimized routes, timetables databases
+- main decisions:
+    - forcing a standard data format insertion with a tycoon API 
+    - payments are stored in an anonymized way (tockenization) for customer service needs / audit
 
 Deployment view
