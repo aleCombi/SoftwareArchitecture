@@ -2,7 +2,7 @@ Intro
 
 Stakeholder view
 
-
+- we linked main stakeholders with QAs
 
 Context view
 
