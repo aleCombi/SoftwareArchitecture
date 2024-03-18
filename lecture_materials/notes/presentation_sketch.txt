@@ -1,5 +1,9 @@
 Intro 
 
+Stakeholder view
+
+
+
 Context view
 
 - show the drawing
@@ -15,7 +19,14 @@ Functional view
 
 - show the drawing 
 
-- elements: accounts, single-tickets, routes, payments, tycoons api, databases, bank, tycoon, user state
+- database abstracted
+- accounts or single tickets
+- payments: one-off or periodic with card or cash, tokenization service to keep data anonymous
+- route optimization module uses data updated by tycoons
+- booking module to handle reservations
+- authentication: scanning cards or tickets at turnstiles => bank card, NFC, single ticket, fillable card, QR on phone app (usability)
+- user state module 
+
 - main decisions:
     - remove the word management
     - separated main view with turnstiles view
@@ -26,9 +37,26 @@ Functional view
 Information view
 
 - show the drawing
-- elements: same as functional + payments, tickets, accounts, optimized routes, timetables databases
+- divided databases matching functional elements that needs to access and modify them
+- interaction with tycoon:
+    - we force a data standard
+    - only interact via API => we prevent unwanted access to Information (maintenability, integrability, scalability)
+
+- optimization of routes => we periodically get data from tycoons, precompute optimizations 
+and cache it (best price, best times)
+
+- keep storage of data so financial analysis can be performed or audit or customer service
+
 - main decisions:
     - forcing a standard data format insertion with a tycoon API 
     - payments are stored in an anonymized way (tockenization) for customer service needs / audit
+    - cache optimized routes
+    - single tickets and accounts are conceptually similar but we separate due to data insertion frequency difference
+
+
+Main focus:
+    - route optimization and how data flow needs to work for that to be efficient
+    - why? 
+        main focus of users is to have a seamless integration between the existing systems (usability, performance)
 
 Deployment view
