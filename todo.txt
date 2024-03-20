@@ -16,3 +16,9 @@ HOMEWORK
 7) Prepare for architectural debate
 8) Decision 9 + context view granularity + info view legend (CA)
 9) Decision 10 + consequences in the info/functional view + update functional view legend(AC)
+10) User => passenger
+11) Do we need a QA scenario for each decision?
+12) Databases can be combined and access can be restricted if they are sharing some data (consistency)
+13) separate dbs from functional view
+14) how are revenues divided?
+15) Optimization messes with single tycoon business... how do you decides that?
