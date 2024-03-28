@@ -132,31 +132,46 @@ These token mechanisms ensure a clear, trackable, and enforceable system that al
 
 \section{Report on Blockchain Implementation Analysis}
 
-This section presents a concise analysis of the proposed blockchain implementation for Zillow's Lease Agreements and Transactions module. The report outlines the benefits of adopting blockchain technology, the rationale for selecting a specific blockchain category, and the design of smart contracts and tokens.
+This section presents a detailed analysis of the proposed blockchain implementation for Zillow's Lease Agreements and Transactions module. It outlines the benefits of adopting blockchain technology, the rationale for selecting a specific blockchain category, and the strategic design of smart contracts and tokens, aiming for a comprehensive understanding of blockchain's potential impact on Zillow's operations.
 
 \subsection{Benefits of Blockchain for Lease Agreements and Transactions}
-Blockchain technology offers several advantages for managing lease agreements and transactions on Zillow. With smart contracts, blockchain enables automated execution of agreements, significantly reducing manual intervention and the likelihood of disputes. The immutable nature of blockchain ensures that once a transaction is recorded, it cannot be altered, thus preventing fraud and enhancing the security of transaction records. 
+Blockchain technology provides several key advantages for managing lease agreements and transactions on Zillow:
 
-Moreover, the use of blockchain fosters transparency in transactions and allows for a decentralized audit trail. This transparency is not only beneficial for users but also aids in regulatory compliance and oversight. 
-
-\subsection{Blockchain Category Rationale}
-A Private, Permissioned Blockchain is identified as the most appropriate solution for Zillow's operations. This decision is supported by a detailed analysis, utilizing a decision flowchart to ensure the category's suitability. 
-
-The choice of a private, permissioned blockchain allows for managing access controls and maintaining privacy, which is crucial for the sensitive nature of real estate transactions. It enables the platform to authorize entities such as property owners, tenants, and Zillow administrators to transact and access information, while still leveraging the consensus mechanism to maintain integrity and consistency across the network.
-
-\subsection{Smart Contract Design}
-Smart contracts are designed to encode the terms of lease agreements, including identification details, payment terms, and conditions. These contracts govern the initiation and termination of leases, automate rent collections, handle security deposits, enforce penalties, and send notifications for renewals and due dates. The design rationale emphasizes the need for efficiency, transparency, and reducing potential conflicts inherent in lease management.
-
-\subsection{Token Design and Lifecycle}
-The implementation includes two types of tokens:
 \begin{itemize}
-    \item \textbf{Rent Tokens (Fungible):} Represent the rental payments and facilitate standardized transactions within the system.
-    \item \textbf{Security Deposit Tokens (Non-Fungible or Semi-Fungible):} Symbolize the security deposits and are held in escrow, providing a digital proof of commitment.
+    \item \textbf{Automated Agreement Execution:} Through smart contracts, blockchain facilitates the automatic execution of lease agreements, significantly reducing the need for manual intervention and minimizing disputes.
+    \item \textbf{Immutable Transaction Records:} Blockchain ensures the immutability of transaction records, enhancing security and preventing fraud by making it impossible to alter recorded transactions.
+    \item \textbf{Transparency and Decentralized Audit Trails:} The technology offers transparency in transactions, providing a decentralized audit trail that benefits users and supports regulatory compliance and oversight.
+    \item \textbf{Operational Efficiency:} The adoption of blockchain can streamline processes, potentially reducing the time and administrative burden associated with traditional lease management methods.
 \end{itemize}
 
-The lifecycle of these tokens is carefully mapped out from creation to transfer, and finally to redemption or release, ensuring a transparent and auditable process.
+\subsection{Blockchain Category Rationale}
+The selection of a Private, Permissioned Blockchain is based on a thorough analysis tailored to Zillow's specific needs:
+
+\begin{itemize}
+    \item \textbf{Privacy and Access Control:} This blockchain type is ideal for handling the sensitive nature of real estate transactions, allowing for robust management of access controls and privacy.
+    \item \textbf{Authorized Transactions:} It permits transactions and access to information by authorized entities, such as property owners, tenants, and Zillow administrators, ensuring a secure and controlled environment.
+    \item \textbf{Network Integrity and Consistency:} Leveraging the consensus mechanism within a private, permissioned setting maintains the network's integrity and consistency, crucial for real estate dealings.
+\end{itemize}
+
+\subsection{Smart Contract Design}
+The design of smart contracts for lease management is focused on encoding the complex terms of lease agreements and automating various operations:
+
+\begin{itemize}
+    \item \textbf{Terms and Conditions:} Contracts include detailed information such as property identifiers, parties involved, payment terms, and lease conditions.
+    \item \textbf{Lease Lifecycle Management:} From the initiation to the termination of leases, smart contracts automate rent collections, manage security deposits, enforce penalties, and send reminders for renewals and due dates.
+    \item \textbf{Conflict Reduction:} By automating and encoding lease terms, smart contracts aim to reduce potential conflicts inherent in lease management, offering a transparent and efficient solution.
+\end{itemize}
+
+\subsection{Token Design and Lifecycle}
+Two types of tokens are implemented to streamline transactions and ensure the integrity of security deposits:
+
+\begin{itemize}
+    \item \textbf{Rent Tokens (Fungible):} These tokens standardize rental payments, facilitating efficient and traceable transactions within the system.
+    \item \textbf{Security Deposit Tokens (Non-Fungible or Semi-Fungible):} Serve as digital proof of security deposits, with terms encoded in smart contracts, enhancing security and trust in escrow processes.
+    \item \textbf{Lifecycle Management:} The process for managing the lifecycle of tokens—from creation to transfer, and ultimately to redemption or release—is clearly defined, ensuring a transparent and auditable system.
+\end{itemize}
 
 \subsection{Conclusion}
-The integration of blockchain into Zillow's Lease Agreements and Transactions module is anticipated to enhance the security, efficiency, and transparency of the platform's operations.
+Integrating blockchain technology into Zillow's Lease Agreements and Transactions module is expected to significantly enhance the platform's security, efficiency, and transparency.
 
 \end{document}
