@@ -13,12 +13,15 @@ HOMEWORK
     - decision 13 (server/serverless) can be reserved for later, but info about the options is there and the format is decent.
 5) check if decisions match functional viewpoint (e.g. turnstiles) (AC) (DONE)
 6) Clarify Info, Concurrency, Deployment view
-7) Prepare for architectural debate
 8) Decision 9 + context view granularity + info view legend (CA)
 9) Decision 10 + consequences in the info/functional view + update functional view legend(AC)
 10) User => passenger
 11) Do we need a QA scenario for each decision?
 12) Databases can be combined and access can be restricted if they are sharing some data (consistency)
 13) separate dbs from functional view
-14) how are revenues divided?
-15) Optimization messes with single tycoon business... how do you decides that?
+14) how are revenues divided? 
+    - option1: tap cards onboard trains, so that revenue can be given to the tycoon operating each train 
+    - option2: get each tycoon a share of revenue based on the value of their subs+tickets (last year) => what about new ones
+    - option3: they negotiate shares
+15) Optimization messes with single tycoon business... how do you decide that?
+    
