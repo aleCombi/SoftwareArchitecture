@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{booktabs} % For formal tables
+
+\title{Laboratory Assignment 2: TradeWeb Software System}
+\author{Alessandro Combi}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+
+The TradeWeb software system is designed for the electronic trading of over-the-counter (OTC) derivatives. The platform facilitates the efficient, transparent execution of trades by connecting buyers and sellers through an electronic network, enabling them to execute trades more quickly and at potentially better prices than traditional methods.
+
+\section{Main functionalities}
+
+The main functionalities of the system are the following:
+\begin{itemize}
+    \item \textbf{Trading functionality:} Aallow to submit orders in the system or requests for quote (RFQ), or to match orders.
+    \item \textbf{Connectivity:} APIs for web interfaces, direct communication with the system or integration in third-party systems.
+    \item \textbf{Market data:} Services to retrieve market data in real-time from external sources.
+    \item \textbf{Reporting and compliance:} create reports for audits or risk management.
+\end{itemize}
+
+\section{Application of blockchain architecture}
+
+A good candidate for the application of a blockchain architecture is the trading functionality, and also the trades execution via the use of smart contracts.
+
+The main reason is that counterparties in OTC markets don't run trades through a central, trusted counterparty (as would be the case on public exchanges), but rather agree on the trades on a one-to-one basis. Furthermore, financial markets are required to comply with regulations regarding transparency, thus the immutability of data guaranteed by blockchain architectures would be particularly beneficial for government or central banks audits. Another crucial requirement of decentralized trade venues is security, as fraud and unauthorized accesses should be avoided. Blockchains help ensuring security with encryption and with a decentralized nature, so that potential fraudsters need to fraud the whole network rather than just one central node.
+
+A module where blockchain architecture is not suitable is the market data retrieval module. First of all, market data are retrieved by a small number of third-party sources. These sources are usually highly trusted among market participants. Even if this was not the case, the amount of market data needed for the execution of OTC derivatives would make for too much data for an efficient blockchain.
+
+\section{Blockchain category}
+
+\subsection{Private or public}
+Accounts in a blockchain for the handling of OTC derivatives trades should represent known financial institutions. This because OTC trades are done between two counterparties that need to easily retrieve information about each other (manly for trustworthiness, compliance and credit verifications) and because of legal regulations in place.
+Furthermore, participants in OTC derivatives markets often require that their trades are not publicly disclosed.
+The need for data privacy and selective transparency makes the choice of a private blockchain natural.
+
+\subsection{Permissioned or permissionless}
+The choice between permissionless and permissioned private blockchain implies the determination of who can participate in the consensus mechanisms, that is, who is allowed to publish new blocks.
+
+Private permissioned blockchains architecture, like Hyperledger Fabric, imply the existence of a consortium of entities which know each other and are allowed to see the blockchain and validate new blocks of transactions. This seem suitable to the OTC markets case, as the number of participants would be relatively limited, making the scalability of the system less of a concern. In this case, innovations in the system (such as new settlement methods or any kind of rules) are discussed internally between peers.
+
+The choice of a private, permissionless architecture on the other hand, could be implemented in a way that transactions can be seen only by a restricted number of nodes (privacy), but everyone can participate in creating smart contracts representing innovative kinds of derivatives (or at least propose them to the network), and in validation, through techniques like \textit{Zero knowledge proofs}.
+
+Which one is more suitable seeems like a software architecture decision that depends strictly on a political or business solution of the company developing the system. Given the current status of things in OTC markets, probably the permissioned choice is more likely, as privacy is easier to guarantee and compliance is guaranteed by the network operator (TradeWeb).
+
+In the table below we list the main requirements of such a system and how the two solutions face them.
+
+
+\begin{table}[h]
+    \centering
+    \caption{Comparison of Private Permissionless vs. Private Permissioned Blockchains}
+    \small % Making the font size smaller for the table
+    \begin{tabular}{>{\raggedright\arraybackslash}p{2.5cm} >{\raggedright\arraybackslash}p{4.5cm} >{\raggedright\arraybackslash}p{4.5cm}}
+    \toprule
+    \textbf{Requirement} & \textbf{Private Permissionless} & \textbf{Private Permissioned} \\
+    \midrule
+    Efficiency and Scalability & Challenging due to the number of nodes; innovations like sharding may help. & More efficient and scalable due to controlled access and fewer nodes. \\
+    \midrule
+    Regulatory Compliance & Compliance can be complex; requires innovative solutions for privacy. & Easier compliance with strict control over participants and transactions. \\
+    \midrule
+    Security and Privacy & Enhanced security with broader participation; privacy with cryptographic techniques. & Easier to manage with known and vetted participants. \\
+    \midrule
+    Modifiability (Innovation) & Encourages innovation with openness. & More controlled innovation, directed towards business needs. \\
+    \midrule
+    Governance & Distributed governance may slow down decision-making. & Centralized governance allows for quick and easy changes. \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+    
+
+\section{Smart Contracts and Tokens}
+
+Smart contracts facilitate the automation of trade settlement by performing condition checks, parameter validations, and facilitating the transfers of currency or assets, markedly improving efficiency by reducing the typical settlement period from days to virtually instantaneous. Additionally, these contracts are tasked with executing compliance checks and necessitate the use of an oracle to fetch external market data.
+
+Tokens are employed within the blockchain to represent various entities:
+
+\begin{itemize}
+    \item \textbf{Currency Flows:} Fungible tokens, for instance, stablecoins that back fiat currencies (USD, EUR, AUD, etc.), are utilized to facilitate payments within the blockchain, mimicking their non-token fiat counterparts.
+    \item \textbf{Trades:} Customized to meet the specific needs of the trading parties, trades are optimally represented by Non-Fungible Tokens (NFTs), which detail each party's role (e.g., payer or receiver in interest rate swaps).
+    \item \textbf{Securities:} To ease transactions within the blockchain, securities such as equity stocks or commodities are represented as fungible tokens, with each token encapsulating the specifics of the asset it represents.
+\end{itemize}
+
+\subsection{Example: Execution of an Interest Rate Swap (IRS) Trade}
+
+\begin{enumerate}
+    \item \textbf{Deployment:} The IRS smart contract is deployed to the blockchain, incorporating the trade's terms and responsible for issuing the IRS NFT, calculating payments, and overseeing lifecycle events.
+    \item \textbf{NFT Issuance:} At the initiation of the swap, the IRS NFT is issued, linking to the smart contract that governs the terms, signifying ownership and participation.
+    \item \textbf{Interest Payments:} Periodically, the smart contract calculates and transfers the due interest between parties, requiring an oracle for adjustments based on floating rates.
+    \item \textbf{Maturity Settlement:} A final settlement transaction is executed at the contract's maturity, concluding the swap.
+    \item \textbf{NFT Finalization:} The IRS NFT's status is updated to "settled" or "terminated," marking the end of its activity.
+\end{enumerate}
+
+\section{Considerations about the development viewpoint}
+The development in such a chain can happen in the form of smart contracts and tokens. 
+Smart contracts and tokens here mostly represent customizable OTC trades, so they need to be created ad-hoc by the participants. TradeWeb might require some constraint in the smart contracts (like interfaces to implement) and a testing phase, in order to ensure security, compliance and performance.
+
+When it comes to market data retrieval, the oracle, bridging between the chain and the outside world, needs to be developed in house by TradeWeb, while the actual data can be retrieved by external party services.
+
+\section{Considerations about the deployment viewpoint}
+In chains like Hyperledger Fabric, smart contracts are deployed within only some nodes of the blockchain, called endorsers, as these kind of blockchain distinguish between the chain (where all transactions are stored) and the ledger (where only confirmed transactions are stored).
+Endorsers help commit transactions to the ledger.
+
+Oracles instead need to be deployed off-chain, thus the a central entity (TradeWeb) needs to have highly efficient services for market data retrieval running. This can be done by third parties specialized in this services, rather then in-house.
+ 
+\end{document}
+
+
+\end{document}
