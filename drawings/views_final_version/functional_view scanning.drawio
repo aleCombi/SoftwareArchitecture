@@ -1,13 +1,13 @@
 <mxfile host="65bd71144e">
     <diagram id="ZQF833xw1EoGUe7-4v3m" name="Page-1">
-        <mxGraphModel dx="1721" dy="877" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="674" dy="489" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="321" value="" style="whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=0;opacity=50;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+                <mxCell id="321" value="" style="whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=0;opacity=50;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
                     <mxGeometry x="500" y="1090" width="590" height="460" as="geometry"/>
                 </mxCell>
-                <mxCell id="322" value="scans" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.371;exitY=1.038;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="334">
+                <mxCell id="322" value="scans" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.371;exitY=1.038;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="334" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="10" y="1350" as="sourcePoint"/>
                         <mxPoint x="170" y="1310" as="targetPoint"/>
@@ -17,14 +17,14 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="323" value="request / &lt;br&gt;grant authorization" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="332">
+                <mxCell id="323" value="request / &lt;br&gt;grant authorization" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="332" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="470" y="1350" as="sourcePoint"/>
                         <mxPoint x="620" y="1350" as="targetPoint"/>
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="324" value="allows / denies" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.164;exitY=-0.012;exitDx=0;exitDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;entryX=0.55;entryY=1.025;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" edge="1" parent="1" source="332" target="334">
+                <mxCell id="324" value="allows / denies" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.164;exitY=-0.012;exitDx=0;exitDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;entryX=0.55;entryY=1.025;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" parent="1" source="332" target="334" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="-60" y="1310" as="targetPoint"/>
                         <Array as="points">
@@ -35,66 +35,66 @@
                         <mxPoint x="400" y="1310" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="325" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;labelBackgroundColor=#080808;strokeColor=#000000;fontColor=#FCFCFC;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="332" target="328">
+                <mxCell id="325" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;labelBackgroundColor=#080808;strokeColor=#000000;fontColor=#FCFCFC;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="332" target="328" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="560" y="1430" as="targetPoint"/>
                         <mxPoint x="470" y="1370" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="326" value="scanned" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="333" target="332">
+                <mxCell id="326" value="scanned" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="333" target="332" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="240" y="1350" as="sourcePoint"/>
                         <mxPoint x="330" y="1350" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="327" value="Request/&lt;br&gt;grant authorization" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="339">
+                <mxCell id="327" value="Request/&lt;br&gt;grant authorization" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="339" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="760" y="1350" as="sourcePoint"/>
                         <mxPoint x="940" y="1350" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="328" value="Accounts (Subs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;gradientColor=#b3b3b3;" vertex="1" parent="1">
+                <mxCell id="328" value="Accounts (Subs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;gradientColor=#b3b3b3;" parent="1" vertex="1">
                     <mxGeometry x="620" y="1430" width="140" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="329" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;request /&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;grant authorization&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontColor=#FCFCFC;" vertex="1" parent="1">
+                <mxCell id="329" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;request /&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;grant authorization&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontColor=#FCFCFC;" parent="1" vertex="1">
                     <mxGeometry x="490" y="1400" width="120" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="330" value="Accounts (Subs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;gradientColor=#b3b3b3;" vertex="1" parent="1">
+                <mxCell id="330" value="Accounts (Subs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;gradientColor=#b3b3b3;" parent="1" vertex="1">
                     <mxGeometry x="620" y="1430" width="140" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="331" value="&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Update / authorize&lt;/span&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;labelBackgroundColor=#907a7a;strokeColor=#000000;fontColor=#000000;startArrow=none;startFill=0;entryX=0.007;entryY=0.625;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="332" target="336">
+                <mxCell id="331" value="&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Update / authorize&lt;/span&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;labelBackgroundColor=#907a7a;strokeColor=#000000;fontColor=#000000;startArrow=none;startFill=0;entryX=0.007;entryY=0.625;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="332" target="336" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="350" y="1190" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="332" value="turnstile (controller device, bus scanner)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="332" value="turnstile (controller device, bus scanner)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="280" y="1310" width="140" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="333" value="fillable card, bank card, ticket, phone, OV card" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="333" value="fillable card, bank card, ticket, phone, OV card" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="80" y="1310" width="140" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="334" value="&lt;b&gt;User&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=80;" vertex="1" parent="1">
+                <mxCell id="334" value="&lt;b&gt;Passenger&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=80;" parent="1" vertex="1">
                     <mxGeometry x="80" y="1120" width="140" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="335" value="&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Updates&lt;/span&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;labelBackgroundColor=#907a7a;strokeColor=#000000;fontColor=#000000;startArrow=none;startFill=0;" edge="1" parent="1" source="336" target="339">
+                <mxCell id="335" value="&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Updates&lt;/span&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;labelBackgroundColor=#907a7a;strokeColor=#000000;fontColor=#000000;startArrow=none;startFill=0;" parent="1" source="336" target="339" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="336" value="User state" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="336" value="User state" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="620" y="1150" width="140" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="337" value="ticket checker (similar role as the account manager)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="337" value="ticket checker (similar role as the account manager)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="620" y="1310" width="140" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="338" value="Accounts (Subs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="338" value="Accounts (Subs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="620" y="1430" width="140" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="339" value="Database" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="339" value="Database" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="890" y="1310" width="140" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="340" value="&lt;h1&gt;Functional View - Scanning Procedure&lt;/h1&gt;" style="text;strokeColor=none;align=left;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="340" value="&lt;h1&gt;Functional View - Scanning Procedure&lt;/h1&gt;" style="text;strokeColor=none;align=left;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="80" y="940" width="670" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="341" value="&lt;h1 style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#080808&quot;&gt;TRIP SYSTEM&lt;/font&gt;&lt;/b&gt;&lt;/h1&gt;" style="text;whiteSpace=wrap;html=1;fontColor=#000000;" vertex="1" parent="1">
+                <mxCell id="341" value="&lt;h1 style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#080808&quot;&gt;TRIP SYSTEM&lt;/font&gt;&lt;/b&gt;&lt;/h1&gt;" style="text;whiteSpace=wrap;html=1;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="920" y="1090" width="190" height="80" as="geometry"/>
                 </mxCell>
             </root>

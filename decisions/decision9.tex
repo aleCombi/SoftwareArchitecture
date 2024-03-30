@@ -15,7 +15,7 @@ The TrIP system requires a flexible and secure method for user authentication th
 \subsection*{Criteria}
 \begin{itemize}
     \item Secure storage and handling of personal and financial data.
-    \item Ease of account creation and management for users.
+    \item Ease of account creation and management for passengers.
     \item Seamless integration with existing turnstile and payment systems.
     \item Flexibility to support different methods of authentication, including cards and digital wallets.
     \item High availability and reliability of the authentication system.
@@ -23,8 +23,8 @@ The TrIP system requires a flexible and secure method for user authentication th
 
 \subsection*{Option 1: Anonymous card}
 \begin{itemize}
-    \item \textbf{Pro:} Ensures user privacy and quick adoption for casual users.
-    \item \textbf{Con:} Limited capabilities for account management and tracking user history.
+    \item \textbf{Pro:} Ensures passenger privacy and quick adoption for casual users.
+    \item \textbf{Con:} Limited capabilities for account management and tracking passenger history.
 \end{itemize}
 
 \subsection*{Option 2: Bank credit card}
@@ -36,7 +36,7 @@ The TrIP system requires a flexible and secure method for user authentication th
 \subsection*{Option 3: Phone app}
 \begin{itemize}
     \item \textbf{Pro:} Provides a versatile platform for account management, payments, and ticket validation via QR codes or NFC.
-    \item \textbf{Con:} Requires smartphone access, possibly excluding certain user demographics.
+    \item \textbf{Con:} Requires smartphone access, possibly excluding certain passengers demographics.
 \end{itemize}
 
 \subsection*{Option 4: Nominal card}
@@ -52,12 +52,12 @@ The TrIP system requires a flexible and secure method for user authentication th
 \end{itemize}
 
 \subsection*{Decision}
-The decision is to implement a hybrid approach, integrating a phone app (with NFC capabilities and linked to bank accounts) for regular users, along with an anonymous fillable card for tourists and a physical nominal card for those who prefer or require a physical token. The hybrid approach balances convenience with coverage for all user types.
+The decision is to implement a hybrid approach, integrating a phone app (with NFC capabilities and linked to bank accounts) for regular users, along with an anonymous fillable card for tourists and a physical nominal card for those who prefer or require a physical token. The hybrid approach balances convenience with coverage for all passenger types.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
 \begin{itemize}
-    \item Provides a comprehensive solution covering the needs of various user groups, increasing system accessibility and user satisfaction.
+    \item Provides a comprehensive solution covering the needs of various passenger groups, increasing system accessibility and passenger satisfaction.
     \item Enhances security by offering multiple authentication methods, each with its own set of security protocols.
     \item Encourages digital transformation and supports a move towards a more contactless, efficient user experience.
 \end{itemize}
@@ -65,6 +65,6 @@ The decision is to implement a hybrid approach, integrating a phone app (with NF
 \begin{itemize}
     \item May increase complexity and cost of the system, both in development and maintenance.
     \item The need to support multiple authentication methods can complicate infrastructure and operational processes.
-    \item Potential resistance from users who are less technologically adept or prefer traditional methods.
+    \item Potential resistance from passengers who are less technologically adept or prefer traditional methods.
 \end{itemize}
-This decision supports the TRIP system's objective to provide a secure, convenient, and inclusive environment for all types of users while recognizing the need to manage operational and development complexities.
+This decision supports the TRIP system's objective to provide a secure, convenient, and inclusive environment for all types of passengers while recognizing the need to manage operational and development complexities.

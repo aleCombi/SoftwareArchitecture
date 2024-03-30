@@ -32,7 +32,7 @@ The following outlines a Quality Attribute (QA) scenario focusing on the real-ti
 \begin{itemize}
     \item Minimize excessive requests to tycoon systems, avoiding system overload.
     \item Ensure high performance to prevent a negative user experience.
-    \item Prevent multiple users from paying for the same seat, ensuring fairness in ticket sales.
+    \item Prevent multiple passengers from paying for the same seat, ensuring fairness in ticket sales.
 \end{itemize}
 
 \subsection*{Option 1: Lock the Seats Before Payment}
@@ -70,7 +70,7 @@ Seats are locked only after payment confirmation, adhering to a first-come, firs
 \subsubsection*{Cons}
 \begin{itemize}[noitemsep]
     \item \textbf{User Experience} (Usability): Customers may go through the payment process only to find out the seat has been taken, leading to frustration.
-    \item \textbf{Race Conditions} (Reliability): Higher risk of race conditions where multiple users complete payments for the last seat simultaneously.
+    \item \textbf{Race Conditions} (Reliability): Higher risk of race conditions where multiple passengers complete payments for the last seat simultaneously.
 \end{itemize}
 
 \subsubsection*{User stories}

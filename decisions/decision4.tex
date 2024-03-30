@@ -7,11 +7,11 @@ Accepted.
 
 
 \subsection*{Concern}
-A user wants to traver around the network using its subscription(s) instead of always having to buy a single fare.
+A passenger wants to traver around the network using its subscription(s) instead of always having to buy a single fare.
 Tycoons have explicitely requested to maintain their own subscriptions separated.
 The following user stories are tied to this decision:
 \begin{itemize}
-    \item \textbf{User Story 16}: 16. As a passenger, I want to be able to purchase a single ticket that allows me to travel across all train networks so that I can travel seamlessly without needing to buy separate tickets for each tycoon's network.
+    \item \textbf{User Story 16}: As a passenger, I want to be able to purchase a single ticket that allows me to travel across all train networks so that I can travel seamlessly without needing to buy separate tickets for each tycoon's network.
     \item \textbf{User Story 23}: As a tycoon, I want the payment system to integrate with my existing infrastructure with minimal disruption so that I can maintain high service levels during the transition..
 \end{itemize}
 
@@ -31,16 +31,16 @@ Alternatively, if passengers have active subscriptions to a tycoon, they should 
 \subsection*{Criteria}
 \begin{itemize}
 \item Ease of use for the passenger.
-\item Multiple route options for the user.
-\item The system returns to user usable options based on price/time/availability/subscription.
+\item Multiple route options for the passenger.
+\item The system returns to the passenger usable options based on price/time/availability/subscription.
 \item Simple integration with the tycoon systems.
 \end{itemize}
 
-\subsection*{Option 1: Introduction of a subscription manager tool, route management needs to take user subscriptions into consideration.}
+\subsection*{Option 1: Introduction of a subscription manager tool, route management needs to take passenger subscriptions into consideration.}
 We want to include a Subscription Manager module to our functional view. 
 Such a module has the responsibility to verify subscriptions, communicating with the tycoon system.
-It should also allow users to create their own TRIP account and tie it to subscriptions.
-Since we need scalability, we consider using a TRIP account that is tied to one or many subscriptions, and let the user add new or automatically renew the existing ones.
+It should also allow passengers to create their own TRIP account and tie it to subscriptions.
+Since we need scalability, we consider using a TRIP account that is tied to one or many subscriptions, and let the passenger add new or automatically renew the existing ones.
 This means that we need an authentication means, like a magnetic card, or a phone app linked to NFC scanning or other alternatives.
 This will be the topic of a future decision.
 Furthermore, the Route management module needs to be able to optimize with respect to price, given that the passenger holds some subscription.
@@ -57,9 +57,9 @@ This should be the topic of another decision.
 
 \begin{itemize}[noitemsep]
     \item \textbf{Modular Architecture:} The separation of subscription management and route optimization into distinct modules enhances the system's modularity, making it easier to maintain, update, or replace parts of the system without affecting others.
-    \item \textbf{Scalability:} Designed with scalability in mind, allowing for easy addition and management of new subscriptions or renewal of existing ones, which can accommodate growing user demands and evolving business requirements.
+    \item \textbf{Scalability:} Designed with scalability in mind, allowing for easy addition and management of new subscriptions or renewal of existing ones, which can accommodate growing passenger demands and evolving business requirements.
     \item \textbf{Reduced Risk of System-wide Failures:} By distributing functionalities across different systems or modules, the impact of a failure in one component is limited, reducing the risk of system-wide outages and improving overall system reliability.
-    \item \textbf{Flexibility in User Authentication:} Supports various means of user authentication (e.g., magnetic card, smartphone app), offering flexibility and convenience for users to access their subscriptions and travel seamlessly.
+    \item \textbf{Flexibility in Passenger Authentication:} Supports various means of passenger authentication (e.g., magnetic card, smartphone app), offering flexibility and convenience for passengers to access their subscriptions and travel seamlessly.
 \end{itemize}
 
 \subsection*{Cons}
@@ -84,7 +84,7 @@ The Integrated Subscription-Route Optimization Service (IS-ROS) combines the fun
 \end{itemize}
 
 \subsection*{Option 3: Include a Single-Ticket management module}
-Abstractly, a single ticket can be seen as an account that expires once the journey is completed. As an account, it is linked to a user via its personal data, if it is related to a booking or via 
+Abstractly, a single ticket can be seen as an account that expires once the journey is completed. As an account, it is linked to a passenger via their personal data, if it is related to a booking or via 
 an anonymous user ID if it is not.
 Its temporary nature though causes different needs for information storage and flow, as updates for single tickets occurs often.
 Hence the need for a separated module and a related database.

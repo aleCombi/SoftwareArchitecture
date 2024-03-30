@@ -46,7 +46,7 @@ How does the turnstile communicate with the system to verify if the passenger ha
 
 \subsection*{Criteria}
 \begin{itemize}
-    \item Allow users to scan tickets or multiplatform travel cards (if they exists) at turnstiles.
+    \item Allow passengers to scan tickets or multiplatform travel cards (if they exists) at turnstiles.
     \item Don't allow people without the appropriate tickets or subscriptions or cards.
     \item Possibly allow people to scan when they enter and when they exit and calculate a fare (this might depend on agreements between tycoons). 
     \item Possibly communicate station usage data to the system.
@@ -54,7 +54,7 @@ How does the turnstile communicate with the system to verify if the passenger ha
     \item Allow balance check for charged cards.
 \end{itemize}
 
-\subsection*{Option 1: Add a ticket checker and a user state modules to authorize user}
+\subsection*{Option 1: Add a ticket checker and a user state modules to authorize passengers}
 After scanning a ticket or badge, the user state should be updated, in order to calculate the fare price for fillable card holders or for the scanning of bank cards (debit credit).
 The ticket or badge should be checked by the single ticket checker module or by the account management to insure consistency.
 In case of the scanning of bank cards, the user state module needs to communicate with payment management, in order to proceed with the actual payment.

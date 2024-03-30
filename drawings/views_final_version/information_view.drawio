@@ -1,16 +1,16 @@
 <mxfile host="65bd71144e">
     <diagram id="ZQF833xw1EoGUe7-4v3m" name="Page-1">
-        <mxGraphModel dx="691" dy="599" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="384" dy="342" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="297" value="" style="whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=0;opacity=50;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
                     <mxGeometry x="290" y="210" width="980" height="725" as="geometry"/>
                 </mxCell>
-                <mxCell id="366" value="User choices" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;" parent="1" source="298" target="308" edge="1">
+                <mxCell id="366" value="Passenger choices" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;" parent="1" source="298" target="308" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="298" value="&lt;b&gt;User&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=80;" parent="1" vertex="1">
+                <mxCell id="298" value="&lt;b&gt;Passenger&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=80;" parent="1" vertex="1">
                     <mxGeometry x="130" y="210" width="90" height="740" as="geometry"/>
                 </mxCell>
                 <mxCell id="346" value="Account info and choices + periodic payments info" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;startArrow=block;startFill=1;" parent="1" source="308" target="330" edge="1">
@@ -167,10 +167,10 @@
                 <mxCell id="400" value="&lt;b&gt;Tycoon API&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#d79b00;opacity=80;" parent="1" vertex="1">
                     <mxGeometry x="410" y="220" width="702.5" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="403" value="Request data" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" source="402" target="400">
+                <mxCell id="403" value="Request data" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=none;endFill=0;" parent="1" source="402" target="400" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="402" value="Customer service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=80;" vertex="1" parent="1">
+                <mxCell id="402" value="Customer service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=80;" parent="1" vertex="1">
                     <mxGeometry x="250" y="80" width="140" height="80" as="geometry"/>
                 </mxCell>
             </root>
