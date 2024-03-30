@@ -1,0 +1,4 @@
+calculation inside the station (event 2 - unreliable network) (private server, need encription (probs))
+route optimizer calculators (needs to be fast, doesn't need to secure, encrypted)
+payment terminal, and scanning devices should be in the Diagrams
+database servers (routes, )
