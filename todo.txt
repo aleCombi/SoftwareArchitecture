@@ -45,8 +45,8 @@ Review notes
 Restructure every decision to fit to the template. (Alessandro)
 Diagrams match quality attributes. (Can)
 Diagrams match events. (Can - made two rows Ale bitching again, finish both at the same time.)
-Make a table of events and how they change quality attribute (with double plus - CanGPT)
-Deployment view
+Make a table of events and how they change quality attribute (with double plus - CanGPT) (DONE)
+Deployment view (diagram done)
 Concurrency view
 Development view
 

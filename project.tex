@@ -8,6 +8,11 @@
 \usepackage{graphicx}
 \usepackage{booktabs} % For professional looking tables
 \usepackage{float} % For improved control over floating environments
+\usepackage{array}
+\usepackage{makecell} % Allows for line breaks within table cells
+\usepackage[table]{xcolor} % For cell coloring
+\definecolor{changeColor}{RGB}{220, 220, 220} % Light gray color for changes
+
 
 \geometry{
  a4paper,
@@ -67,5 +72,9 @@ The Train Inter Payment System (TrIP) is a collaborative project initiated by th
 
 \input{user_stories/user_stories.tex}
 % \input{user_stories_table.tex}
+
+\input{tables/events_table.tex}
+
+
 
 \end{document}
