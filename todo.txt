@@ -42,6 +42,7 @@ Review notes
     26) process re-engineering on variable workload times (it is not something that trip system does, maybe mention a deal with tycoons on how to handle holidays?, maybe no timetables on peak hours etc.)
 
 27) Add decision 15
+28) update figure 1, revise the decision
 
 Restructure every decision to fit to the template. (Alessandro)
 Diagrams match quality attributes. (Can)
