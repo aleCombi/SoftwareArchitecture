@@ -4,7 +4,23 @@
 Accepted.
 
 \subsection*{Architectural Summary}
-
+\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+    \hline
+    \textbf{In the context of} & managing subscriptions and accounts of passengers, \\
+    \hline
+    \textbf{Facing} & the challenge of integrating many different subscriptions for the same passenger and letting subscription separated, \\
+    \hline
+    \textbf{To achieve} & streamlined integration with multiple tycoon systems, high passenger usability, \\
+    \hline
+    \textbf{We considered} & Option 1: Introduction of a subscription manager tool.; Option 2: Integrated Subscription-Route Optimization Service; Option 3: Include a Single-Ticket management module\\
+    \hline
+    \textbf{And decided for} & Option 1: Introduction of a subscription manager tool; and Option 3: Include a Single-Ticket management module  \\
+    \hline
+    \textbf{Because} & It enhances scalability and maintainability though modularity, it reduces system-wide failures risks, allows occasional travellers to easily use the system, \\
+    \hline
+    \textbf{Accepting} & Increased System Complexity, higher Initial Costs, Data Consistency Challenges. \\
+    \hline
+\end{tabular}
 
 \subsection*{Concern}
 A passenger wants to traver around the network using its subscription(s) instead of always having to buy a single fare.
@@ -30,10 +46,10 @@ Alternatively, if passengers have active subscriptions to a tycoon, they should 
 
 \subsection*{Criteria}
 \begin{itemize}
-\item Ease of use for the passenger.
-\item Multiple route options for the passenger.
-\item The system returns to the passenger usable options based on price/time/availability/subscription.
-\item Simple integration with the tycoon systems.
+    \item Ease of use for the passenger.
+    \item Multiple route options for the passenger.
+    \item The system returns to the passenger usable options based on price/time/availability/subscription.
+    \item Simple integration with the tycoon systems.
 \end{itemize}
 
 \subsection*{Option 1: Introduction of a subscription manager tool, route management needs to take passenger subscriptions into consideration.}

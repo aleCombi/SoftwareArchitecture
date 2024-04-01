@@ -4,7 +4,23 @@
 Review.
 
 \subsection*{Architectural Summary}
-
+\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+    \hline
+    \textbf{In the context of} & choosing which data should be stored in the TRiP system, \\
+    \hline
+    \textbf{Facing} & the challenge of ensuring data security and high performance, \\
+    \hline
+    \textbf{To achieve} & high performance in data retrieval, easy integrability with tycoons' systems, \\
+    \hline
+    \textbf{We considered} & Option 1: Database-per-service pattern; Option 2: Unified Centralized Database System; Option 3: Database per tycoon, Option 4: Hybrid cloud storage\\
+    \hline
+    \textbf{And decided for} & Option 1: Database-per-service pattern, Option 4: Hybrid cloud storage \\
+    \hline
+    \textbf{Because} & It allows us to achieve high availabiliy and maintenability, \\
+    \hline
+    \textbf{Accepting} & Increased System Complexity, higher costs. \\
+    \hline
+\end{tabular}
 
 \subsection*{Context}
 We need to answer the following questions:
@@ -17,8 +33,8 @@ We need to answer the following questions:
 
 \subsection*{Concern}
 We need to keep some information available from our system, but security of the data (especially payment and account data) is crucial for the government and for the passengers concerns.
+We also need high performance in giving routes choices to passengers and quick payments.
 
-\subsubsection*{User stories}
 The following user stories are particularly relevant to the decision on the database scope, emphasizing the need for comprehensive management of subscriptions, security, and system integration:
 
 \begin{itemize}[noitemsep]
@@ -43,8 +59,8 @@ The following user stories are particularly relevant to the decision on the data
     \item \textbf{User Story 27:} As a network maintenance planner, I want the payment system to integrate with maintenance scheduling tools so that I can plan work with minimal disruption to the train service and revenue.
 \end{itemize}
 
-\subsection*{Option 1: Querying modules or external parties should know as little as possible}
-We try to have one database for each important set of information that the system needs to know.
+\subsection*{Option 1: Database-per-service pattern}
+We try to have one database for each important set of information that the system needs to know, employing the database-per-service pattern.
 We try to stick to the Separation of Concerns principle, so that each module only has access to the data it scricly needs to operate.
 We divide the following:
 \begin{itemize}
@@ -92,7 +108,7 @@ We can keep bookings data a DaaS, since it needs to be updated regularly and con
     \item \textbf{Complexity in Ensuring Data Protection} (Security, Privacy): Protecting a large, centralized repository of sensitive information poses significant challenges, requiring robust security measures to prevent unauthorized access and data breaches.
 \end{itemize}
 
-\subsection*{Option 3: Database per tycoon or not}
+\subsection*{Option 3: Database per tycoon}
 
 \subsubsection*{Pros}
 \begin{itemize}[noitemsep]
@@ -123,16 +139,18 @@ Crucial data stored in cloud (timetables, and prices and bookings). Non-crucial 
 \end{itemize}
 
 \subsection*{Decision}
-We choose Hybrid cloud storage System, increased Availability which is important for event 2 which requirees less stringent Maintainability and cost requirements. Cloud increased cost and interaction between databases increase Maintainability compared to single database.
+We choose Options 1 and 4, using a Hybrid cloud storage System for the deployment, but separate databases accessible by one related service.
+The goal is to achive high Availability, which is crucial after Event 2, which requirees less stringent Maintainability and cost requirements. Maintainability and performance are increased by choosing database-per-service instead of a single database.
+Cloud solutions can be expensive for data storage.
+
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
 \begin{itemize}
     \item \textbf{database as a service}: Single point of failure is reduced, scalable.
-    \item \textbf{}: Single point of failure is reduced, scalable.
 \end{itemize}
 \textbf{Negative Consequences:}
 \begin{itemize}
-    \item \textbf{Tycoon permission management} : More complextiy, we need to restrict access for each tycoon.
+    \item \textbf{Tycoon permission management} : More complexity, we need to restrict access for each tycoon.
     \item \textbf{Single point of failure} : If database fails, everything fails.(bad for availablity)[maybe a solution is backup database].
     \item \textbf{database as a service}: Expensive.
 \end{itemize}

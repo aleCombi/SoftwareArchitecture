@@ -4,13 +4,29 @@
 Accepted.
 
 \subsection*{Architectural Summary}
-% TODO
+\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+    \hline
+    \textbf{In the context of} & choosing appropriate database technology to store information about travels and payments, \\
+    \hline
+    \textbf{Facing} & the challenge of storing data coming from different tycoons systems in a cost-effective manner, \\
+    \hline
+    \textbf{To achieve} & a seamless experience that is intuitive, accessible, and responsive, and maintains the system's usability and passenger satisfaction \\
+    \hline
+    \textbf{We considered} & Option 1: SQL Database (e.g., PostgreSQL); Option 2: NoSQL Database (e.g., MongoDB); \\
+    \hline
+    \textbf{And decided for} & Option 1: SQL Database (e.g., PostgreSQL) \\
+    \hline
+    \textbf{Because} & It suits the kind of data we need to store, the request for data integrity and easier to source developers expertise, \\
+    \hline
+    \textbf{Accepting} & Potential difficulties in horizontal scaling, less flexibility in the data model. \\
+    \hline
+\end{tabular}
 
 \subsection*{Concern}
-The main concern lies in selecting a database that can efficiently manage complex data relationships, provide high transactional integrity, and scale as needed without compromising on performance or security.
+The main staleholder's concerns related to this decision are the passengers request to have a good integration among different tycoons subscription, the TrIP owner request to keep maintenance costs low and the data protection required by government and passengers.
 
 \subsection*{Context}
-In developing the TrIP system, tasked with unifying the payment and subscription management across three railroad tycoons' operations, we are faced with the decision of choosing an appropriate database technology. This choice hinges on our need to ensure data integrity, support complex queries for transaction processing, and maintain scalability and security.
+In developing the TrIP system we are faced with the decision of choosing an appropriate database technology. This choice hinges on our need to ensure data integrity, support complex queries for transaction processing, and maintain scalability and security.
 The database must handle a wide array of data, including user subscriptions, fare transactions, and station and route information, necessitating a robust system that supports complex queries and relational data structuring.
 The architecture might include more than one databases, depending on the needs that will arise during later decisions.
 
@@ -61,5 +77,6 @@ After thorough consideration, the decision is to implement an \textbf{SQL databa
 \begin{itemize}
     \item May require additional strategies for scaling horizontally, such as implementing read replicas or sharding, to manage large data volumes and high traffic loads effectively.
     \item Could necessitate more intensive resource management and optimization to ensure performance at scale.
+    \item A less flexible data model.
 \end{itemize}
 Choosing an SQL database aligns with the TrIP system's core requirements for data integrity, relational data handling, and transactional consistency. This foundation will support the system's initial functionality and long-term growth, with a focus on maintaining data accuracy and trustworthiness.

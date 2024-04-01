@@ -4,6 +4,23 @@
 Accepted
 
 \subsection*{Architectural Summary}
+\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+    \hline
+    \textbf{In the context of} & managing high volumes of booking requests for a train, \\
+    \hline
+    \textbf{Facing} & the challenge of avoiding overbookings, \\
+    \hline
+    \textbf{To achieve} & high performance, minimal system overload and data consistency, \\
+    \hline
+    \textbf{We considered} & Option 1: Lock the Seats Before Payment; Option 2: Lock the Seats After Payment, FCFS, Refuse Payments if Seat is Booked; Option 3: Real-time Seat Availability with Dynamic Allocation, Option 4: 2PC Protocol\\
+    \hline
+    \textbf{And decided for} & Option 1: Lock the Seats Before Payment,  \\
+    \hline
+    \textbf{Because} & It directly solves the problem of overbookings and concurrent accesses, \\
+    \hline
+    \textbf{Accepting} & Increased System Complexity, potential for seats hoarding. \\
+    \hline
+\end{tabular}
 
 \subsection*{Concern}
 Ensuring a high level of usability and availability in the ticketing system is paramount. System operators and railroad tycoons aim to minimize customer service issues arising from passengers' frustrations with paying for unavailable routes.
@@ -135,7 +152,7 @@ Option 4 can be useful if the system is decentralized, but introduces unwanted c
     \item Reduced customer service issues related to overbooking and ticket availability.
     \item Enhanced system resilience against peak demand scenarios.
 \end{itemize}
-\textbf{Negative Consequences:}
+\textbf{Negative Consequences:}% TODO: I think these are not negative consequences of option 1
 \begin{itemize}
     \item Potential increase in system complexity and operational costs.
     \item Challenges in accurately forecasting demand for dynamic seat allocation or overbooking strategies.

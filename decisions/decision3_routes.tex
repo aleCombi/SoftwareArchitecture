@@ -4,13 +4,34 @@
 Accepted.
 
 \subsection*{Architectural Summary}
-% TODO
+\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+    \hline
+    \textbf{In the context of} & allowing terminals to present route options to passengers when they select their departure and arrival stations, \\
+    \hline
+    \textbf{Facing} & the challenge of letting passengers choose between different travel combination involving multiple tycoons, \\
+    \hline
+    \textbf{To achieve} & streamlined integration with multiple tycoon systems, and accurate representation of options based on multiple factors, \\
+    \hline
+    \textbf{We considered} & Option 1: Direct Tycoon Integration; Option 2: Centralized Route Management Module; \\
+    \hline
+    \textbf{And decided for} & Option 2: Centralized Route Management Module \\
+    \hline
+    \textbf{Because} & It simplifies data flow and integration between the TRiP system and tycoon's systems, it improves scalability and maintainability of the system, \\
+    \hline
+    \textbf{Accepting} & Initial development effort and potential difficulties in data synchronization across modules. \\
+    \hline
+\end{tabular}
 
 \subsection*{Concern}
-The concern is to facilitate a seamless travel planning experience for passengers by ensuring the system can accurately and efficiently gather available route options from various tycoon systems and present them based on the user's criteria of price, time, and subscription status.
+The concern is to facilitate a seamless travel planning experience for passengers by ensuring the system can accurately and efficiently gather available route options and present them based on the user's criteria of price, time, and subscription status.
+Related user stories are listed here:
+\begin{itemize}
+    \item \textbf{User Story 16:} As a passenger, I want to be able to purchase a single ticket that allows me to travel across all train networks so that I can travel seamlessly without needing to buy separate tickets for each tycoon's network.
+    \item \textbf{User Story 26:} As a station manager, I want the system to offer real-time updates on train schedules and network disruptions so that I can keep passengers informed and manage station flow effectively.
+\end{itemize}
 
 \subsection*{Context}
-In the context of enhancing the TrIP system's ability to provide optimized travel options, we face the challenge of efficiently querying multiple tycoon systems to gather route information that aligns with passenger preferences and existing subscriptions.
+The TrIP system needs to be able to compute optimized travel options (for instance best prices and lowest travel times), gathering information from multiple tycoon systems in order to align with passenger preferences and existing subscriptions.
 The decision is centered on the system's interface with tycoon systems to retrieve and optimize route data, which impacts the functionality and performance of the terminal's route planning features for the passengers.
 
 \subsection*{Criteria}

@@ -1,14 +1,15 @@
 \subsection{Decision 1: User Interface}
 
 \subsection*{Status}
-Accepted.
+Accepted. 
+Reviewed after the decision to include a smartphone application and a web application.
 
 \subsection*{Architectural Summary}
 \begin{tabular}{|p{3.5cm}|p{10.5cm}|}
     \hline
-    \textbf{In the context of} & designing an intuitive and engaging user interface for the TrIP system terminals \\
+    \textbf{In the context of} & designing a user interface for the TrIP system payment terminals \\
     \hline
-    \textbf{Facing} & the challenge of selecting guiding principles and frameworks that will shape the user experience and interaction design \\
+    \textbf{Facing} & the challenge of letting various type of passengers easily find information and make purchases, \\
     \hline
     \textbf{To achieve} & a seamless experience that is intuitive, accessible, and responsive, and maintains the system's usability and passenger satisfaction \\
     \hline
@@ -18,21 +19,30 @@ Accepted.
     \hline
     \textbf{Because} & It offers a balance of development speed, consistency, and usability that meets our criteria and constraints \\
     \hline
-    \textbf{Accepting} & This decision will impact the development timeline, operational costs, and the user's ability to navigate the system effectively \\
+    \textbf{Accepting} & Potential dependency on external communities and companies. \\
     \hline
 \end{tabular}
 
 \subsection*{Concern}
 Passengers require a user interface that is easy to navigate, visually appealing, and provides a seamless experience across different tycoon systems.
+we face the challenge of selecting guiding principles and frameworks that will shape the user experience and interaction design.
+Related user stories are listed here:
+
+\begin{itemize}
+    \item \textbf{User Story 16:} As a passenger, I want to be able to purchase a single ticket that allows me to travel across all train networks so that I can travel seamlessly without needing to buy separate tickets for each tycoon's network.
+    \item \textbf{User Story 7:} As an advocate for accessibility, I want the system to offer voice-activated features and screen reader compatibility for passengers with visual impairments so that the service is inclusive and accessible to everyone.
+    \item \textbf{User Story 14:} As a visually impaired person, I want a high contrast interface and big font, so that I can avoid mistakes when buying my tickets.
+    \item \textbf{User Story 9:} As a tourist, I want to choose among many languages, so that I don't have to translate using my phone.
+\end{itemize}
 
 \subsection*{Context}
-In the context of designing an intuitive and engaging user interface for the TrIP system terminals, we face the challenge of selecting guiding principles and frameworks that will shape the user experience and interaction design.
-The design of the user interface on the terminals involves the passenger's interaction with the system, from querying routes to finalizing ticket purchases. It is an essential component of the system that directly affects user satisfaction and system usability.
+We need to design an intuitive and engaging user interface for the TrIP system terminals, web application and smartphone application.
+The design of the user interface on the terminals involves the passenger's interaction with the system, from querying routes to finalizing ticket purchases.
 
 \subsection*{Criteria}
 The decision will be guided by the following criteria:
 \begin{itemize}
-    \item Consistency in design to provide a unified look and feel across all terminals.
+    \item Consistency in design to provide a unified look and feel across all terminals, web apps and smartphone apps.
     \item Accessibility to ensure the system is usable by all passengers, including those with disabilities.
     \item Responsiveness so that the interface can adapt to various screen sizes and orientations.
     \item Ease of maintenance and scalability for future enhancements.
