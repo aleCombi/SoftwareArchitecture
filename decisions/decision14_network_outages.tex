@@ -1,25 +1,19 @@
-\subsection{Decision 14: Handling Network Outages}
-
-\subsection*{Status}
-Open
-
-
 \subsection*{Architectural Summary}
 \begin{tabular}{|p{3.5cm}|p{10.5cm}|}
     \hline
-    \textbf{In the context of} &  \\
+    \textbf{In the context of} & Ensuring uninterrupted service and data integrity during network outages in the TRiP system. \\
     \hline
-    \textbf{Facing} &  \\
+    \textbf{Facing} & The challenge of maintaining operational continuity and securing transactions in the absence of network connectivity. \\
     \hline
-    \textbf{To achieve} & \\
+    \textbf{To achieve} & A resilient system capable of handling ticket validations and transactions securely, even during network disruptions. \\
     \hline
-    \textbf{We considered} & \\
+    \textbf{We considered} & Option 1: Delayed Processing; Option 2: Local Caching, \\
     \hline
-    \textbf{And decided for} & \\
+    \textbf{And decided for} & A hybrid approach utilizing delayed processing and strategic local caching for essential operations. \\
     \hline
-    \textbf{Because} &  \\
+    \textbf{Because} & This method balances the need for operational continuity with security and data integrity, catering to the immediate needs of users while addressing potential security risks. \\
     \hline
-    \textbf{Accepting} &  \\
+    \textbf{Accepting} & The complexity of managing dual mechanisms and potential security concerns related to local data storage. \\
     \hline
 \end{tabular}
 
