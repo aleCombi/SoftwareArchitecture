@@ -1,0 +1,66 @@
+\subsection{Decision 14: Handling Network Outages}
+
+\subsection*{Status}
+Open
+
+
+\subsection*{Architectural Summary}
+\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+    \hline
+    \textbf{In the context of} &  \\
+    \hline
+    \textbf{Facing} &  \\
+    \hline
+    \textbf{To achieve} & \\
+    \hline
+    \textbf{We considered} & \\
+    \hline
+    \textbf{And decided for} & \\
+    \hline
+    \textbf{Because} &  \\
+    \hline
+    \textbf{Accepting} &  \\
+    \hline
+\end{tabular}
+
+\subsection*{Concern}
+Ensuring system resilience and continuous operation during network disruptions.
+\subsubsection*{User Stories}
+\begin{itemize}
+    \item Users expect ticket validation to work even during network outages.
+    \item Tycoons require the system to handle transactions securely and efficiently, irrespective of network status.
+\end{itemize}
+
+\subsection*{Context}
+Network outages pose significant challenges to real-time processing capabilities, affecting ticket validations and financial transactions.
+
+\subsection*{Criteria}
+\begin{itemize}
+    \item Minimize service disruption during network outages.
+    \item Ensure data security and integrity, especially for financial transactions.
+    \item Optimize local data storage to balance operational continuity with security risks.
+\end{itemize}
+
+\subsection*{Option 1: Delayed Processing}
+Transactions are processed once network connectivity is restored, minimizing the need for local data storage but risking transaction backlog.
+
+\subsection*{Option 2: Local Caching}
+Local caching of critical data to enable processing during outages, with careful consideration of security implications due to increased local data storage.
+
+\subsection*{Decision}
+A combination of Option 1 and strategic caching for essential data will be used for delayed processing. This approach is chosen to maintain service reliability while addressing security concerns.
+This decision balances the need for uninterrupted service during network outages against the risks associated with local data storage. It considers the priority of user experience and security as per stakeholder requirements and aligns with previous decisions to enhance system resilience.
+
+\subsection*{Consequences}
+\textbf{Positive Consequences:}
+\begin{itemize}
+    \item Maintains ticket validation and system operations during network outages, enhancing user experience.
+    \item Reduces the risk of service disruption, aligning with the expectations of users and tycoons.
+    \item Balances operational needs with security concerns through selective data caching.
+\end{itemize}
+\textbf{Negative Consequences:}
+\begin{itemize}
+    \item May introduce a risk of negative balances due to delayed processing of financial transactions.
+    \item Increases system complexity with the need to manage both delayed processing and data caching mechanisms.
+    \item Poses potential security risks related to the local storage of sensitive data, despite limited caching.
+\end{itemize}

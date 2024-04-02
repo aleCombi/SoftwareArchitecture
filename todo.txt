@@ -44,12 +44,12 @@ Review notes
 27) Add decision 15
 28) update figure 1, revise the decision
 
-Restructure every decision to fit to the template. (Alessandro)
+Restructure every decision to fit to the template. (Alessandro) (DONE)
 Diagrams match quality attributes. (Can)
 Diagrams match events. (Can - made two rows Ale bitching again, finish both at the same time.)
 Make a table of events and how they change quality attribute (with double plus - CanGPT) (DONE)
-Deployment view (diagram done)
-Concurrency view
+Deployment view (diagram DONE)
+Concurrency view (diagram DONE)
 Development view
 
 Perspectives on Functional ViewPoint view 2: addresses security for tycoon (no unauhtorized entries), usability for passengers who have a ticket/sub/account.
