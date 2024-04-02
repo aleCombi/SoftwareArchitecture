@@ -3,6 +3,23 @@
 \subsection*{Status}
 Accepted.
 \subsection*{Architectural Summary}
+\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+    \hline
+    \textbf{In the context of} & allowing data update (like timetables and fare prices) from tycoons, \\
+    \hline
+    \textbf{Facing} & the need to quickly allow addition of new tycoons, fair competition between tycoons, passengers' request of correct information; \\
+    \hline
+    \textbf{To achieve} & tycoons' usability, reliability for passengers, \\
+    \hline
+    \textbf{We considered} & Option 1: Tycoon API for interactions with databases; Option 2: Real time information requests to tycoon systems and tycoon-specific API \\
+    \hline
+    \textbf{And decided for} & Option 1: Tycoon API for interactions with databases;\\
+    \hline
+    \textbf{Because} & Convers Event 1 specifically, ensures data consistency across tycoons-specific timetables/price, improves mainteinability of the system, \\
+    \hline
+    \textbf{Accepting} & Potential resistance from some tycoons, API management, data management overhead. \\
+    \hline
+\end{tabular}
 
 
 \subsection*{Concern}
@@ -92,7 +109,7 @@ responsible for the data querying and feeding, thus it should be able to interac
 As the importance of scalability has been increased by event 1, Option 1 seems the most natural.
 Furthermore, operational cost has reduced importance after event 2, which limits the cons of option 1.
 It ensures high integrability of the system with the tycoons and customer services systems.
-Also availability is can be better with option 1, as we cannot ensure high availability of tycoon system, while we can deploy tactics to ensure our own databases availabiliy. The specific choice of tactics will require a future decision.
+Also availability can be improved with option 1, as we cannot ensure high availability of tycoon system, while we can deploy tactics to ensure our own databases availabiliy. The specific choice of tactics will be outlined in the deployment view.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}

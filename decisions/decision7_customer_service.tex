@@ -4,6 +4,23 @@
 Review.
 
 \subsection*{Architectural Summary}
+\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+    \hline
+    \textbf{In the context of} & providing customer support to passengers, \\
+    \hline
+    \textbf{Facing} & the passengers' and customer service operators concern for quick information retrieval from the system, \\
+    \hline
+    \textbf{To achieve} & timely and accurate, secure information retrieval and communication, \\
+    \hline
+    \textbf{We considered} & Option 1: Direct Access to Live Data; Option 2: Periodic Data Sync to a Dedicated Customer Service Database; Option 3: On-Demand Data Retrieval via Secure API; Option 4: Automated Reporting System\\
+    \hline
+    \textbf{And decided for} & Option 3: On-Demand Data Retrieval via Secure API \\
+    \hline
+    \textbf{Because} & It ensures security and good flexibility to integrate with changes in the customer service platform, \\
+    \hline
+    \textbf{Accepting} & Possible latency, an additional layer of complexity. \\
+    \hline
+\end{tabular}
 
 \subsection*{Concern}
 The primary concern is to ensure that customer service representatives have access to accurate and timely information to address passenger queries and resolve issues efficiently, without compromising data privacy.

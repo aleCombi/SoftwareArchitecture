@@ -4,7 +4,23 @@
 Review
 
 \subsection*{Architectural Summary}
-The system will offer multiple options for account management and authentication to accommodate the preferences and needs of diverse user groups, including commuters, tourists, and casual riders. This strategy aims to streamline the user experience while enhancing security and operational efficiency.
+\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+    \hline
+    \textbf{In the context of} & letting passengers authenticate to their accounts to handle subscriptions, \\
+    \hline
+    \textbf{Facing} & the passengers' concern for user-friendlyness and the tycoon request for integration between their subscriptions systems, also ensuring sensitive data privacy, \\
+    \hline
+    \textbf{To achieve} & security, usability and integrabiliy, \\
+    \hline
+    \textbf{We considered} & Option 1: Anonymous card; Option 2: Bank credit card; Option 3: Phone app; Option 4: Nominal card; Option 5: NFC reader/Google Wallet\\
+    \hline
+    \textbf{And decided for} & a hybrid approach where multiple authentication methods are allowed, both nominal (like a dedicated card) and anomymous (like a fillable card);\\
+    \hline
+    \textbf{Because} & it ensures high usability for many kinds of passengers, only two readers are needed (NFC and QR) at turnstiles, which keeps costs controlled, security is ensured by tokenization, \\
+    \hline
+    \textbf{Accepting} & Higer system complexity, more complicated development and maintenance. \\
+    \hline
+\end{tabular}
 
 \subsection*{Concern}
 Ensuring a secure, user-friendly, and efficient process for account creation, management, and authentication for a variety of users, while maintaining data privacy and system integrity.
@@ -53,6 +69,7 @@ The TrIP system requires a flexible and secure method for user authentication th
 
 \subsection*{Decision}
 The decision is to implement a hybrid approach, integrating a phone app (with NFC capabilities and linked to bank accounts) for regular users, along with an anonymous fillable card for tourists and a physical nominal card for those who prefer or require a physical token. The hybrid approach balances convenience with coverage for all passenger types.
+A tokenization service can be implied, so that no sensitive data is stored, but only tokens representing it, which transfer the security risk and the compliance requirements to specialized companies.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
