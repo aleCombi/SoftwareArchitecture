@@ -200,6 +200,23 @@ In summary, the functional viewpoint of our system meticulously addresses the in
     \label{fig:concurrency_view_1}
 \end{figure}
 
+\begin{table}[H]
+    \centering
+    \caption{Glossary for the Payment and Ticketing Process.}
+    \label{tab:payment_ticketing_glossary}
+    \begin{tabularx}{\textwidth}{@{}lX@{}} % Use 'X' for auto-adjusting width
+    \toprule
+    \textbf{Element} & \textbf{Description} \\
+    \midrule
+    Passenger & The customer who initiates the process by selecting a route and choosing a payment method to pay for a ticket. \\
+    Ticket Machine & The interface through which the passenger selects a route, displays the route and price, and chooses a payment method. \\
+    Terminal & The point of service where the passenger's payment authorization is processed. \\
+    Payment Module & The system component that interacts with the bank to request payment authorization for the transaction. \\
+    Bank & The financial institution that either authorizes or denies the payment transaction. \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/concurrency_view_2.png}
@@ -207,12 +224,45 @@ In summary, the functional viewpoint of our system meticulously addresses the in
     \label{fig:concurrency_view_2}
 \end{figure}
 
+\begin{table}[H]
+    \centering
+    \caption{Glossary for Turnstile Interaction Process.}
+    \label{tab:turnstile_interaction_glossary}
+    \begin{tabularx}{\textwidth}{@{}lX@{}} % Use 'X' for auto-adjusting width
+    \toprule
+    \textbf{Component} & \textbf{Description} \\
+    \midrule
+    Passenger & An individual who is attempting to gain entry through the turnstile by scanning a ticket or card. \\
+    Turnstile & A physical barrier at an entry point that controls access, typically based on ticket or card validation. \\
+    Network & The communication system that the turnstile interfaces with to verify access rights. \\
+    User State & A system component that maintains the current state of a user's access rights, determining whether entry is authorized. \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/concurrency_view_3.png}
     \caption{Concurrency view related to tycoons data updates.}
     \label{fig:concurrency_view_3}
 \end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{Glossary for Route Optimization Process.}
+    \label{tab:route_optimization_glossary}
+    \begin{tabularx}{\textwidth}{@{}lX@{}} % Use 'X' for auto-adjusting width
+    \toprule
+    \textbf{Component} & \textbf{Description} \\
+    \midrule
+    Tycoon & Represents the train companies or transport entities responsible for managing train schedules and routes. \\
+    Tycoon API & The application programming interface that allows the tycoons to update and access timetable information. \\
+    Timetables DB & The database where train schedules, routes, and associated data are stored and updated. \\
+    Route Optimizer & The system component that calculates the most efficient routes, likely using algorithms to process timetable data. \\
+    Optimized Routes DB & A specialized database that stores the results of the route optimization process. \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
 
 \section{Deployment Viewpoint}
 
