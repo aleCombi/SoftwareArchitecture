@@ -137,29 +137,34 @@ In summary, the functional viewpoint of our system meticulously addresses the in
     \caption{Information view.}
     \label{fig:information_view}
 \end{figure}
+
 \begin{table}[H]
     \centering
-    \caption{Legend for the Information View of the TRIP SYSTEM.}
-    \label{tab:information_view_legend}
-    \begin{tabular}{@{}llp{10cm}@{}}
+    \caption{Glossary of elements for the Information View of the TRIP SYSTEM.}
+    \label{tab:information_view_glossary}
+    \begin{tabularx}{\textwidth}{@{}lX@{}} % Use 'X' for auto-adjusting width
     \toprule
-    \textbf{Id} & \textbf{Name} & \textbf{Description} \\
+    \textbf{Element} & \textbf{Description} \\
     \midrule
-    1 & Timetable + Prices + Bookings DB & The database where travel schedules, prices, and booking details are stored. \\
-    2 & Bookings & Interface for passengers to manage their booking requests and view current bookings. \\
-    3 & Terminal / App / Website & Passenger interfaces for accessing booking, route, and payment information. \\
-    4 & Routes & Component that contains information about the travel routes and helps in finding the optimal routes. \\
-    5 & Optimized routes DB & Database storing the most efficient travel routes available. \\
-    6 & Accounts/Subs DB & Database for managing passenger accounts and subscription details. \\
-    7 & Tickets DB & Database where ticket purchases are recorded. \\
-    8 & Payments DB & Database that records and processes payment transactions. \\
-    9 & Accounts (Subs) & Management system for passenger accounts and subscriptions. \\
-    10 & Single-Ticket & Interface for purchasing individual tickets. \\
-    11 & Periodic payments & System handling regular subscription fee transactions. \\
-    12 & Payments & System that processes immediate payment transactions. \\
-    13 & Processed payments & Record of all completed payment transactions. \\
+    Tycoon & Tycoons responsible for making requests for analysis, and inserting travel data. \\
+    Tycoon API & Tycoon's way of interacting to the TRIP system. \\
+    Timetable + Prices + bookings DB & Stores data regarding travel schedules, pricing, and booking information. \\
+    Optimized routes DB & Contains information on the most efficient travel routes that have been calculated and stored. \\
+    Accounts/Subs DB & Maintains records of user accounts and their subscriptions for travel services. \\
+    Tickets DB & A database that logs ticket purchases and holds ticket-related information. \\
+    Payments DB & Records and processes transactions related to payments within the system. \\
+    Passenger & The end-user or customer who utilizes the system for travel services. \\
+    Bookings & The system component or interface that passengers interact with to manage and view their bookings. \\
+    Terminal / App / Website & The various platforms through which passengers can access the system for services. \\
+    Routes & Involves the determination and selection of travel routes within the system. \\
+    Accounts (Subs) & Manages the subscription details associated with user accounts. \\
+    Single-Ticket & A system or interface that deals with the purchase of individual travel tickets. \\
+    Periodic payments & Manages recurring payments, typically for subscription services. \\
+    Payments & Processes transactions related to immediate payments within the system. \\
+    Processed payments & A log or record of payment transactions that have been completed. \\
+    Bank & The financial institution where final payment transactions are processed and funds are transferred. \\
     \bottomrule
-\end{tabular}
+    \end{tabularx}
 \end{table}
 
 \begin{figure}[H]
@@ -217,5 +222,33 @@ In summary, the functional viewpoint of our system meticulously addresses the in
     \caption{Deployment view related to the scanning procedure.}
     \label{fig:deployment_view_scanning}
 \end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{Glossary for the Deployment View of the TRIP SYSTEM.}
+    \label{tab:deployment_view_glossary}
+    \begin{tabularx}{\textwidth}{@{}lXX@{}} % Corrected to have three columns
+    \toprule
+    \textbf{Component} & \textbf{Description} & \textbf{Hosted On} \\
+    \midrule
+    FaaS Environment & Provides a platform for executing backend functions in a serverless architecture, such as route optimization. & Public Cloud Servers \\
+    Tycoon API & Interfaces allowing tycoons' software and systems to communicate with the TRIP system. & Private Cloud Servers \\
+    Customer Service API & Facilitates customer service operations by providing data access and manipulation capabilities. & Private Cloud Servers \\
+    Passenger Access Device & Equipment that passengers interact with to access the system, like ticket validation and purchases. & Terminal, App, Website \\
+    Ticket Machine & Physical machines where passengers can purchase tickets and manage their bookings. & Station Locations \\
+    Scanning Device & Tools used for reading ticket information, necessary for entry validation and passenger tracking. & Entry/Exit Gates \\
+    QR Reader & Specialized scanners that interpret QR codes on tickets for entry validation or information retrieval. & Scanning Devices \\
+    NFC Reader & Contactless devices that read NFC tags for authentication and ticket validation. & Passenger Access Devices \\
+    Timetable, Prices, Bookings Database & Stores all relevant data for scheduling, pricing, and passenger bookings. & Public Cloud Servers \\
+    Optimized Routes Database & Contains data on the most efficient routes calculated by the optimization algorithms. & Public Cloud Servers \\
+    Accounts Database & Manages passenger account information, including subscription details and personal data. & Public Cloud Servers \\
+    Tickets Database & Holds data related to ticket sales, validations, and historical transactions. & Public Cloud Servers \\
+    Payments Database & Processes and records all payment transactions within the system. & Public Cloud Servers \\
+    Encrypted Account Lookup Database & A secure database that stores sensitive account information, accessible only through authorized queries. & Private Cloud Servers \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+
 
 \section{Development Viewpoint}
