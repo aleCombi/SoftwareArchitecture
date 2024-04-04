@@ -160,6 +160,13 @@ In summary, the functional viewpoint of our system meticulously addresses the in
     \label{fig:information_view}
 \end{figure}
 
+\subsection{Description}
+The Information View of the TRIP SYSTEM is about how data moves and is stored. The system uses several databases. The Timetable + Prices + Bookings DB keeps track of schedules, prices, and reservations. The Optimized Routes DB has data on the best travel paths. The Accounts/Subs DB holds information on user accounts and subscriptions. The Tickets DB records ticket purchases, and the Payments DB keeps a record of all payments.
+
+Tycoons use the Tycoon API to put in and get data. Passengers use terminals, apps, or websites to book travel and select routes. This choice and payment info go into the databases, updating the system.
+
+The Routes component uses the Optimized Routes DB to give passengers the best travel options. The Accounts (Subs) part handles subscription details and payments, working with the Accounts/Subs DB. For single tickets, there's a separate interface that works with the Tickets DB. Payments process transactions and send completed payment information to the bank.
+
 \begin{table}[H]
     \centering
     \caption{Glossary of elements for the Information View of the TRIP SYSTEM.}
@@ -195,6 +202,9 @@ In summary, the functional viewpoint of our system meticulously addresses the in
     \caption{Information view related to the scanning procedure.}
     \label{fig:information_view_scanning}
 \end{figure}
+
+\subsection{Description}
+The TRIP SYSTEM's scanning procedure is a sequence that starts with the Passenger, who scans at the Turnstile to gain entry. This triggers the Update/Authorize process, updating the Passenger State with the user's access rights. The Passenger State reflects the user's current permissions within the TRIP SYSTEM. Each user’s information is recorded in the Passenger State DB, a database that tracks and manages user statuses.
 
 \begin{table}[H]
     \centering
