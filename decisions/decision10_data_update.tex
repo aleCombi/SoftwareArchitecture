@@ -53,7 +53,7 @@ Also \textit{security} and \textit{privacy} here are paramount, as only the stri
 
 \subsection*{Context}
 The systems keeps data stored on multiple databases. 
-Some of them needs to give some degree of access to the tycoons and the customer service of the TRIP system:
+Some of them needs to give some degree of access to the tycoons and the customer service of the TrIP system:
 \begin{itemize}
     \item Tickets database;
     \item Payments database;
@@ -75,7 +75,7 @@ Consider the scenario of adding/removing a tycoon, adding/removing routes and st
 
 \subsection*{Option 1: Tycoon API for interactions with databases}
 
-We can add a layer between the TRIP system and the Tycoons, as an API which gives a set of querying rights to tycoons to export the data they need and forces them a format of data to be provided.
+We can add a layer between the TrIP system and the Tycoons, as an API which gives a set of querying rights to tycoons to export the data they need and forces them a format of data to be provided.
 
 Forcing tycoons to a certain format is possible because both bus and train system can be abstracted to a graph, where nodes are stations and edges are connections.
 They both have times for connections and prices to submit, together with bookings availabilities.
@@ -87,13 +87,13 @@ They both have times for connections and prices to submit, together with booking
 \end{itemize}
 \subsubsection*{Cons}
 \begin{itemize}[noitemsep]
-    \item \textbf{Usability} for the tycoon: Interfacing with an API needs some work from the tycoons IT department, to ensure the TRIP system is properly updated.
-    \item \textbf{Operational cost}: storing lots of information on the TRIP system requires the management of multiple databases.
+    \item \textbf{Usability} for the tycoon: Interfacing with an API needs some work from the tycoons IT department, to ensure the TrIP system is properly updated.
+    \item \textbf{Operational cost}: storing lots of information on the TrIP system requires the management of multiple databases.
 \end{itemize}
 
 
 \subsection*{Option 2: Real time information requests to tycoon systems and tycoon-specific API}
-Also asking data from tycoons periodically from the system is a possibility. In this case the TRIP system is
+Also asking data from tycoons periodically from the system is a possibility. In this case the TrIP system is
 responsible for the data querying and feeding, thus it should be able to interact with each tycoon system with a specific API.
 \subsubsection*{Pros}
 \begin{itemize}[noitemsep]
@@ -114,9 +114,9 @@ Also availability can be improved with option 1, as we cannot ensure high availa
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
 \begin{itemize}
-    \item Adding new tycoons would be easy for the TRIP system.
+    \item Adding new tycoons would be easy for the TrIP system.
     \item Standardized data is exchanged and managed.
-    \item Load management efficiency: the TRIP system is responsible for its own load management, instead of relying on tycoons systems.
+    \item Load management efficiency: the TrIP system is responsible for its own load management, instead of relying on tycoons systems.
     \item High accuracy of data thanks to standardization.
     \item Tycoons can potentially share analytical tools, having all the same interface.
     \item API acts as a gatekeeper, to keep tycoons from accessing to unwanted information. This should be reflected on future decisions meant at defining specific tactics.

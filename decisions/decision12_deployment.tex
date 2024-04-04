@@ -6,9 +6,9 @@ Open
 \subsection*{Architectural Summary}
 \begin{tabular}{|p{3.5cm}|p{10.5cm}|}
     \hline
-    \textbf{In the context of} & choosing to deploy TRiP system on cloud or on physical servers, \\
+    \textbf{In the context of} & choosing to deploy TrIP system on cloud or on physical servers, \\
     \hline
-    \textbf{Facing} & cost-effectiveness required by the TRiP owner, scalability and performance needs, \\
+    \textbf{Facing} & cost-effectiveness required by the TrIP owner, scalability and performance needs, \\
     \hline
     \textbf{To achieve} & high availability of the system together with security of passengers data, \\
     \hline
@@ -82,7 +82,7 @@ Implementing a hybrid system that uses a combination of serverless architecture 
 \end{itemize}
 
 \subsection*{Decision}
-As the focus on security have increased after Event 4 and the TRiP owner is more prone on spending, we pick option 3. This way, all the privacy-critical operations and data storages will be done in private clouds, while operations and storages of public data (such as the timetables),
+As the focus on security have increased after Event 4 and the TrIP owner is more prone on spending, we pick option 3. This way, all the privacy-critical operations and data storages will be done in private clouds, while operations and storages of public data (such as the timetables),
 will be on public data, guaranteeing cost-effectiveness and less maintenance concerns.
 We choose to store and operate with accounts in the system identifying them via an account ID. The mapping between this account IDs and the account private information (such as name, contacts, etc.) should be stored in a in-house private server.
 Communication with this database need to be encrypted to guarantee compliance with GDPR, write access to it can only be done by passengers while managing their accounts and read writes can be guaranteed only to officials verifying tickets onboard trains.

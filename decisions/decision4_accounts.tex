@@ -55,8 +55,8 @@ Alternatively, if passengers have active subscriptions to a tycoon, they should 
 \subsection*{Option 1: Introduction of a subscription manager tool, route management needs to take passenger subscriptions into consideration.}
 We want to include a Subscription Manager module to our functional view. 
 Such a module has the responsibility to verify subscriptions, communicating with the tycoon system.
-It should also allow passengers to create their own TRIP account and tie it to subscriptions.
-Since we need scalability, we consider using a TRIP account that is tied to one or many subscriptions, and let the passenger add new or automatically renew the existing ones.
+It should also allow passengers to create their own TrIP account and tie it to subscriptions.
+Since we need scalability, we consider using a TrIP account that is tied to one or many subscriptions, and let the passenger add new or automatically renew the existing ones.
 This means that we need an authentication means, like a magnetic card, or a phone app linked to NFC scanning or other alternatives.
 This will be the topic of a future decision.
 Furthermore, the Route management module needs to be able to optimize with respect to price, given that the passenger holds some subscription.
@@ -107,7 +107,7 @@ Hence the need for a separated module and a related database.
 
 \subsection*{Decision}
 We decided to pick Option 1. The increased concern for scalability, caused by event 1, points clearly to the listed pros of this option. Furthermore, the focus on modularity
-gives us easy maintainability, which is important for the TRIP owner.
+gives us easy maintainability, which is important for the TrIP owner.
 Performance in this case doesn't seem to be that central, as optimization of routes should be precomputed and cached, given that timetables should not change often and that subscription have relatively long lasting periods.
 With our option, we still have the flexibility to assign more computational or data access resources to the module who needs them the most.
 We also include Option 3, as we think Single Tickets remain central to achieve the Usability required by stakeholders who are less familiar with technology such as smartphone apps or are travelling only occasionally.

@@ -12,7 +12,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/context_view.png}
-    \caption{Context model of the TRIP system.}
+    \caption{Context model of the TrIP system.}
     \label{fig:context_view_model}
 \end{figure}
 
@@ -22,16 +22,16 @@
 \toprule
 \textbf{Id} & \textbf{Name} & \textbf{Description} \\
 \midrule
-1 & Passenger & Individuals who use the TRIP SYSTEM and its associated services, interacting through various interfaces. \\
+1 & Passenger & Individuals who use the TrIP SYSTEM and its associated services, interacting through various interfaces. \\
 2 & Customer Service & The department that handles passenger complaints and feedback, providing support and sending analysis or data requests to the system. \\
 3 & Financial Analysts & Experts or entities that review financial data, requiring analytical information from the system for decision-making. \\
 4 & Tycoons & The operational decision-makers of the system, possibly managers or algorithms that control system parameters and require data. \\
 5 & Tycoon API & The programming interface through which Tycoons receive updates and send requests to the system. \\
-6 & TRIP System & The core system that integrates various interfaces and processes, forming the central operation platform. \\
+6 & TrIP System & The core system that integrates various interfaces and processes, forming the central operation platform. \\
 7 & Governments & Regulatory bodies that may require data or perform audits on the system for governance and compliance. \\
-8 & TRIP Owner & The entity or person owning and maintaining the TRIP SYSTEM, responsible for its overall functionality. \\
+8 & TrIP Owner & The entity or person owning and maintaining the TrIP SYSTEM, responsible for its overall functionality. \\
 9 & Bank & Financial institution that handles the authorization and processing of payments for the system. \\
-10 & Stations & Locations where the TRIP SYSTEM provides service to passengers, such as train or bus stations. \\
+10 & Stations & Locations where the TrIP SYSTEM provides service to passengers, such as train or bus stations. \\
 11 & Railroads & Infrastructure providers that offer the tracks on which train services operate. \\
 12 & Trains & The vehicles used by the system to transport passengers from one station to another. \\
 13 & Buses/Bus Stations & The bus services and their stations that are part of the transport network. \\
@@ -41,7 +41,7 @@
 17 & Electronic Interfaces & Digital platforms such as mobile applications and websites that passengers interact with for services. \\
 \bottomrule
 \end{tabular}
-\caption{Context model glossary for the TRIP System.}
+\caption{Context model glossary for the TrIP System.}
 \label{tab:glossary_context_view}
 \end{table}
 
@@ -49,7 +49,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/functional_view.png}
-    \caption{TRIP System.}
+    \caption{TrIP System.}
     \label{fig:trip_system}
 \end{figure}
 
@@ -67,7 +67,7 @@ The system is designed to be scalable and flexible, so that it can be easily ada
     \toprule
     \textbf{Id} & \textbf{Name} & \textbf{Description} \\
     \midrule
-    1 & Passenger & End-users of the TRIP SYSTEM who interact with various system components to manage their travel experience. \\
+    1 & Passenger & End-users of the TrIP SYSTEM who interact with various system components to manage their travel experience. \\
     2 & Customer Service & The interface for passengers to make inquiries or complaints and receive assistance with bookings or account issues. \\
     3 & Tycoon & The administrative or business logic module that updates timetables and analyzes system data for improvements or reporting. \\
     4 & Database & An abstraction for the set of databases that stores all system data including passenger accounts, bookings, and payment information. Detailed information about how different databases are handled is detailed in the Information View.\\
@@ -80,7 +80,7 @@ The system is designed to be scalable and flexible, so that it can be easily ada
     10 & Terminal/App/Website & User interfaces through which they can access services such as booking, route information, and payment. \\
     \bottomrule
     \end{tabular}
-    \caption{Glossary of elements detailing the components of the TRIP SYSTEM and their roles in facilitating user interaction and service provision.}
+    \caption{Glossary of elements detailing the components of the TrIP SYSTEM and their roles in facilitating user interaction and service provision.}
     \label{tab:glossary_trip_system}
 \end{table}
 
@@ -91,7 +91,7 @@ The system is designed to be scalable and flexible, so that it can be easily ada
     \label{fig:ticket_scanner}
 \end{figure}
 
-\subsection{Description}
+\subsection{DescriptionTrIP}
 The scanning procedure within the TRIP SYSTEM encapsulates the interactions between the passenger and the system's access control mechanisms. It begins with the user presenting a valid form of transit access—such as a card or mobile device—to a scanning device like a turnstile or bus scanner. This device then consults the User state, a repository of the passenger's authorization status, to allow or deny entry. In parallel, the Ticket Checker function verifies the user's credentials against the Accounts subsystem, which manages detailed account information and subscriptions. Any changes to the user's status are updated in real time in the central Database, ensuring accurate tracking of access and travel history. This process ensures a secure, streamlined experience for passengers while providing the system with the necessary oversight to prevent unauthorized access
 
 \begin{table}[H]
@@ -109,7 +109,7 @@ The scanning procedure within the TRIP SYSTEM encapsulates the interactions betw
     7 & Database & An abstraction for the set of databases that stores all system data including passenger accounts, bookings, and payment information. Detailed information about how different databases are handled is detailed in the Information View.\\
     \bottomrule
     \end{tabular}
-    \caption{Glossary of elements for the Functional View - Turnstiles, detailing the components and their roles in passenger access and authorization within the TRIP SYSTEM.}
+    \caption{Glossary of elements for the Functional View - Turnstiles, detailing the components and their roles in passenger access and authorization within the TrIP SYSTEM.}
     \label{tab:glossary_turnstiles}
 \end{table}
 
@@ -137,15 +137,15 @@ The scanning procedure within the TRIP SYSTEM encapsulates the interactions betw
 
 In addressing the Quality Attribute (QA) priorities highlighted by users, our functional viewpoint incorporates several key decisions designed to enhance usability, maintainability, scalability, and performance efficiency.
 
-To meet the usability needs of users, we have opted for standardized User Interfaces (UIs). These UIs, being open-source and widely utilized, benefit from a large user base that contributes to their maintenance and robustness. This choice ensures a user-friendly and reliable interface for passengers over the long term. Furthermore, it aligns with the TRIP owner's preferences by offering ease of maintenance and low operational costs.
+To meet the usability needs of users, we have opted for standardized User Interfaces (UIs). These UIs, being open-source and widely utilized, benefit from a large user base that contributes to their maintenance and robustness. This choice ensures a user-friendly and reliable interface for passengers over the long term. Furthermore, it aligns with the TrIP owner's preferences by offering ease of maintenance and low operational costs.
 
-The introduction of multiple payment methods, including fillable cards, credit cards, and single tickets, significantly simplifies passenger interaction with the TRIP system. The integration of accounts and subscriptions further facilitates seamless travel across multiple tycoon networks, enabling passengers to efficiently manage and use their subscriptions.
+The introduction of multiple payment methods, including fillable cards, credit cards, and single tickets, significantly simplifies passenger interaction with the TrIP system. The integration of accounts and subscriptions further facilitates seamless travel across multiple tycoon networks, enabling passengers to efficiently manage and use their subscriptions.
 
 In response to Event 1, which underscored the need for easier integration of new tycoons, we have implemented the Tycoon API. This API standardizes data requests from each tycoon, irrespective of their mode of transportation, thus facilitating the smooth integration of new tycoons into the system. The Tycoon API, in conjunction with the accounts and bookings module, ensures that passengers can effortlessly utilize their subscriptions across different networks and book their preferred routes.
 
-Event 3, which focused on traffic jams, raised the importance of optimizing system performance during peak periods. By deciding on a centralized route management module, we have streamlined data flow between the TRIP system and the tycoons. This module not only simplifies data management but also enhances the system's ability to handle high request volumes through optimization and caching strategies.
+Event 3, which focused on traffic jams, raised the importance of optimizing system performance during peak periods. By deciding on a centralized route management module, we have streamlined data flow between the TrIP system and the tycoons. This module not only simplifies data management but also enhances the system's ability to handle high request volumes through optimization and caching strategies.
 
-In summary, the functional viewpoint of our system meticulously addresses the initial QA priorities, along with the challenges presented by new tycoon integration (Event 1) and traffic jams (Event 3). These decisions collectively ensure a user-friendly, scalable, and high-performing TRIP system for passengers, tycoons, and the TRIP owner alike.
+In summary, the functional viewpoint of our system meticulously addresses the initial QA priorities, along with the challenges presented by new tycoon integration (Event 1) and traffic jams (Event 3). These decisions collectively ensure a user-friendly, scalable, and high-performing TrIP system for passengers, tycoons, and the TrIP owner alike.
 
 
 
@@ -160,7 +160,7 @@ In summary, the functional viewpoint of our system meticulously addresses the in
 \end{figure}
 
 \subsection{Description}
-The Information View of the TRIP SYSTEM is about how data moves and is stored. The system uses several databases. The Timetable + Prices + Bookings DB keeps track of schedules, prices, and reservations. The Optimized Routes DB has data on the best travel paths. The Accounts/Subs DB holds information on user accounts and subscriptions. The Tickets DB records ticket purchases, and the Payments DB keeps a record of all payments.
+The Information View of the TrIP SYSTEM is about how data moves and is stored. The system uses several databases. The Timetable + Prices + Bookings DB keeps track of schedules, prices, and reservations. The Optimized Routes DB has data on the best travel paths. The Accounts/Subs DB holds information on user accounts and subscriptions. The Tickets DB records ticket purchases, and the Payments DB keeps a record of all payments.
 
 Tycoons use the Tycoon API to put in and get data. Passengers use terminals, apps, or websites to book travel and select routes. This choice and payment info go into the databases, updating the system.
 
@@ -168,14 +168,14 @@ The Routes component uses the Optimized Routes DB to give passengers the best tr
 
 \begin{table}[H]
     \centering
-    \caption{Glossary of elements for the Information View of the TRIP SYSTEM.}
+    \caption{Glossary of elements for the Information View of the TrIP SYSTEM.}
     \label{tab:information_view_glossary}
     \begin{tabularx}{\textwidth}{@{}lX@{}} % Use 'X' for auto-adjusting width
     \toprule
     \textbf{Element} & \textbf{Description} \\
     \midrule
     Tycoon & Tycoons responsible for making requests for analysis, and inserting travel data. \\
-    Tycoon API & Tycoon's way of interacting to the TRIP system. \\
+    Tycoon API & Tycoon's way of interacting to the TrIP system. \\
     Timetable + Prices + bookings DB & Stores data regarding travel schedules, pricing, and booking information. \\
     Optimized routes DB & Contains information on the most efficient travel routes that have been calculated and stored. \\
     Accounts/Subs DB & Maintains records of user accounts and their subscriptions for travel services. \\
@@ -203,17 +203,17 @@ The Routes component uses the Optimized Routes DB to give passengers the best tr
 \end{figure}
 
 \subsection{Description}
-The TRIP SYSTEM's scanning procedure is a sequence that starts with the Passenger, who scans at the Turnstile to gain entry. This triggers the Update/Authorize process, updating the Passenger State with the user's access rights. The Passenger State reflects the user's current permissions within the TRIP SYSTEM. Each user’s information is recorded in the Passenger State DB, a database that tracks and manages user statuses.
+The TrIP SYSTEM's scanning procedure is a sequence that starts with the Passenger, who scans at the Turnstile to gain entry. This triggers the Update/Authorize process, updating the Passenger State with the user's access rights. The Passenger State reflects the user's current permissions within the TRIP SYSTEM. Each user’s information is recorded in the Passenger State DB, a database that tracks and manages user statuses.
 
 \begin{table}[H]
     \centering
-    \caption{Legend for the Scanning Procedure in the Information View of the TRIP SYSTEM.}
+    \caption{Legend for the Scanning Procedure in the Information View of the TrIP SYSTEM.}
     \label{tab:scanning_procedure_legend}
     \begin{tabular}{@{}llp{10cm}@{}}
     \toprule
     \textbf{Id} & \textbf{Name} & \textbf{Description} \\
     \midrule
-    1 & Passenger & The starting point representing the individual using the TRIP SYSTEM. \\
+    1 & Passenger & The starting point representing the individual using the TrIP SYSTEM. \\
     2 & Turnstile & The physical or virtual entry point where the passenger scans to gain access. \\
     3 & Update / Authorize & The process that updates the system and authorizes the passenger to proceed. \\
     4 & Passenger State & The current status of the passenger within the system, which is updated after scanning. \\
@@ -306,14 +306,14 @@ The TRIP SYSTEM's scanning procedure is a sequence that starts with the Passenge
 
 \begin{table}[H]
     \centering
-    \caption{Glossary for the Deployment View of the TRIP SYSTEM.}
+    \caption{Glossary for the Deployment View of the TrIP SYSTEM.}
     \label{tab:deployment_view_glossary}
     \begin{tabularx}{\textwidth}{@{}lXX@{}} % Corrected to have three columns
     \toprule
     \textbf{Component} & \textbf{Description} & \textbf{Hosted On} \\
     \midrule
     FaaS Environment & Provides a platform for executing backend functions in a serverless architecture, such as route optimization. & Public Cloud Servers \\
-    Tycoon API & Interfaces allowing tycoons' software and systems to communicate with the TRIP system. & Private Cloud Servers \\
+    Tycoon API & Interfaces allowing tycoons' software and systems to communicate with the TrIP system. & Private Cloud Servers \\
     Customer Service API & Facilitates customer service operations by providing data access and manipulation capabilities. & Private Cloud Servers \\
     Passenger Access Device & Equipment that passengers interact with to access the system, like ticket validation and purchases. & Terminal, App, Website \\
     Ticket Machine & Physical machines where passengers can purchase tickets and manage their bookings. & Station Locations \\
@@ -330,8 +330,6 @@ The TRIP SYSTEM's scanning procedure is a sequence that starts with the Passenge
     \end{tabularx}
 \end{table}
 
-
-
 \section{Development Viewpoint}
 
 \begin{figure}[H]
@@ -340,6 +338,32 @@ The TRIP SYSTEM's scanning procedure is a sequence that starts with the Passenge
     \caption{Deployment view related broker pattern related to Tycoon API.}
     \label{fig:development_view_broker}
 \end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{Glossary for the Broker in the Development View.}
+    \label{tab:broker_development_glossary}
+    \begin{tabular}{@{}llp{10cm}@{}}
+    \toprule
+    \textbf{Id} & \textbf{Name} & \textbf{Description} \\
+    \midrule
+    1 & Client & Represents the Tycoon requesting data or action from the broker. \\
+    2 & Broker & Tycoon API that mediates between clients (Tycoon's) and various service providers (TrIP System's modules), handling requests and responses. \\
+    3 & Provider & TrIP system that register with the broker to offer their services to clients. \\
+    4 & Tycoon API & The application programming interface provided by the broker for communication with clients and providers. \\
+    5 & Query & A request sent from the client to the broker, seeking information or action. \\
+    6 & Register & The action of a provider adding their services to the broker's list of available resources. \\
+    7 & Forward & The process of the broker sending requests to providers or responses back to clients. \\
+    8 & Answer & The provider's response to a query that is sent back to the client via the broker. \\
+    9 & Accounts & TrIP System module that manages user account information and authentication. \\
+    10 & Tickets & TrIP system for issuing tickets, usually related to events or transportation. \\
+    11 & Payments & The TrIP module that handles transaction processing. \\
+    12 & Bookings & TrIP System module that manages reservations for services offered by the provider. \\
+    13 & Routes & TrIP System module that handles route pricing. \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
 
 \begin{figure}[H]
     \centering
