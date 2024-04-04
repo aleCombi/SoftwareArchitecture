@@ -69,7 +69,7 @@ add safety for tycoons, mention availability, performance (routes)
 
 
 Perspectives on development ViewPoint view 1: 
-maintainability canb e addressed
+maintainability, usability canb e addressed
 
 
 Decision 15:
