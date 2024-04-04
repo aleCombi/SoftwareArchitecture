@@ -46,7 +46,6 @@ Review notes
 
 Restructure every decision to fit to the template. (Alessandro) (DONE)
 Diagrams match quality attributes. (Can)
-Context view point fix it up, add description with events and initial task description copy pasta. (Can)
 Diagrams match events. (Can - made two rows Ale bitching again, finish both at the same time.)
 Make a table of events and how they change quality attribute (with double plus - CanGPT) (DONE)
 Deployment view (diagram DONE)
