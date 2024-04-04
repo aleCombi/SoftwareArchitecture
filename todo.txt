@@ -46,6 +46,7 @@ Review notes
 
 Restructure every decision to fit to the template. (Alessandro) (DONE)
 Diagrams match quality attributes. (Can)
+add safety to contect view for tycoons (Can)
 Diagrams match events. (Can - made two rows Ale bitching again, finish both at the same time.)
 Make a table of events and how they change quality attribute (with double plus - CanGPT) (DONE)
 Deployment view (diagram DONE)
@@ -55,12 +56,21 @@ Development view
 Perspectives on Functional ViewPoint view 2: addresses security for tycoon (no unauhtorized entries), usability for passengers who have a ticket/sub/account.
 
 Perspectives on Deployement ViewPoint view 1: 
-    addresses performance, availability for passengers, with load balancer (payments)
+    addresses performance, availability for passengers, with load balancer (payments), scalability
     addresses event 2 (network outage) QAs, with decision 14.
 
 Perspectives on Information ViewPoint view 1: 
     addresses event 4 (data leaks) with encryption (security tactic) (we can mention in decision 13)
     address security for tycoons, employ tactic authorize actors, and limit access (decision 10)
+
+
+Perspectives on Concurrency ViewPoint view 1: 
+add safety for tycoons, mention availability, performance (routes)
+
+
+Perspectives on development ViewPoint view 1: 
+maintainability canb e addressed
+
 
 Decision 15:
     - option 1: delayed processing
