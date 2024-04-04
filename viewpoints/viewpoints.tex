@@ -115,7 +115,6 @@ The scanning procedure within the TRIP SYSTEM encapsulates the interactions betw
 
 \subsection{Analysis on Perspectives}
 
-% Quality attribute table
 \begin{table}[h!]
     \centering
     \resizebox{\textwidth}{!}{%
@@ -123,14 +122,19 @@ The scanning procedure within the TRIP SYSTEM encapsulates the interactions betw
       \hline
       & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
       \hline
-      Functional View & X & X & & & & X & & & X \\
+      Functional View & 
+      \cellcolor{gray!60}X & % Usability (2nd priority)
+      \cellcolor{gray!30}X & % Performance (3rd priority)
+      & & & 
+      \cellcolor{gray!15}X & % Availability (4th priority)
+      & & 
+      \cellcolor{gray!90}X \\ % Maintainability (1st priority)
       \hline
     \end{tabular}
     }
     \caption{Functional View Prioritized Quality Attributes}
     \label{tab:functional_view}
-  \end{table}
-
+\end{table}
 
 \subsubsection{Scenarios}
 \input{scenarios/functional_view.tex}
@@ -220,6 +224,31 @@ The TrIP SYSTEM's scanning procedure is a sequence that starts with the Passenge
     5 & Passenger State DB & The database that records the state information of the passenger. \\
     \bottomrule
 \end{tabular}
+\end{table}
+
+\subsection{Analysis on Perspectives}
+\begin{table}[h!]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+      \hline
+      & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
+      \hline
+      Information View & 
+       & % Usability
+       & % Performance
+      \cellcolor{gray!90}X & % Security (1st priority)
+       & % Modifiability
+       & % Cost Efficiency
+       & % Availability
+       & % Safety
+       & % Integrability
+       \\ % Maintainability
+      \hline
+    \end{tabular}
+    }
+    \caption{Information View Prioritized Quality Attributes}
+    \label{tab:information_view}
 \end{table}
 
 \section{Concurrency Viewpoint}
@@ -315,6 +344,31 @@ This process outlines how timetable updates and route optimization are handled i
     \end{tabularx}
 \end{table}
 
+\subsection{Analysis on Perspectives}
+\begin{table}[h!]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+      \hline
+      & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
+      \hline
+      Concurrency View & 
+       & % Usability
+      \cellcolor{gray!30}X & % Performance (2nd priority)
+       & % Security
+       & % Modifiability
+       & % Cost Efficiency
+      \cellcolor{gray!90}X & % Availability (1st priority)
+      \cellcolor{gray!60}X & % Safety
+       & % Integrability
+       \\ % Maintainability
+      \hline
+    \end{tabular}
+    }
+    \caption{Concurrency View Prioritized Quality Attributes}
+    \label{tab:concurrency_view}
+\end{table}
+
 \section{Deployment Viewpoint}
 
 \begin{figure}[H]
@@ -357,6 +411,32 @@ Payment processing, crucial for managing Passenger State and payments, is secure
     \bottomrule
     \end{tabularx}
 \end{table}
+
+\subsection{Analysis on Perspectives}
+\begin{table}[h!]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+      \hline
+      & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
+      \hline
+      Deployment View & 
+       & % Usability
+      \cellcolor{gray!90}X & % Performance (1st priority)
+      \cellcolor{gray!60}X & % Security (3rd priority)
+       & % Modifiability
+       & % Cost Efficiency
+      \cellcolor{gray!70}X & % Availability (2nd priority)
+       & % Safety
+       & % Integrability
+       \\ % Maintainability
+      \hline
+    \end{tabular}
+    }
+    \caption{Deployment View Prioritized Quality Attributes}
+    \label{tab:deployment_view}
+\end{table}
+
 
 \section{Development Viewpoint}
 
@@ -429,4 +509,29 @@ This diagram illustrates the Model-View-Controller (MVC) pattern applied within 
     12 & View Selection & The process within the TrIP system for choosing the appropriate user interface view to display to passengers based on the current context or request. \\
     \bottomrule
     \end{tabular}
+\end{table}
+
+\subsection{Analysis on Perspectives}
+\begin{table}[h!]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+      \hline
+      & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
+      \hline
+      Development View & 
+      \cellcolor{gray!60}X & % Usability (2nd priority)
+       & % Performance
+       & % Security
+       & % Modifiability
+       & % Cost Efficiency
+       & % Availability
+       & % Safety
+       & % Integrability
+      \cellcolor{gray!90}X \\ % Maintainability (1st priority)
+      \hline
+    \end{tabular}
+    }
+    \caption{Development View Prioritized Quality Attributes}
+    \label{tab:development_view}
 \end{table}
