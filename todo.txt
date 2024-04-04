@@ -68,3 +68,4 @@ Decision 15:
     - decision: option 1 + some caching for delayed processing 
     - consequences: there may be risk of negative card balance, we still check tickets, we dont check cards (take the risk from credit/debit cards, the anonymous card stores its balance, so we can authorize, the nominal card stores its subs and balance)
 
+change how we write TRIP -> TRiP (as in the description)
