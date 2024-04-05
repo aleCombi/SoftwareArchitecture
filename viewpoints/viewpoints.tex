@@ -125,7 +125,8 @@ The scanning procedure within the TRIP SYSTEM encapsulates the interactions betw
       Functional View & 
       \cellcolor{gray!60}X & % Usability (2nd priority)
       \cellcolor{gray!30}X & % Performance (3rd priority)
-      & & & 
+      & & 
+      \cellcolor{gray!55}X & % Cost (3rd priority)
       \cellcolor{gray!15}X & % Availability (4th priority)
       & & 
       \cellcolor{gray!90}X \\ % Maintainability (1st priority)
@@ -372,6 +373,9 @@ This process outlines how timetable updates and route optimization are handled i
     \label{tab:concurrency_view}
 \end{table}
 
+\subsubsection{Scenarios}
+\input{scenarios/concurrency_view.tex}
+
 \section{Deployment Viewpoint}
 
 \begin{figure}[H]
@@ -429,7 +433,7 @@ Payment processing, crucial for managing Passenger State and payments, is secure
       \cellcolor{gray!60}X & % Security (3rd priority)
        & % Modifiability
        & % Cost Efficiency
-      \cellcolor{gray!70}X & % Availability (2nd priority)
+       & % Availability (2nd priority)
        & % Safety
        & % Integrability
        \\ % Maintainability
@@ -528,11 +532,11 @@ This diagram illustrates the Model-View-Controller (MVC) pattern applied within 
       \cellcolor{gray!60}X & % Usability (2nd priority)
        & % Performance
        & % Security
-       & % Modifiability
+       \cellcolor{gray!40}X& % Modifiability
        & % Cost Efficiency
        & % Availability
        & % Safety
-       & % Integrability
+       \cellcolor{gray!25}X& % Integrability
       \cellcolor{gray!90}X \\ % Maintainability (1st priority)
       \hline
     \end{tabular}

@@ -1,0 +1,54 @@
+% Scenario: Ensuring Service Availability During Network Outages
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} lX @{}}
+    \toprule
+    \textbf{Aspect} & \textbf{Details} \\
+    \midrule
+    Source & Network outage impacting the TrIP system's connectivity. \\
+    Stimulus & A passenger attempts to validate their ticket at a turnstile during the outage. \\
+    Artifact & Hybrid approach of delayed processing and local caching implemented in the TrIP system. \\
+    Response & The turnstile, equipped with local caching, validates the passenger's ticket against stored data, allowing entry. Transaction details are queued for delayed processing once network connectivity resumes, ensuring no service disruption. \\
+    Measure & Passenger service continuity is maintained with 99.9\% uptime, and ticket validations during outages show no significant delay, ensuring high system availability. \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Scenario for Availability - Network Outage Handling}
+    \label{table:availability_network_outage}
+\end{table}
+
+% Scenario: Maintaining Safety through Authorized Access
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} lX @{}}
+    \toprule
+    \textbf{Aspect} & \textbf{Details} \\
+    \midrule
+    Source & TrIP system's safety protocols for access control. \\
+    Stimulus & An individual attempts to access the transit system without a valid ticket or permission. \\
+    Artifact & Turnstile with integrated validation system that checks for valid tickets. \\
+    Response & The turnstile denies entry to the individual without a valid ticket, preventing unauthorized access and maintaining the safety and security of the transit environment. \\
+    Measure & Zero reported incidents of unauthorized access, ensuring the safety of the transit system and its users. \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Scenario for Safety - Authorized Access Enforcement}
+    \label{table:safety_authorized_access}
+\end{table}
+
+% Scenario: Optimizing Performance with Pre-stored Routes
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} lX @{}}
+    \toprule
+    \textbf{Aspect} & \textbf{Details} \\
+    \midrule
+    Source & Passenger requests the best route options via the TrIP system during peak hours. \\
+    Stimulus & High demand for route information causes potential strain on the system. \\
+    Artifact & Optimized Routes Database that stores frequently requested route data. \\
+    Response & The TrIP system quickly retrieves optimized route options from the pre-stored data, providing the passenger with fast and efficient service without needing to compute the routes in real-time. \\
+    Measure & The response time for route information requests during peak periods remains under 2 seconds, enhancing the overall performance of the system. \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Scenario for Performance - Efficient Route Retrieval}
+    \label{table:performance_route_optimization}
+\end{table}
+
