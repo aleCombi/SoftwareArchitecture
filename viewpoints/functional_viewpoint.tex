@@ -1,3 +1,5 @@
+\input{scenarios/functional_view.tex}
+
 \section{Functional Viewpoint}
 
 We start discussing the Functional Viewpoint by analyzing stakeholder concerns that need to be addressed.
@@ -74,6 +76,16 @@ The system is designed to be scalable and flexible, so that it can be easily ada
 \end{table}
 
 \subsubsection{Analysis on Perspectives}
+In addressing the Quality Attribute (QA) priorities highlighted by users, our Main Functional Elements view incorporates several key decisions designed to enhance usability, maintainability, scalability, and performance efficiency.
+
+\scenarioOneFunctional
+\scenarioTwoFunctional
+
+To meet the \textit{usability} needs of passengers, we have opted for standardized User Interfaces (UIs). These UIs, being open-source and widely utilized, benefit from a large user base that contributes to their \textit{maintenance} and robustness. This choice ensures a user-friendly and reliable interface for passengers over the long term. Furthermore, it aligns with the TrIP owner's preferences by offering ease of maintenance and \textit{low operational costs}.
+
+In response to Event 1, which underscored the need for easier \textit{integration} of new tycoons, we have implemented the Tycoon API. This API standardizes data requests from each tycoon, irrespective of their mode of transportation, thus facilitating the smooth integration of new tycoons into the system. The Tycoon API, in conjunction with the accounts and bookings module, ensures that passengers can effortlessly utilize their subscriptions across different networks and book their preferred routes.
+
+Event 3, which focused on traffic jams, raised the importance of optimizing system \textit{performance} during peak periods. By deciding on a centralized route management module, we have streamlined data flow between the TrIP system and the tycoons. This module not only simplifies data management but also enhances the system's ability to handle high request volumes through optimization and caching strategies.
 
 \subsection{View: Ticket scanning}
 \subsubsection{Model}
@@ -108,19 +120,11 @@ The scanning procedure within the TRIP SYSTEM encapsulates the interactions betw
 \end{table}
 
 \subsubsection{Analysis on Perspectives}
-
-
-\paragraph{Scenarios}
-\input{scenarios/functional_view.tex}
-
-In addressing the Quality Attribute (QA) priorities highlighted by users, our functional viewpoint incorporates several key decisions designed to enhance usability, maintainability, scalability, and performance efficiency.
-
-To meet the usability needs of users, we have opted for standardized User Interfaces (UIs). These UIs, being open-source and widely utilized, benefit from a large user base that contributes to their maintenance and robustness. This choice ensures a user-friendly and reliable interface for passengers over the long term. Furthermore, it aligns with the TrIP owner's preferences by offering ease of maintenance and low operational costs.
+In addressing the Quality Attribute (QA) priorities highlighted by users, our ticket scanning view incorporates several key decisions designed to enhance usability, maintainability, scalability, and performance efficiency.
 
 The introduction of multiple payment methods, including fillable cards, credit cards, and single tickets, significantly simplifies passenger interaction with the TrIP system. The integration of accounts and subscriptions further facilitates seamless travel across multiple tycoon networks, enabling passengers to efficiently manage and use their subscriptions.
 
-In response to Event 1, which underscored the need for easier integration of new tycoons, we have implemented the Tycoon API. This API standardizes data requests from each tycoon, irrespective of their mode of transportation, thus facilitating the smooth integration of new tycoons into the system. The Tycoon API, in conjunction with the accounts and bookings module, ensures that passengers can effortlessly utilize their subscriptions across different networks and book their preferred routes.
-
-Event 3, which focused on traffic jams, raised the importance of optimizing system performance during peak periods. By deciding on a centralized route management module, we have streamlined data flow between the TrIP system and the tycoons. This module not only simplifies data management but also enhances the system's ability to handle high request volumes through optimization and caching strategies.
+\paragraph{Scenarios}
+\scenarioThreeFunctional
 
 In summary, the functional viewpoint of our system meticulously addresses the initial QA priorities, along with the challenges presented by new tycoon integration (Event 1) and traffic jams (Event 3). These decisions collectively ensure a user-friendly, scalable, and high-performing TrIP system for passengers, tycoons, and the TrIP owner alike.

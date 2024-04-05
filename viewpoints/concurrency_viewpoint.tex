@@ -1,3 +1,5 @@
+\input{scenarios/concurrency_view.tex}
+
 \section{Concurrency Viewpoint}
 We start discussing the information viewpoint by analyzing stakeholder concerns that need to be addressed.
 We individuated the following user stories:
@@ -61,6 +63,9 @@ In the TRIP SYSTEM, the Passenger starts the process at the Ticket Machine, choo
 \end{table}
 
 \subsubsection{Analysis on Perspectives}
+\paragraph{Scenarios}
+\scenarioThreeConcurrency
+
 \subsection{View: Scanning procedure}
 \subsubsection{Model}
 \begin{figure}[H]
@@ -102,6 +107,10 @@ This process ensures that the system can function and provide decisions autonomo
     \end{tabularx}
 \end{table}
 \subsubsection{Analysis on Perspectives}
+\paragraph{Scenarios}
+\scenarioOneConcurrency
+\scenarioTwoConcurrency
+
 \subsection{View: Tycoon data updates}
 \subsubsection{Model}
 
@@ -136,7 +145,6 @@ This process outlines how timetable updates and route optimization are handled i
 \subsubsection{Analysis on Perspectives}
 
 \paragraph{Scenarios}
-\input{scenarios/concurrency_view.tex}
 
 The Concurrency Viewpoint is central to the TRiP system's architecture, focusing on ensuring that user interactions with the system occur smoothly and without delay, even when multiple operations are executed simultaneously. This viewpoint addresses the system's capacity to manage concurrent actions effectively, with a particular emphasis on maintaining performance, safety, and availability. \\
 
