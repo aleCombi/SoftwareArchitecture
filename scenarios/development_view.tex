@@ -1,0 +1,54 @@
+% Scenario 1: Usability Enhancement through Standardized UIs
+% Scenario: Efficient Data Retrieval for Tycoon Route Analysis and Account Information
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} lX @{}}
+    \toprule
+    \textbf{Aspect} & \textbf{Details} \\
+    \midrule
+    Source & Tycoon's analytical system requesting data for route pricing and passenger account details. \\
+    Stimulus & The Tycoon system sends a data request to analyze route prices based on their subscription models and to gather specific account information for passengers. \\
+    Artifact & Tycoon API interfacing between the Tycoon's systems and the TrIP system's databases. \\
+    Response & The Tycoon API promptly routes the queries to the appropriate data providers, retrieves the requested information, and consolidates the results for the Tycoon system. \\
+    Measure & Tycoon system receives comprehensive data within 3 seconds, enabling effective route and subscription analysis for passenger accounts. \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Scenario for Tycoon API Data Retrieval}
+    \label{table:tycoon_api_data_retrieval}
+\end{table}
+
+% Scenario: Streamlined System Updates through MVC Pattern
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} lX @{}}
+    \toprule
+    \textbf{Aspect} & \textbf{Details} \\
+    \midrule
+    Source & TrIP system development team. \\
+    Stimulus & The need to update the route pricing algorithm without affecting the user interface. \\
+    Artifact & Model-View-Controller (MVC) pattern within the TrIP system. \\
+    Response & Developers update the Pricing Model with the new algorithm, which automatically propagates changes to the relevant Views without requiring additional adjustments. \\
+    Measure & The system update is deployed with zero downtime, and subsequent feature updates require 40\% less time due to decoupled architecture. \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Scenario for Maintainability - MVC Pattern}
+    \label{table:mvc_maintainability}
+\end{table}
+
+% Scenario: Enhanced User Experience with MVC-Driven UI
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} lX @{}}
+    \toprule
+    \textbf{Aspect} & \textbf{Details} \\
+    \midrule
+    Source & Passenger using the TrIP system to manage travel. \\
+    Stimulus & The passenger updates their travel preferences in the User Account View. \\
+    Artifact & MVC pattern facilitating the User Account management. \\
+    Response & The Controller processes the passenger's input, updates the User Account Model, and the View dynamically reflects the changes, providing immediate visual confirmation to the passenger. \\
+    Measure & Passengers express a 90\% satisfaction rate with the ease of updating preferences, and the error rate in preference updates decreases by 50\%. \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Scenario for Usability - MVC-Driven UI}
+    \label{table:mvc_usability}
+\end{table}
