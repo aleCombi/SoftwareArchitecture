@@ -1,6 +1,8 @@
 \section{Context Viewpoint}
 
-\subsection{Stakeholder Model}
+\subsection{View: Stakeholders}
+
+\subsubsection{Model}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/stakeholder_view.png}
@@ -8,7 +10,13 @@
     \label{fig:stakeholder_view_model}
 \end{figure}
 
-\subsection{Context Model}
+\subsubsection{Description}
+\subsubsection{Glossary of Elements}
+
+\subsubsection{Analysis on Perspectives}
+
+\subsection{View: Context diagram}
+\subsubsection{Model}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/context_view.png}
@@ -16,7 +24,7 @@
     \label{fig:context_view_model}
 \end{figure}
 
-\subsection*{Description}
+\subsubsection{Description}
 The Context View of the TRiP SYSTEM delineates the ecosystem within which the system operates, including its interactions with users, external entities, and other system components. At the user level, engagement with the TRiP system is facilitated through various interfaces such as terminals, apps, websites, and controller devices like turnstiles and bus scanners, enabling passengers to access services seamlessly.
 
 The system is subject to a range of external dependencies, including infrastructure elements like stations, railroads, and trains, as well as service providers such as phone companies and utilities that supply essential resources. These components are integral to the system's operations, impacting its functionality and performance.
@@ -25,6 +33,7 @@ At the core, the TRiP system is interconnected with Tycoons via the Tycoon API, 
 
 The system's architecture is designed to ensure robustness and responsiveness to both the passengers' and Tycoons' needs. It facilitates various processes, from payment transactions, which are securely handled and routed through financial institutions, to the maintenance of service quality, overseen by the TRiP owner and regulated by governmental audits and codes. This comprehensive network of interactions defines the TRiP system's context, emphasizing its multifaceted nature and the critical role it plays in serving its stakeholders.
 
+\subsubsection{Glossary of the Elements}
 \begin{table}[H]
 \centering
 \begin{tabular}{@{}clp{9cm}@{}}
@@ -54,7 +63,14 @@ The system's architecture is designed to ensure robustness and responsiveness to
 \label{tab:glossary_context_view}
 \end{table}
 
+\subsubsection{Analysis on Perspectives}
+
 \section{Functional Viewpoint}
+
+\subsection{View: Main Functional Elements}
+
+\subsubsection{Model}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/functional_view.png}
@@ -62,7 +78,7 @@ The system's architecture is designed to ensure robustness and responsiveness to
     \label{fig:trip_system}
 \end{figure}
 
-\subsection*{Description}
+\subsubsection{Description}
 The functional view diagram of the TrIP system illustrates the major functions of the system and how they interact with each other. The diagram features boxes representing different functions, connected by arrows that represent interactions.
 The system starts with the user, who can interact with the system through various interfaces, such as terminals, apps, or websites. The user can input their departure and arrival stations, and the system will then display a list of available routes. The user can then select a route and proceed to payment.
 The payment system can handle various payment methods, including single tickets, subscriptions, and fillable cards. If the user has a subscription, the system will automatically check if the subscription is valid for the selected route. This is done by the Account and Subscription Management module, which communicates with the tycoon systems to verify the subscription. If the subscription is not valid, the user will be prompted to purchase a single ticket or top up their fillable card.
@@ -70,6 +86,7 @@ Once the payment is processed, the system will generate a ticket or update the u
 The system also includes a number of other functions, such as a booking system, a route optimization system, and a customer service system. The booking system allows users to reserve seats on trains. The route optimization system helps users find the most efficient routes between their departure and arrival stations. The customer service system provides support to passengers with inquiries and complaints.
 The system is designed to be scalable and flexible, so that it can be easily adapted to accommodate new tycoons and changing business models. The system is also designed to be secure, so that passenger data is protected from unauthorized access.
 
+\subsubsection{Glossary of Elements}
 \begin{table}[H]
     \centering
     \begin{tabular}{@{}clp{9cm}@{}}
@@ -93,6 +110,10 @@ The system is designed to be scalable and flexible, so that it can be easily ada
     \label{tab:glossary_trip_system}
 \end{table}
 
+\subsubsection{Analysis on Perspectives}
+
+\subsection{View: Ticket scanning}
+\subsubsection{Model}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/functional_view scanning.png}
@@ -100,9 +121,10 @@ The system is designed to be scalable and flexible, so that it can be easily ada
     \label{fig:ticket_scanner}
 \end{figure}
 
-\subsection*{Description}
+\subsubsection{Description}
 The scanning procedure within the TRIP SYSTEM encapsulates the interactions between the passenger and the system's access control mechanisms. It begins with the user presenting a valid form of transit access—such as a card or mobile device—to a scanning device like a turnstile or bus scanner. This device then consults the User state, a repository of the passenger's authorization status, to allow or deny entry. In parallel, the Ticket Checker function verifies the user's credentials against the Accounts subsystem, which manages detailed account information and subscriptions. Any changes to the user's status are updated in real time in the central Database, ensuring accurate tracking of access and travel history. This process ensures a secure, streamlined experience for passengers while providing the system with the necessary oversight to prevent unauthorized access
 
+\subsubsection{Glossary of Elements}
 \begin{table}[H]
     \centering
     \begin{tabular}{@{}clp{9cm}@{}} % Adjust the width of the description column as needed to fit the page
@@ -122,7 +144,7 @@ The scanning procedure within the TRIP SYSTEM encapsulates the interactions betw
     \label{tab:glossary_turnstiles}
 \end{table}
 
-\subsection{Analysis on Perspectives}
+\subsubsection{Analysis on Perspectives}
 
 \begin{table}[h!]
     \centering
@@ -146,7 +168,7 @@ The scanning procedure within the TRIP SYSTEM encapsulates the interactions betw
     \label{tab:functional_view}
 \end{table}
 
-\subsubsection{Scenarios}
+\paragraph{Scenarios}
 \input{scenarios/functional_view.tex}
 
 In addressing the Quality Attribute (QA) priorities highlighted by users, our functional viewpoint incorporates several key decisions designed to enhance usability, maintainability, scalability, and performance efficiency.
@@ -165,7 +187,8 @@ In summary, the functional viewpoint of our system meticulously addresses the in
 
 
 \section{Information Viewpoint}
-
+\subsection{View: Main Information View}
+\subsubsection{Model}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/information_view.png}
@@ -173,12 +196,14 @@ In summary, the functional viewpoint of our system meticulously addresses the in
     \label{fig:information_view}
 \end{figure}
 
-\subsection*{Description}
+\subsubsection{Description}
 The Information View of the TrIP SYSTEM is about how data moves and is stored. The system uses several databases. The Timetable + Prices + Bookings DB keeps track of schedules, prices, and reservations. The Optimized Routes DB has data on the best travel paths. The Accounts/Subs DB holds information on user accounts and subscriptions. The Tickets DB records ticket purchases, and the Payments DB keeps a record of all payments.
 
 Tycoons use the Tycoon API to put in and get data. Passengers use terminals, apps, or websites to book travel and select routes. This choice and payment info go into the databases, updating the system.
 
 The Routes component uses the Optimized Routes DB to give passengers the best travel options. The Accounts (Subs) part handles subscription details and payments, working with the Accounts/Subs DB. For single tickets, there's a separate interface that works with the Tickets DB. Payments process transactions and send completed payment information to the bank.
+
+\subsubsection{Glossary of Elements}
 
 \begin{table}[H]
     \centering
@@ -209,6 +234,10 @@ The Routes component uses the Optimized Routes DB to give passengers the best tr
     \end{tabularx}
 \end{table}
 
+\subsubsection{Analysis on Perspectives}
+
+\subsection{View: Scanning information flows}
+\subsubsection{Model}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/information_view scanning.png}
@@ -216,7 +245,7 @@ The Routes component uses the Optimized Routes DB to give passengers the best tr
     \label{fig:information_view_scanning}
 \end{figure}
 
-\subsection*{Description}
+\subsubsection{Description}
 The TrIP SYSTEM's scanning procedure is a sequence that starts with the Passenger, who scans at the Turnstile to gain entry. This triggers the Update/Authorize process, updating the Passenger State with the user's access rights. The Passenger State reflects the user's current permissions within the TRIP SYSTEM. Each user’s information is recorded in the Passenger State DB, a database that tracks and manages user statuses.
 
 \begin{table}[H]
@@ -236,7 +265,7 @@ The TrIP SYSTEM's scanning procedure is a sequence that starts with the Passenge
 \end{tabular}
 \end{table}
 
-\subsection{Analysis on Perspectives}
+\subsubsection{Analysis on Perspectives}
 \begin{table}[h!]
     \centering
     \resizebox{\textwidth}{!}{%
@@ -261,7 +290,7 @@ The TrIP SYSTEM's scanning procedure is a sequence that starts with the Passenge
     \label{tab:information_view}
 \end{table}
 
-\subsubsection{Scenarios}
+\paragraph{Scenarios}
 \input{scenarios/information_view.tex}
 
 The Information View of the TrIP system provides a comprehensive architecture designed to handle and safeguard data movement and storage, ensuring the system's integrity and security.
@@ -277,6 +306,8 @@ The Tycoon API serves as a broker for data access by tycoons. It provides a cont
 Using the scenarios provided, we can see how the system's design and technology choices map directly to its operations. Passengers entering their information into terminals or apps can be assured that their data will be encrypted and stored securely, as detailed in the first scenario. Payment processes, as per the second scenario, happen within the secure confines of the banking system. Lastly, the way the Tycoon API manages data requests ensures that passenger data is only accessed by authorized tycoons, enhancing privacy and data protection as outlined in the third scenario.
 
 \section{Concurrency Viewpoint}
+\subsection{View: Ticket purchase}
+\subsubsection{Model}
 
 \begin{figure}[H]
     \centering
@@ -285,7 +316,7 @@ Using the scenarios provided, we can see how the system's design and technology 
     \label{fig:concurrency_view_1}
 \end{figure}
 
-\subsection*{Description}
+\subsubsection{Description}
 In the TRIP SYSTEM, the Passenger starts the process at the Ticket Machine, choosing a route and payment method. The Terminal takes over to process the payment, and the Payment Module communicates with the Bank for payment approval. If the Bank approves, the Payment Module signals the Ticket Machine to confirm the transaction and print the ticket. If the Bank denies the payment, the process is stopped, and the Passenger is notified.
 
 \begin{table}[H]
@@ -305,6 +336,10 @@ In the TRIP SYSTEM, the Passenger starts the process at the Ticket Machine, choo
     \end{tabularx}
 \end{table}
 
+\subsubsection{Analysis on Perspectives}
+
+\subsection{View: Scanning procedure}
+\subsubsection{Model}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/concurrency_view_2.png}
@@ -312,7 +347,7 @@ In the TRIP SYSTEM, the Passenger starts the process at the Ticket Machine, choo
     \label{fig:concurrency_view_2}
 \end{figure}
 
-\subsection*{Description}
+\subsubsection{Description}
 The diagram depicts a turnstile access procedure with conditional paths based on network availability and user authorization. When a Passenger scans their ticket or card at the Turnstile, two scenarios can unfold:
 
 \begin{enumerate}
@@ -325,6 +360,8 @@ The diagram depicts a turnstile access procedure with conditional paths based on
 \end{enumerate}
 
 This process ensures that the system can function and provide decisions autonomously, even in the absence of network connectivity, enhancing reliability and user experience.
+
+\subsubsection{Glossary of Elements}
 
 \begin{table}[H]
     \centering
@@ -341,6 +378,9 @@ This process ensures that the system can function and provide decisions autonomo
     \bottomrule
     \end{tabularx}
 \end{table}
+\subsubsection{Analysis on Perspectives}
+\subsection{View: Tycoon data updates}
+\subsubsection{Model}
 
 \begin{figure}[H]
     \centering
@@ -349,7 +389,7 @@ This process ensures that the system can function and provide decisions autonomo
     \label{fig:concurrency_view_3}
 \end{figure}
 
-\subsection*{Description}
+\subsubsection{Description}
 This process outlines how timetable updates and route optimization are handled in the system. It begins with the Tycoon, an administrative role, who updates timetables through the Tycoon API. These updates are then applied to the Timetables DB. Following this update, the Route Optimizer initiates the optimization process, which takes the updated timetable data to determine the most efficient routes. These optimized routes are then stored in the Optimized Routes DB, completing the cycle of updating and optimizing the route information available to the system and its users.
 
 \begin{table}[H]
@@ -368,8 +408,9 @@ This process outlines how timetable updates and route optimization are handled i
     \bottomrule
     \end{tabularx}
 \end{table}
+\subsubsection{Glossary of Elements}
 
-\subsection{Analysis on Perspectives}
+\subsubsection{Analysis on Perspectives}
 \begin{table}[h!]
     \centering
     \resizebox{\textwidth}{!}{%
@@ -394,7 +435,7 @@ This process outlines how timetable updates and route optimization are handled i
     \label{tab:concurrency_view}
 \end{table}
 
-\subsubsection{Scenarios}
+\paragraph{Scenarios}
 \input{scenarios/concurrency_view.tex}
 
 The Concurrency Viewpoint is central to the TRiP system's architecture, focusing on ensuring that user interactions with the system occur smoothly and without delay, even when multiple operations are executed simultaneously. This viewpoint addresses the system's capacity to manage concurrent actions effectively, with a particular emphasis on maintaining performance, safety, and availability. \\
@@ -412,6 +453,8 @@ By detailing these processes, the concurrency viewpoint showcases the TrIP syste
 
 \section{Deployment Viewpoint}
 
+\subsection{View: Scanning procedure}
+\subsubsection{Model}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/deployment_view.png}
@@ -419,13 +462,14 @@ By detailing these processes, the concurrency viewpoint showcases the TrIP syste
     \label{fig:deployment_view_scanning}
 \end{figure}
 
-\subsection*{Description}
+\subsubsection{Description}
 The deployment view diagram illustrates the TrIP system's architecture, showing components distributed across public and private cloud servers. Public cloud servers house the FaaS Environment for route optimization, a Terminal with Customer Service API, and the Primary Functional Server hosting Accounts, Single Ticket, Bookings, and Routes components. Devices for passenger access, such as web and phone apps, interface with scanning devices like QR and NFC readers, managed by state trackers and checkers.
 
 The ticket machine interfaces include User Interface and POS components. Database servers in the public cloud manage the PostgreSQL databases for Timetables, Prices, Bookings, Optimized Routes, Accounts, Tickets, and Payments. The private cloud server secures the Encrypted Account Lookup database. A Load Balancer ensures efficient traffic management.
 
 Payment processing, crucial for managing Passenger State and payments, is securely handled in the private cloud, emphasizing the system's focus on security and reliable transaction handling. 
 
+\subsubsection{Glossary of Elements}
 
 \begin{table}[H]
     \centering
@@ -453,7 +497,7 @@ Payment processing, crucial for managing Passenger State and payments, is secure
     \end{tabularx}
 \end{table}
 
-\subsection{Analysis on Perspectives}
+\subsubsection{Analysis on Perspectives}
 \begin{table}[h!]
     \centering
     \resizebox{\textwidth}{!}{%
@@ -478,7 +522,7 @@ Payment processing, crucial for managing Passenger State and payments, is secure
     \label{tab:deployment_view}
 \end{table}
 
-\subsubsection{Scenarios}
+\paragraph{Scenarios}
 \input{scenarios/deployment_view.tex}
 
 In the Deployment Viewpoint, the TRiP system's architecture is strategically distributed across a combination of cloud-based and localized servers to optimize for both performance and security, critical attributes for the robustness and reliability of the system.
@@ -490,7 +534,8 @@ For security, the system employs private cloud servers, where sensitive componen
 Through this architecture, the TRiP system ensures the system is able handle the performance requirements from its users, while keeping the user information secure. Usage of cloud servers ensures dynamically scalable performance requirements. Keeping the state of the users, and caching optimzied routes is another architectural decision where the system is able to respond user requests fast with the scanning devices.
 
 \section{Development Viewpoint}
-
+\subsection{View: Broker pattern for Tycoon API}
+\subsubsection{Model}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/development_view_broker.png}
@@ -498,9 +543,10 @@ Through this architecture, the TRiP system ensures the system is able handle the
     \label{fig:development_view_broker}
 \end{figure}
 
-\subsection*{Description}
+\subsubsection{Description}
 The diagram portrays the broker architecture in the TrIP system, delineating the communication between clients, the broker, and providers. Tycoon clients initiate the interaction by registering with the Tycoon API broker. Queries are sent from the Tycoon to the broker, which then forwards these queries to the relevant providers. These providers include services for Accounts, Payments, Bookings, Tickets, and Routes, each playing a pivotal role in processing Tycoon requests. Upon gathering the necessary data or performing the required actions, providers send their response back to the broker. The broker, in turn, forwards this information back to the Tycoon client, completing the request-response cycle. This broker pattern facilitates a structured approach to handling requests and centralizes the communication logic, simplifying interactions across the system’s diverse components.
 
+\subsubsection{Glossary of Elements}
 
 \begin{table}[H]
     \centering
@@ -527,7 +573,9 @@ The diagram portrays the broker architecture in the TrIP system, delineating the
     \end{tabular}
 \end{table}
 
-
+\subsubsection{Analysis on Perspectives}
+\subsection{View: Model-View-Controller pattern for User Interface}
+\subsubsection{Model}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings/views_final_version/development_view_User_Interface.png}
@@ -535,8 +583,10 @@ The diagram portrays the broker architecture in the TrIP system, delineating the
     \label{fig:development_view_User_Interface}
 \end{figure}
 
-\subsection*{Description}
+\subsubsection{Description}
 This diagram illustrates the Model-View-Controller (MVC) pattern applied within the TrIP system. It breaks down the system's user interface into Views, which are responsible for presenting data to users and include interfaces for Payment, User Account, Route, and Pricing. The Models act as the data layer with Payment, Route, User Account, and Pricing components that manage the system's state. They receive state queries and broadcast state changes to the Views. Controllers interpret user gestures, direct state changes, and mediate between the Models and Views. This separation of concerns ensures that user interactions are handled efficiently, system data is managed cohesively, and business logic is executed in a controlled manner. The MVC architecture is fundamental to the system's organization, promoting clear delineations between different functionalities and facilitating ease of maintenance and scalability.
+
+\subsubsection{Glossary of Elements}
 
 \begin{table}[H]
     \centering
@@ -562,7 +612,7 @@ This diagram illustrates the Model-View-Controller (MVC) pattern applied within 
     \end{tabular}
 \end{table}
 
-\subsection{Analysis on Perspectives}
+\subsubsection{Analysis on Perspectives}
 \begin{table}[h!]
     \centering
     \resizebox{\textwidth}{!}{%
@@ -588,7 +638,7 @@ This diagram illustrates the Model-View-Controller (MVC) pattern applied within 
 \end{table}
 
 
-\subsubsection{Scenarios}
+\paragraph{Scenarios}
 \input{scenarios/development_view.tex}
 The Development Viewpoint focuses on the structural aspects that underpin the TrIP system's architecture, highlighting the modular approach in system design to enhance usability and maintainability. \\
 
