@@ -1,169 +1,103 @@
 \section{User Stories}
 
 \subsection{Prioritized User Stories}
-
-\noindent
-1. As a frequent traveler, I want to subscribe to a comprehensive monthly pass that includes all three networks so that I can save money on my regular commutes. \textbf{QAs:} Usability
-
-\noindent
-2. As a passenger, I want to be able to check the balance of my multi-network travel card online so that I can easily manage my travel expenses. \textbf{QAs:} Usability
-
-\noindent
-13. As a family, we want to charge train cards from the terminal, so that we can travel when we need without one transaction every time. \textbf{QAs:} Usability(+), Modifiability(-)
-
-\noindent
-15. As an occasional passenger, I want the system to not allow me to pay for temporarily blocked routes, so that I don't have to go through customer service. \textbf{QAs:} Usability(+), Modifiability(-), Performance(-)
-
-\noindent
-16. As a passenger, I want to be able to purchase a single ticket that allows me to travel across all train networks so that I can travel seamlessly without needing to buy separate tickets for each tycoon's network. \textbf{QAs:} Usability(+), Modifiability(-), Performance(-)
-
-\noindent
-18. As a government regulator, I want the payment system to adhere to data protection and financial transaction security standards so that passengers' personal and financial information is secure. \textbf{QAs:} Security(+), Modifiability(-), Testability(-), Integrability(-)
-
-\noindent
-23. As a tycoon, I want the payment system to integrate with my existing infrastructure with minimal disruption so that I can maintain high service levels during the transition. \textbf{QAs:} Integrability(+), Modifiability(-), Usability(+), Testability(-)
-
-\noindent
-26. As a station manager, I want the system to offer real-time updates on train schedules and network disruptions so that I can keep passengers informed and manage station flow effectively. \textbf{QAs:} Usability(+), Performance(-)
-
-\noindent
-27. As a network maintenance planner, I want the payment system to integrate with maintenance scheduling tools so that I can plan work with minimal disruption to the train service and revenue. \textbf{QAs:} Availability(+), Modifiability(-)
+\begin{itemize}
+    \item \userStoryOne \textbf{QAs:} Usability
+    \item \userStoryTwo \textbf{QAs:} Usability
+    \item \userStoryThirteen \textbf{QAs:} Usability(+), Modifiability(-)
+    \item \userStoryFifteen \textbf{QAs:} Usability(+), Modifiability(-), Performance(-)
+    \item \userStorySixteen \textbf{QAs:} Usability(+), Modifiability(-), Performance(-)
+    \item \userStoryEighteen \textbf{QAs:} Security(+), Modifiability(-), Testability(-), Integrability(-)
+    \item \userStoryTwentyThree \textbf{QAs:} Integrability(+), Modifiability(-), Usability(+), Testability(-)
+    \item \userStoryTwentySix \textbf{QAs:} Usability(+), Performance(-)
+    \item \userStoryTwentySeven \textbf{QAs:} Availability(+), Modifiability(-)
+\end{itemize}
 
 \subsection{Passengers}
-
-\noindent
-1. As a frequent traveler, I want to subscribe to a comprehensive monthly pass that includes all three networks so that I can save money on my regular commutes. \textbf{QAs:} Usability
-
-\noindent
-2. As a passenger, I want to be able to check the balance of my multi-network travel card online so that I can easily manage my travel expenses. \textbf{QAs:} Usability
-
-\noindent
-3. As a passenger with a subscription, I want to receive automatic notifications about my subscription renewal and any discounts or promotions available so that I can take advantage of cost savings. \textbf{QAs:} Usability
+\begin{itemize}
+    \item \userStoryOne \textbf{QAs:} Usability
+    \item \userStoryTwo \textbf{QAs:} Usability
+    \item \userStoryThree \textbf{QAs:} Usability
+\end{itemize}
 
 \subsection{Tech-savvy Passengers}
-
-\noindent
-4. As a tech-savvy passenger, I want to use a mobile app to manage my subscriptions, make payments, and receive digital tickets so that I can have a paperless and convenient travel experience. \textbf{QAs:} Usability(+), Deployability(-)
-
-\noindent
-5. As a passenger interested in sustainability, I want the system to track my travel carbon footprint and offer carbon offset options so that I can make environmentally responsible travel choices. \textbf{QAs:} Energy efficiency(+), Performance(-)
+\begin{itemize}
+    \item \userStoryFour \textbf{QAs:} Usability(+), Deployability(-)
+    \item \userStoryFive \textbf{QAs:} Energy efficiency(+), Performance(-)
+\end{itemize}
 
 \subsection{Accessibility Advocates}
+\begin{itemize}
+    \item \userStorySix \textbf{QAs:} Usability(+), Safety(+)
+    \item \userStorySeven \textbf{QAs:} Usability(+), Modifiability(-), Deployability(-)
+    \item \userStoryEight \textbf{QAs:} Usability(+), Modifiability(+)
+    \item \userStoryNine \textbf{QAs:} Usability(+), Modifiability(-)
+    \item \userStoryTen \textbf{QAs:} Usability(+), Modifiability(-), Performance(-)
+\end{itemize}
 
-\noindent
-6. As a passenger with mobility challenges, I want the payment system to provide information on accessible services and allow for easy purchase of accessible seating across all networks so that I can travel comfortably and safely. \textbf{QAs:} Usability(+), Safety(+)
-
-\noindent
-7. As an advocate for accessibility, I want the system to offer voice-activated features and screen reader compatibility for passengers with visual impairments so that the service is inclusive and accessible to everyone. \textbf{QAs:} Usability(+), Modifiability(-), Deployability(-)
-
-\noindent
-8. As an elder, I want a simple interface, so that I don't have to get help to buy tickets. \textbf{QAs:} Usability(+), Modifiability(+)
-
-\noindent
-9. As a tourist, I want to choose among many languages, so that I don't have to translate using my phone. \textbf{QAs:} Usability(+), Modifiability(-)
-
-\noindent
-10. As a tourist, I want to have quick access to the most popular trips, so I can quickly get my ticket. \textbf{QAs:} Usability(+), Modifiability(-), Performance(-)
-
-\noindent
-11. As a student, I want to be able to scan my student card, so that I can access financial benefits. \textbf{QAs:} Usability(+), Modifiability(-)
-
-\noindent
-12. As a commuting worker / student, I want a single transaction to get all the subscriptions I need, so that I can travel from home to work every day. \textbf{QAs:} Usability(+), Performance(-)
-
-\noindent
-13. As a family, we want to charge train cards from the terminal, so that we can travel when we need without one transaction every time. \textbf{QAs:} Usability(+), Modifiability(-)
-
-\noindent
-14. As a visually impaired person, I want a high contrast interface and big font, so that I can avoid mistakes when buying my tickets. \textbf{QAs:} Usability(+)
-
-\noindent
-15. As an occasional passenger, I want the system to not allow me to pay for temporarily blocked routes, so that I don't have to go through customer service. \textbf{QAs:} Usability(+), Modifiability(-), Performance(-)
-
-\noindent
-16. As a passenger, I want to be able to purchase a single ticket that allows me to travel across all train networks so that I can travel seamlessly without needing to buy separate tickets for each tycoon's network. \textbf{QAs:} Usability(+), Modifiability(-), Performance(-)
-
-\noindent
-17. As a student/commuter, I want the system to tell me which subscriptions I need to go from home to school/work, so that I can get the best price. \textbf{QAs:} Usability(+), Performance(-), Modifiability(-)
+\subsection{Passengers with Special Considerations}
+\begin{itemize}
+    \item \userStoryEleven \textbf{QAs:} Usability(+), Modifiability(-)
+    \item \userStoryTwelve \textbf{QAs:} Usability(+), Performance(-)
+    \item \userStoryThirteen \textbf{QAs:} Usability(+), Modifiability(-)
+    \item \userStoryFourteen \textbf{QAs:} Usability(+)
+    \item \userStoryFifteen \textbf{QAs:} Usability(+), Modifiability(-), Performance(-)
+    \item \userStorySixteen \textbf{QAs:} Usability(+), Modifiability(-), Performance(-)
+    \item \userStorySeventeen \textbf{QAs:} Usability(+), Performance(-), Modifiability(-)
+\end{itemize}
 
 \subsection{Government}
-
-\noindent
-18. As a government regulator, I want the payment system to adhere to data protection and financial transaction security standards so that passengers' personal and financial information is secure. \textbf{QAs:} Security(+), Modifiability(-), Testability(-), Integrability(-)
-
-\noindent
-19. As a government entity, I want the system to provide detailed reporting on passenger numbers and revenue for each network so that we can assess the public transportation system's efficiency and fairness. \textbf{QAs:} Usability(+), Modifiability(-), Integrability(-)
-
-\noindent
-20. As a local government official, I want to ensure that the payment system includes options for reduced fares for eligible populations (students, elderly, low-income) across all networks so that public transportation is accessible to everyone. Also, as a local government, I want to get usage data from the system, so that I can do urban planning properly. \textbf{QAs:} Usability(+), Performance(-), Modifiability(-)
+\begin{itemize}
+    \item \userStoryEighteen \textbf{QAs:} Security(+), Modifiability(-), Testability(-), Integrability(-)
+    \item \userStoryNineteen \textbf{QAs:} Usability(+), Modifiability(-), Integrability(-)
+    \item \userStoryTwenty \textbf{QAs:} Usability(+), Performance(-), Modifiability(-)
+\end{itemize}
 
 \subsection{Tycoons (Train Company Owners)}
-
-\noindent
-21. As a tycoon, I want the payment system to accurately track revenue from shared and exclusive segments of my network so that revenue sharing among tycoons is fair and transparent. \textbf{QAs:} Usability(+), Performance(-), Modifiability(-)
-
-\noindent
-22. As a tycoon, I want the ability to offer exclusive promotions and discounts to passengers using my network to encourage loyalty and increase ridership. \textbf{QAs:} Usability(+), Modifiability(-)
-
-\noindent
-23. As a tycoon, I want the payment system to integrate with my existing infrastructure with minimal disruption so that I can maintain high service levels during the transition. \textbf{QAs:} Integrability(+), Modifiability(-), Usability(+), Testability(-)
-
-\noindent
-24. As a tycoon, I want to access analytics and data insights from the payment system to understand passenger behavior and adjust my services accordingly to maximize revenue and improve service. \textbf{QAs:} Integrability(+), Modifiability(-)
+\begin{itemize}
+    \item \userStoryTwentyOne \textbf{QAs:} Usability(+), Performance(-), Modifiability(-)
+    \item \userStoryTwentyTwo \textbf{QAs:} Usability(+), Modifiability(-)
+    \item \userStoryTwentyThree \textbf{QAs:} Integrability(+), Modifiability(-), Usability(+), Testability(-)
+    \item \userStoryTwentyFour \textbf{QAs:} Integrability(+), Modifiability(-)
+\end{itemize}
 
 \subsection{Financial Analysts}
-
-\noindent
-As a financial analyst for a tycoon, I want the system to provide detailed financial analytics and forecasting tools so that we can optimize pricing strategies and revenue across the shared network. \textbf{QAs:} Availability(+), Modifiability(-)
+\begin{itemize}
+    \item \userStoryTwentyFive \textbf{QAs:} Availability(+), Modifiability(-)
+\end{itemize}
 
 \subsection{Station Staff}
-
-\noindent
-25. As a station staff member, I want a simple and fast way to assist passengers with ticket purchases and inquiries across all networks so that I can provide efficient customer service. \textbf{QAs:} Usability(+), Modifiability(-)
+\begin{itemize}
+    \item \userStoryTwentySix \textbf{QAs:} Usability(+), Modifiability(-)
+\end{itemize}
 
 \subsection{Maintenance Teams}
-
-\noindent
-26. As a maintenance team member, I want the system to allow for temporary fare adjustments or bypass options during maintenance work so that we can minimize inconvenience to passengers. \textbf{QAs:} Availability(+), Modifiability(-)
-
-\noindent
-27. As a network maintenance planner, I want the payment system to integrate with maintenance scheduling tools so that I can plan work with minimal disruption to the train service and revenue. \textbf{QAs:} Availability(+), Modifiability(-)
+\begin{itemize}
+    \item \userStoryTwentySeven \textbf{QAs:} Availability(+), Modifiability(-)
+\end{itemize}
 
 \subsection{Government Financial Auditors}
-
-\noindent
-28. As a government financial auditor, I want the payment system to include audit trails and compliance reporting features so that we can ensure transparency and accountability in revenue management.
+\begin{itemize}
+    \item \userStoryTwentyEight \textbf{QAs:} The need for audit trails and compliance reporting for transparency and accountability.
+\end{itemize}
 
 \subsection{TrIP Owner}
-\noindent
-28. As the TrIP owner, I want to use a service-based architecture, so that the system is easy to maintain and update.
+\begin{itemize}
+    \item \userStoryFortyOne \textbf{QAs:} Modifiability(+), Deployability(+)
+    \item \userStoryTwentyNine \textbf{QAs:} Cost-effectiveness over time.
+    \item \userStoryThirty \textbf{QAs:} Scalability of maintenance efforts.
+    \item \userStoryThirtyOne \textbf{QAs:} Automation of routine maintenance tasks.
+    \item \userStoryThirtyTwo \textbf{QAs:} Cost-effectiveness of data management.
+    \item \userStoryThirtyThree \textbf{QAs:} Efficiency of error handling and reporting.
+    \item \userStoryThirtyFour \textbf{QAs:} Sustainability and environmental friendliness of operational technologies.
+\end{itemize}
 
-\noindent
-29. As the TrIP owner, I want the system to operate with the lowest possible operational costs, so that it remains cost-effective over time.
-
-\noindent
-30. As the TrIP owner, I want the system maintenance efforts to be easily scalable, so that costs do not increase disproportionately as we expand.
-
-\noindent
-31. As the TrIP owner, I want routine maintenance tasks to be automated, so that manual labor and operational costs are reduced.
-
-\noindent
-32. As the TrIP owner, I want a cost-effective database solution for data management, so that storage and access costs remain low.
-
-\noindent
-33. As the TrIP owner, I want an efficient error handling and reporting mechanism, so that system downtime is minimized and maintenance is cost-effective.
-
-\noindent
-34. As the TrIP owner, I want to implement energy-efficient and eco-friendly technologies, so that the system's operational costs are sustainable and environmentally friendly.
-
-\textbf{User Story 35:} As a new tycoon entering the market, I want to easily integrate my services with the TrIP system, so that passengers can quickly benefit from additional travel options. This emphasizes the importance of the TrIP system's scalability and maintainability to seamlessly onboard new transport services.
-
-\textbf{User Story 36:} As a system administrator, I want the ability to add and configure services from new tycoons without significant downtime, so that the system remains up-to-date and competitive. This story underlines the need for a flexible and maintainable system that can adapt to changes in the transportation ecosystem.
-
-\textbf{User Story 37:} As a passenger, I want to see new transportation options as soon as they become available, so that I can plan my trips with the most comprehensive information. This story highlights the system's need for availability and usability in presenting data from newly added tycoons.
-
-\textbf{User Story 38:} As a tycoon, I want my data (such as timetables, prices, and updates) to be accurately and promptly reflected in the
-
-\item \textbf{User Story 39:} As a passenger, I expect ticket validation to work seamlessly, even during network outages, ensuring that my travel is not hindered by technical issues. 
-
-\item \textbf{User Story 40:} As a tycoon, I require the system to handle all transactions securely and efficiently, irrespective of the current network status, to maintain service continuity and safeguard revenue. 
+\subsection{Additional Considerations}
+\begin{itemize}
+    \item \userStoryThirtyFive \textbf{QAs:} Scalability and maintainability for new tycoons.
+    \item \userStoryThirtySix \textbf{QAs:} System's adaptability and competitive edge.
+    \item \userStoryThirtySeven \textbf{QAs:} Availability and usability for new transport options.
+    \item \userStoryThirtyEight \textbf{QAs:} Accuracy and promptness of tycoon data reflection.
+    \item \userStoryThirtyNine \textbf{QAs:} Seamless ticket validation during network outages.
+    \item \userStoryForty \textbf{QAs:} Secure and efficient handling of transactions under any network status.
+\end{itemize}
