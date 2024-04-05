@@ -59,6 +59,13 @@ The following user stories are particularly relevant to the decision on the data
     \item \textbf{User Story 27:} As a network maintenance planner, I want the payment system to integrate with maintenance scheduling tools so that I can plan work with minimal disruption to the train service and revenue.
 \end{itemize}
 
+\subsection*{Criteria}
+\begin{itemize}
+    \item \textit{Performance and availability}: Quick and reliable data retrieval.
+    \item \textit{Mainteinability}: clear data organization and division of responsibilities across system elements.
+    \item \textit{Security}: Protection of sensitive data.
+\end{itemize}
+
 \subsection*{Option 1: Database-per-service pattern}
 We try to have one database for each important set of information that the system needs to know, employing the database-per-service pattern.
 We try to stick to the Separation of Concerns principle, so that each module only has access to the data it scricly needs to operate.

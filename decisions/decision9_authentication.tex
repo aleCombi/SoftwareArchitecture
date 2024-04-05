@@ -25,17 +25,25 @@ Review
 \subsection*{Concern}
 Ensuring a secure, user-friendly, and efficient process for account creation, management, and authentication for a variety of users, while maintaining data privacy and system integrity.
 
+Related user stories are listed below:
+\begin{itemize}
+    \item \textbf{User Story 1:} As a frequent traveler, I want to subscribe to a comprehensive monthly pass that includes all three networks so that I can save money on my regular commutes.
+    \item \textbf{User Story 4:} As a tech-savvy passenger, I want to use a mobile app to manage my subscriptions, make payments, and receive digital tickets so that I can have a paperless and convenient travel experience.
+    \item \textbf{User Story 12:} As a commuting worker/student, I want a single transaction to get all the subscriptions I need, so that I can travel from home to work every day. 
+    \item \textbf{User Story 18:} As a government regulator, I want the payment system to adhere to data protection and financial transaction security standards so that passengers' personal and financial information is secure.
+    \item \textbf{User Story 26:} As a station manager, I want the system to offer real-time updates on train schedules and network disruptions so that I can keep passengers informed and manage station flow effectively.
+\end{itemize}
+
 \subsection*{Context}
 The TrIP system requires a flexible and secure method for user authentication that accommodates various levels of user interaction and convenience. The chosen solution must integrate seamlessly with the existing ticketing and payment infrastructure and support a range of devices and technologies used by passengers.
 
 \subsection*{Criteria}
 \begin{itemize}
-    % TODO:mentiond usability
-    \item Secure storage and handling of personal and financial data.
-    \item Ease of account creation and management for passengers.
-    \item Seamless integration with existing turnstile and payment systems.
-    \item Flexibility to support different methods of authentication, including cards and digital wallets.
-    \item High availability and reliability of the authentication system.
+    \item \textit{Security}: Secure storage and handling of personal and financial data.
+    \item \textit{Usability}: Ease of account creation and management for passengers.
+    \item \textit{Integrability}: Seamless integration with existing turnstile and payment systems.
+    \item \textit{Flexibility}: Flexibility to support different methods of authentication, including cards and digital wallets.
+    \item \textit{Availability}: High availability and reliability of the authentication system.
 \end{itemize}
 
 \subsection*{Option 1: Anonymous card}
@@ -70,7 +78,8 @@ The TrIP system requires a flexible and secure method for user authentication th
 
 \subsection*{Decision}
 The decision is to implement a hybrid approach, integrating a phone app (with NFC capabilities and linked to bank accounts) for regular users, along with an anonymous fillable card for tourists and a physical nominal card for those who prefer or require a physical token. The hybrid approach balances convenience with coverage for all passenger types.
-A tokenization service can be implied, so that no sensitive data is stored, but only tokens representing it, which transfer the security risk and the compliance requirements to specialized companies.
+A tokenization service can be implemented, so that no sensitive data is stored, but only tokens representing it, which transfer the security risk and the compliance requirements to specialized companies.
+This will be explained in more detailed in the Information Viewpoint.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}

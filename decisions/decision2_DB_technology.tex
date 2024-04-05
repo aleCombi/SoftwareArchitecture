@@ -10,13 +10,13 @@ Accepted.
     \hline
     \textbf{Facing} & the challenge of storing data coming from different tycoons systems in a cost-effective manner, \\
     \hline
-    \textbf{To achieve} & a seamless experience that is intuitive, accessible, and responsive, and maintains the system's usability and passenger satisfaction \\
+    \textbf{To achieve} & \textit{Mainteinability}, \textit{security}, \textit{cost efficiency}, \textit{performance} and \textit{scalability} \\
     \hline
     \textbf{We considered} & Option 1: SQL Database (e.g., PostgreSQL); Option 2: NoSQL Database (e.g., MongoDB); \\
     \hline
     \textbf{And decided for} & Option 1: SQL Database (e.g., PostgreSQL) \\
     \hline
-    \textbf{Because} & It suits the kind of data we need to store, the request for data integrity and easier to source developers expertise, \\
+    \textbf{Because} & It suits the kind of data we need to store, it is easier to source developers expertise and security is well tested, \\
     \hline
     \textbf{Accepting} & Potential difficulties in horizontal scaling, less flexibility in the data model. \\
     \hline
@@ -25,6 +25,15 @@ Accepted.
 \subsection*{Concern}
 The main staleholder's concerns related to this decision are the passengers request to have a good integration among different tycoons subscription, the TrIP owner request to keep maintenance costs low and the data protection required by government and passengers.
 
+Related user stories are listed here:
+
+\begin{itemize}
+    \item \textbf{User Story 18:} As a government regulator, I want the payment system to adhere to data protection and financial transaction security standards so that passengers' personal and financial information is secure.
+    \item \textbf{User Story 29:} As the TRiP owner, I want the system to operate with the lowest possible operational costs, so that it remains cost-effective over time.  
+    \item \textbf{User Story 30:} As the TRiP owner, I want the system maintenance efforts to be easily scalable, so that costs do not increase disproportionately as we expand. 
+    \item \textbf{User Story 32:} As the TRiP owner, I want a cost-effective database solution for data management, so that storage and access costs remain low. 
+\end{itemize}
+
 \subsection*{Context}
 In developing the TrIP system we are faced with the decision of choosing an appropriate database technology. This choice hinges on our need to ensure data integrity, support complex queries for transaction processing, and maintain scalability and security.
 The database must handle a wide array of data, including user subscriptions, fare transactions, and station and route information, necessitating a robust system that supports complex queries and relational data structuring.
@@ -32,11 +41,12 @@ The architecture might include more than one databases, depending on the needs t
 
 \subsection*{Criteria}
 \begin{itemize}
+    \item \textit{Cost efficiency} and \textit{mainteinability}.
+    \item Comprehensive \textit{security} features to safeguard sensitive data.
     \item Data integrity and transactional consistency for financial transactions.
     \item Ability to support complex queries and relational data models.
-    \item Scalability to grow with the system's user base and data volume.
-    \item Performance under varying load conditions.
-    \item Comprehensive security features to safeguard sensitive data.
+    \item \textit{Scalability} to grow with the system's user base and data volume.
+    \item \textit{Performance} under varying load conditions.
 \end{itemize}
 
 \subsection*{Option 1: SQL Database (e.g., PostgreSQL)}
@@ -46,6 +56,7 @@ A relational database model renowned for its strong consistency, ACID (Atomicity
     \item \textbf{Pro:} We have a highly structured data.
     \item \textbf{Pro:} More developers are familiar with it, more resources on the topic. It has a strong community and over 30 years of active development.
     \item \textbf{Pro:} Good with concurrency.
+    \item \textbf{Pro:} Well tested security features like encryption, access control, SQL injection prevention, auditing capabilities.
     \item \textbf{Pro:} Open source and free.
     \item \textbf{Con:} Scalability challenges in horizontally distributed architectures compared to NoSQL options.
     \item \textbf{Con:} Requires accurate upfront planning of the data model due to its structured nature, thereby limiting flexibility.
@@ -57,6 +68,7 @@ A distributed database system designed for scalability and flexibility, suitable
     \item \textbf{Pro:} Offers superior scalability and flexibility for managing unstructured or semi-structured data.
     \item \textbf{Pro:} Enhances performance for non-structured data.
     \item \textbf{Con:} May compromise transactional integrity and consistency in favor of performance and scalability.
+    \item \textbf{Con:} Relatively new, hence less well tested for security concerns.
 \end{itemize}
 
 \subsection*{Decision}

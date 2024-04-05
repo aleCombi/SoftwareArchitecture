@@ -10,7 +10,7 @@ Accepted
     \hline
     \textbf{Facing} & the challenge of avoiding overbookings, \\
     \hline
-    \textbf{To achieve} & high performance, minimal system overload and data consistency, \\
+    \textbf{To achieve} & high performance, minimal system overload and data consistency, prevention of passengers complaints, \\
     \hline
     \textbf{We considered} & Option 1: Lock the Seats Before Payment; Option 2: Lock the Seats After Payment, FCFS, Refuse Payments if Seat is Booked; Option 3: Real-time Seat Availability with Dynamic Allocation, Option 4: 2PC Protocol\\
     \hline
@@ -47,9 +47,9 @@ The following outlines a Quality Attribute (QA) scenario focusing on the real-ti
 
 \subsection*{Criteria}
 \begin{itemize}
-    \item Minimize excessive requests to tycoon systems, avoiding system overload.
-    \item Ensure high performance to prevent a negative user experience.
-    \item Prevent multiple passengers from paying for the same seat, ensuring fairness in ticket sales.
+    \item \textit{Scalability}: Minimize excessive requests to tycoon systems, avoiding system overload.
+    \item Ensure high \textit{performance} to prevent a negative user experience.
+    \item \textit{Functionality}: Prevent multiple passengers from paying for the same seat, ensuring fairness in ticket sales.
 \end{itemize}
 
 \subsection*{Option 1: Lock the Seats Before Payment}

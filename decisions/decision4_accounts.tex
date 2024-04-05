@@ -10,7 +10,7 @@ Accepted.
     \hline
     \textbf{Facing} & the challenge of integrating many different subscriptions for the same passenger and letting subscription separated, \\
     \hline
-    \textbf{To achieve} & streamlined integration with multiple tycoon systems, high passenger usability, \\
+    \textbf{To achieve} & streamlined integration with multiple tycoon systems, high passenger usability, ease of maintenance, \\
     \hline
     \textbf{We considered} & Option 1: Introduction of a subscription manager tool.; Option 2: Integrated Subscription-Route Optimization Service; Option 3: Include a Single-Ticket management module\\
     \hline
@@ -28,7 +28,8 @@ Tycoons have explicitely requested to maintain their own subscriptions separated
 The following user stories are tied to this decision:
 \begin{itemize}
     \item \textbf{User Story 16}: As a passenger, I want to be able to purchase a single ticket that allows me to travel across all train networks so that I can travel seamlessly without needing to buy separate tickets for each tycoon's network.
-    \item \textbf{User Story 23}: As a tycoon, I want the payment system to integrate with my existing infrastructure with minimal disruption so that I can maintain high service levels during the transition..
+    \item \textbf{User Story 23}: As a tycoon, I want the payment system to integrate with my existing infrastructure with minimal disruption so that I can maintain high service levels during the transition.
+    \item \textbf{User Story 30:} As the TRiP owner, I want the system maintenance efforts to be easily scalable, so that costs do not increase disproportionately as we expand. 
 \end{itemize}
 
 Specific concerns identified for the system include the following:
@@ -46,10 +47,11 @@ Alternatively, if passengers have active subscriptions to a tycoon, they should 
 
 \subsection*{Criteria}
 \begin{itemize}
-    \item Ease of use for the passenger.
-    \item Multiple route options for the passenger.
-    \item The system returns to the passenger usable options based on price/time/availability/subscription.
-    \item Simple integration with the tycoon systems.
+    \item \textit{Usability}: Ease of use for the passenger.
+    \item \textit{Functionality}: Multiple route and subscriptions options for the passenger without excessive effort.
+    \item \textit{Functionality}: The system returns to the passenger usable options based on price/time/availability/subscription.
+    \item \textit{Integrability}: Simple integration with the tycoon systems.
+    \item \textit{Maintainability and scalability}: Ease to accomodate changes in the subscriptions options from tycoons.
 \end{itemize}
 
 \subsection*{Option 1: Introduction of a subscription manager tool, route management needs to take passenger subscriptions into consideration.}
