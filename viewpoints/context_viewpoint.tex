@@ -1,0 +1,66 @@
+\section{Context Viewpoint}
+
+\subsection{View: Stakeholders}
+
+\subsubsection{Model}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{drawings/views_final_version/stakeholder_view.png}
+    \caption{Stakeholder model of the TRIP system.}
+    \label{fig:stakeholder_view_model}
+\end{figure}
+
+\subsubsection{Description}
+\subsubsection{Glossary of Elements}
+
+\subsubsection{Analysis on Perspectives}
+
+\subsection{View: Context diagram}
+\subsubsection{Model}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{drawings/views_final_version/context_view.png}
+    \caption{Context model of the TrIP system.}
+    \label{fig:context_view_model}
+\end{figure}
+
+\subsubsection{Description}
+The Context View of the TRiP SYSTEM delineates the ecosystem within which the system operates, including its interactions with users, external entities, and other system components. At the user level, engagement with the TRiP system is facilitated through various interfaces such as terminals, apps, websites, and controller devices like turnstiles and bus scanners, enabling passengers to access services seamlessly.
+
+The system is subject to a range of external dependencies, including infrastructure elements like stations, railroads, and trains, as well as service providers such as phone companies and utilities that supply essential resources. These components are integral to the system's operations, impacting its functionality and performance.
+
+At the core, the TRiP system is interconnected with Tycoons via the Tycoon API, through which data flows bidirectionally, allowing for the exchange of updates, requests, and analytical data. The databases within the system are pivotal in managing schedules, user accounts, tickets, and payments, all of which are crucial for the day-to-day operations.
+
+The system's architecture is designed to ensure robustness and responsiveness to both the passengers' and Tycoons' needs. It facilitates various processes, from payment transactions, which are securely handled and routed through financial institutions, to the maintenance of service quality, overseen by the TRiP owner and regulated by governmental audits and codes. This comprehensive network of interactions defines the TRiP system's context, emphasizing its multifaceted nature and the critical role it plays in serving its stakeholders.
+
+\subsubsection{Glossary of the Elements}
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}clp{9cm}@{}}
+\toprule
+\textbf{Id} & \textbf{Name} & \textbf{Description} \\
+\midrule
+1 & Passenger & Individuals who use the TrIP SYSTEM and its associated services, interacting through various interfaces. \\
+2 & Customer Service & The department that handles passenger complaints and feedback, providing support and sending analysis or data requests to the system. \\
+3 & Financial Analysts & Experts or entities that review financial data, requiring analytical information from the system for decision-making. \\
+4 & Tycoons & The operational decision-makers of the system, possibly managers or algorithms that control system parameters and require data. \\
+5 & Tycoon API & The programming interface through which Tycoons receive updates and send requests to the system. \\
+6 & TrIP System & The core system that integrates various interfaces and processes, forming the central operation platform. \\
+7 & Governments & Regulatory bodies that may require data or perform audits on the system for governance and compliance. \\
+8 & TrIP Owner & The entity or person owning and maintaining the TrIP SYSTEM, responsible for its overall functionality. \\
+9 & Bank & Financial institution that handles the authorization and processing of payments for the system. \\
+10 & Stations & Locations where the TrIP SYSTEM provides service to passengers, such as train or bus stations. \\
+11 & Railroads & Infrastructure providers that offer the tracks on which train services operate. \\
+12 & Trains & The vehicles used by the system to transport passengers from one station to another. \\
+13 & Buses/Bus Stations & The bus services and their stations that are part of the transport network. \\
+14 & Phone Companies & Telecom service providers that facilitate mobile communication and data transfer for the system. \\
+15 & Resources (electricity, gas) & Utility providers that supply essential power and energy required for the system’s operations. \\
+16 & Controller Device Interfaces & The interfaces like turnstiles and bus scanners that manage access control and validate user credentials. \\
+17 & Electronic Interfaces & Digital platforms such as mobile applications and websites that passengers interact with for services. \\
+\bottomrule
+\end{tabular}
+\caption{Context model glossary for the TrIP System.}
+\label{tab:glossary_context_view}
+\end{table}
+
+\subsubsection{Analysis on Perspectives}

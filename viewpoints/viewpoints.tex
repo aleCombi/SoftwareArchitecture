@@ -67,6 +67,36 @@ The system's architecture is designed to ensure robustness and responsiveness to
 
 \section{Functional Viewpoint}
 
+We start discussing the Functional Viewpoint by analyzing stakeholder concerns that need to be addressed.
+We individuated the following user stories:
+\begin{itemize}
+    \item User stories TODO
+\end{itemize}
+
+As a consequence, we decided to prioritize Quality Attributes for this view as indicated in Table~\ref{tab:functional_view}.
+\begin{table}[h!]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+      \hline
+      & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
+      \hline
+      Functional View & 
+      \cellcolor{gray!60}X & % Usability (2nd priority)
+      \cellcolor{gray!30}X & % Performance (3rd priority)
+      & & 
+      \cellcolor{gray!55}X & % Cost (3rd priority)
+      \cellcolor{gray!15}X & % Availability (4th priority)
+      & & 
+      \cellcolor{gray!90}X \\ % Maintainability (1st priority)
+      \hline
+    \end{tabular}
+    }
+    \caption{Functional View Prioritized Quality Attributes}
+    \label{tab:functional_view}
+\end{table}
+
+
 \subsection{View: Main Functional Elements}
 
 \subsubsection{Model}
@@ -146,27 +176,6 @@ The scanning procedure within the TRIP SYSTEM encapsulates the interactions betw
 
 \subsubsection{Analysis on Perspectives}
 
-\begin{table}[h!]
-    \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
-      \hline
-      & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
-      \hline
-      Functional View & 
-      \cellcolor{gray!60}X & % Usability (2nd priority)
-      \cellcolor{gray!30}X & % Performance (3rd priority)
-      & & 
-      \cellcolor{gray!55}X & % Cost (3rd priority)
-      \cellcolor{gray!15}X & % Availability (4th priority)
-      & & 
-      \cellcolor{gray!90}X \\ % Maintainability (1st priority)
-      \hline
-    \end{tabular}
-    }
-    \caption{Functional View Prioritized Quality Attributes}
-    \label{tab:functional_view}
-\end{table}
 
 \paragraph{Scenarios}
 \input{scenarios/functional_view.tex}
@@ -182,11 +191,39 @@ In response to Event 1, which underscored the need for easier integration of new
 Event 3, which focused on traffic jams, raised the importance of optimizing system performance during peak periods. By deciding on a centralized route management module, we have streamlined data flow between the TrIP system and the tycoons. This module not only simplifies data management but also enhances the system's ability to handle high request volumes through optimization and caching strategies.
 
 In summary, the functional viewpoint of our system meticulously addresses the initial QA priorities, along with the challenges presented by new tycoon integration (Event 1) and traffic jams (Event 3). These decisions collectively ensure a user-friendly, scalable, and high-performing TrIP system for passengers, tycoons, and the TrIP owner alike.
-
-
-
-
 \section{Information Viewpoint}
+We start discussing the Information Viewpoint by analyzing stakeholder concerns that need to be addressed.
+We individuated the following user stories:
+\begin{itemize}
+    \item User stories TODO
+\end{itemize}
+
+As a consequence, we decided to prioritize Quality Attributes for this view as indicated in Table~\ref{tab:information_view}.
+
+\begin{table}[h!]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+      \hline
+      & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
+      \hline
+      Information View & 
+       & % Usability
+       & % Performance
+      \cellcolor{gray!90}X & % Security (1st priority)
+       & % Modifiability
+       & % Cost Efficiency
+       & % Availability
+       & % Safety
+       & % Integrability
+       \\ % Maintainability
+      \hline
+    \end{tabular}
+    }
+    \caption{Information View Prioritized Quality Attributes}
+    \label{tab:information_view}
+\end{table}
+
 \subsection{View: Main Information View}
 \subsubsection{Model}
 \begin{figure}[H]
@@ -266,29 +303,7 @@ The TrIP SYSTEM's scanning procedure is a sequence that starts with the Passenge
 \end{table}
 
 \subsubsection{Analysis on Perspectives}
-\begin{table}[h!]
-    \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
-      \hline
-      & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
-      \hline
-      Information View & 
-       & % Usability
-       & % Performance
-      \cellcolor{gray!90}X & % Security (1st priority)
-       & % Modifiability
-       & % Cost Efficiency
-       & % Availability
-       & % Safety
-       & % Integrability
-       \\ % Maintainability
-      \hline
-    \end{tabular}
-    }
-    \caption{Information View Prioritized Quality Attributes}
-    \label{tab:information_view}
-\end{table}
+
 
 \paragraph{Scenarios}
 \input{scenarios/information_view.tex}
@@ -304,8 +319,38 @@ Payments are a critical interaction point for the system and its users. The TrIP
 The Tycoon API serves as a broker for data access by tycoons. It provides a controlled access point, permitting only authorized tycoons to retrieve passenger data. This access control mechanism is crucial for maintaining passenger privacy and data security. It allows tycoons to access only the data necessary for their service offerings and nothing beyond that.
 
 Using the scenarios provided, we can see how the system's design and technology choices map directly to its operations. Passengers entering their information into terminals or apps can be assured that their data will be encrypted and stored securely, as detailed in the first scenario. Payment processes, as per the second scenario, happen within the secure confines of the banking system. Lastly, the way the Tycoon API manages data requests ensures that passenger data is only accessed by authorized tycoons, enhancing privacy and data protection as outlined in the third scenario.
-
 \section{Concurrency Viewpoint}
+We start discussing the information viewpoint by analyzing stakeholder concerns that need to be addressed.
+We individuated the following user stories:
+\begin{itemize}
+    \item User stories TODO
+\end{itemize}
+
+As a consequence, we decided to prioritize Quality Attributes for this view as indicated in Table~\ref{tab:concurrency_view}.
+\begin{table}[h!]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+      \hline
+      & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
+      \hline
+      Concurrency View & 
+       & % Usability
+      \cellcolor{gray!30}X & % Performance (2nd priority)
+       & % Security
+       & % Modifiability
+       & % Cost Efficiency
+      \cellcolor{gray!90}X & % Availability (1st priority)
+      \cellcolor{gray!60}X & % Safety
+       & % Integrability
+       \\ % Maintainability
+      \hline
+    \end{tabular}
+    }
+    \caption{Concurrency View Prioritized Quality Attributes}
+    \label{tab:concurrency_view}
+\end{table}
+
 \subsection{View: Ticket purchase}
 \subsubsection{Model}
 
@@ -337,7 +382,6 @@ In the TRIP SYSTEM, the Passenger starts the process at the Ticket Machine, choo
 \end{table}
 
 \subsubsection{Analysis on Perspectives}
-
 \subsection{View: Scanning procedure}
 \subsubsection{Model}
 \begin{figure}[H]
@@ -411,29 +455,6 @@ This process outlines how timetable updates and route optimization are handled i
 \subsubsection{Glossary of Elements}
 
 \subsubsection{Analysis on Perspectives}
-\begin{table}[h!]
-    \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
-      \hline
-      & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
-      \hline
-      Concurrency View & 
-       & % Usability
-      \cellcolor{gray!30}X & % Performance (2nd priority)
-       & % Security
-       & % Modifiability
-       & % Cost Efficiency
-      \cellcolor{gray!90}X & % Availability (1st priority)
-      \cellcolor{gray!60}X & % Safety
-       & % Integrability
-       \\ % Maintainability
-      \hline
-    \end{tabular}
-    }
-    \caption{Concurrency View Prioritized Quality Attributes}
-    \label{tab:concurrency_view}
-\end{table}
 
 \paragraph{Scenarios}
 \input{scenarios/concurrency_view.tex}
@@ -450,8 +471,37 @@ The second aspect of concurrency comes into play at the turnstiles, where passen
 Finally, the system’s capacity to update and optimize routes through the Tycoon API and Route Optimizer reflects its modifiability and performance attributes. Tycoons can update timetables, which are then processed to optimize routes, and these optimizations are stored in the Optimized Routes DB for quick retrieval. This ensures that passengers receive up-to-date and efficient routing information, which is especially important during peak traffic conditions. \\
 
 By detailing these processes, the concurrency viewpoint showcases the TrIP system's capability to maintain a high level of service and security across its operations, aligning with the defined quality attributes of performance, safety, and availability.
-
 \section{Deployment Viewpoint}
+We start discussing the information viewpoint by analyzing stakeholder concerns that need to be addressed.
+We individuated the following user stories:
+\begin{itemize}
+    \item User stories TODO
+\end{itemize}
+
+As a consequence, we decided to prioritize Quality Attributes for this view as indicated in Table~\ref{tab:deployment_view}.
+\begin{table}[h!]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+      \hline
+      & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
+      \hline
+      Deployment View & 
+       & % Usability
+      \cellcolor{gray!90}X & % Performance (1st priority)
+      \cellcolor{gray!60}X & % Security (3rd priority)
+       & % Modifiability
+       & % Cost Efficiency
+       & % Availability (2nd priority)
+       & % Safety
+       & % Integrability
+       \\ % Maintainability
+      \hline
+    \end{tabular}
+    }
+    \caption{Deployment View Prioritized Quality Attributes}
+    \label{tab:deployment_view}
+\end{table}
 
 \subsection{View: Scanning procedure}
 \subsubsection{Model}
@@ -468,7 +518,6 @@ The deployment view diagram illustrates the TrIP system's architecture, showing 
 The ticket machine interfaces include User Interface and POS components. Database servers in the public cloud manage the PostgreSQL databases for Timetables, Prices, Bookings, Optimized Routes, Accounts, Tickets, and Payments. The private cloud server secures the Encrypted Account Lookup database. A Load Balancer ensures efficient traffic management.
 
 Payment processing, crucial for managing Passenger State and payments, is securely handled in the private cloud, emphasizing the system's focus on security and reliable transaction handling. 
-
 \subsubsection{Glossary of Elements}
 
 \begin{table}[H]
@@ -496,31 +545,7 @@ Payment processing, crucial for managing Passenger State and payments, is secure
     \bottomrule
     \end{tabularx}
 \end{table}
-
 \subsubsection{Analysis on Perspectives}
-\begin{table}[h!]
-    \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
-      \hline
-      & Usability & Performance & Security & Modifiability & Cost Efficiency & Availability & Safety & Integrability & Maintainability \\
-      \hline
-      Deployment View & 
-       & % Usability
-      \cellcolor{gray!90}X & % Performance (1st priority)
-      \cellcolor{gray!60}X & % Security (3rd priority)
-       & % Modifiability
-       & % Cost Efficiency
-       & % Availability (2nd priority)
-       & % Safety
-       & % Integrability
-       \\ % Maintainability
-      \hline
-    \end{tabular}
-    }
-    \caption{Deployment View Prioritized Quality Attributes}
-    \label{tab:deployment_view}
-\end{table}
 
 \paragraph{Scenarios}
 \input{scenarios/deployment_view.tex}
@@ -532,7 +557,6 @@ The TRiP system's deployment on cloud servers is engineered to enhance performan
 For security, the system employs private cloud servers, where sensitive components such as the Encrypted Account Lookup Database are hosted. The encryption of this database is a crucial security measure, safeguarding personal and travel data against unauthorized access. 
 
 Through this architecture, the TRiP system ensures the system is able handle the performance requirements from its users, while keeping the user information secure. Usage of cloud servers ensures dynamically scalable performance requirements. Keeping the state of the users, and caching optimzied routes is another architectural decision where the system is able to respond user requests fast with the scanning devices.
-
 \section{Development Viewpoint}
 \subsection{View: Broker pattern for Tycoon API}
 \subsubsection{Model}
