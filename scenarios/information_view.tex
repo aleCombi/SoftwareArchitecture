@@ -1,0 +1,54 @@
+% Scenario: Protecting Passenger Personal and Travel Information
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} lX @{}}
+    \toprule
+    \textbf{Aspect} & \textbf{Details} \\
+    \midrule
+    Source & Passenger utilizing the TrIP system to manage their travel plans. \\
+    Stimulus & The passenger enters personal and travel data into the system. \\
+    Artifact & Encrypted Account Lookup Database within the TrIP system. \\
+    Response & The system securely stores the passenger's data using state-of-the-art encryption both at rest and in transit, ensuring that personal and travel information is not accessible by unauthorized entities. Access to this data is restricted to specific operations within the TrIP system that require passenger verification. \\
+    Measure & Passenger data breaches are non-existent, and passengers report a high level of trust in the system's data protection capabilities. Security logs show no unauthorized access, affirming the integrity of the encryption measures. \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Scenario for Security - Passenger Data Protection}
+    \label{table:passenger_data_security}
+\end{table}
+
+
+% Scenario: Secure Payment Processing for Passenger Transactions
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} lX @{}}
+    \toprule
+    \textbf{Aspect} & \textbf{Details} \\
+    \midrule
+    Source & Passenger making a payment through the TrIP system. \\
+    Stimulus & The passenger chooses a payment method and initiates a transaction. \\
+    Artifact & Bank interfaced with TrIP system for processing payments. \\
+    Response & The bank processes the payment with rigorous security protocols, ensuring that the payment information is handled in a secure, encrypted channel. The system guarantees that payment data is never stored within the TrIP system and is managed exclusively by the bank, providing an additional layer of security. \\
+    Measure & Payment transactions are completed with zero incidents of data compromise, and the response time for transaction completion remains within 3 seconds. Post-transaction audits confirm the absence of payment data retention within the TrIP system. \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Scenario for Security - Secure Payment Transactions}
+    \label{table:payment_transaction_security}
+\end{table}
+
+% Scenario: Controlled Access to Passenger Account Data
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} lX @{}}
+    \toprule
+    \textbf{Aspect} & \textbf{Details} \\
+    \midrule
+    Source & Passenger subscribing to a specific tycoon's services within the TrIP system. \\
+    Stimulus & The subscribed tycoon requests access to the passenger's account data for service personalization. \\
+    Artifact & Tycoon API enabling access control to passenger data within the TrIP system. \\
+    Response & The TrIP system authenticates the tycoon's request through the Tycoon API, which validates that only the tycoon with whom the passenger is subscribed can retrieve the required data. This ensures that each tycoon can access only their passengers’ data, thus maintaining strict data access control and privacy. \\
+    Measure & Regular audits indicate 100\% compliance with data access policies, with no reported incidents of data leakage or unauthorized access. Passenger feedback confirms trust in the data privacy practices of the TrIP system. \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Scenario for Security - Controlled Tycoon Access to Passenger Data}
+    \label{table:tycoon_access_control}
+\end{table}
