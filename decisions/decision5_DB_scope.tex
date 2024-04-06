@@ -1,16 +1,16 @@
-\subsection{Decision 6: Database scope and organization}
+\subsection{Decision 5: Database scope and organization}
 
 \subsection*{Status}
-Review.
+Accepted. Reviewed after Decision 10 (Data update from Tycoons). Reviewed after Decision 8 (Scanner interactions) to add a User State database.
 
 \subsection*{Architectural Summary}
 \begin{tabular}{|p{3.5cm}|p{10.5cm}|}
     \hline
-    \textbf{In the context of} & choosing which data should be stored in the TrIP system, \\
+    \textbf{In the context of} & Choosing which data should be stored in the TrIP system, \\
     \hline
-    \textbf{Facing} & the challenge of ensuring data security and high performance, \\
+    \textbf{Facing} & The challenge of ensuring data security and high performance, \\
     \hline
-    \textbf{To achieve} & high performance in data retrieval, easy integrability with tycoons' systems, \\
+    \textbf{To achieve} & High performance in data retrieval, easy integrability with tycoons' systems, \\
     \hline
     \textbf{We considered} & Option 1: Database-per-service pattern; Option 2: Unified Centralized Database System; Option 3: Database per tycoon, Option 4: Hybrid cloud storage\\
     \hline
@@ -40,10 +40,7 @@ The following user stories are particularly relevant to the decision on the data
 \begin{itemize}[noitemsep]
     \item \userStoryOne, 
     \item \userStoryTwo,
-    \item \userStoryThree,
     \item \userStoryFour,
-    \item \userStoryFive,
-    \item \userStorySix,
     \item \userStorySixteen,
     \item \userStoryEighteen,
     \item \userStoryTwentyThree,
@@ -51,7 +48,7 @@ The following user stories are particularly relevant to the decision on the data
 \end{itemize}
 
 \subsection*{Criteria}
-\begin{itemize}
+\begin{itemize}[noitemsep]
     \item \textit{Performance and availability}: Quick and reliable data retrieval.
     \item \textit{Mainteinability}: clear data organization and division of responsibilities across system elements.
     \item \textit{Security}: Protection of sensitive data.
@@ -90,7 +87,7 @@ We divide the following:
 
 This option proposes a centralized database architecture that consolidates all necessary information into a single, unified database system. It incorporates robust access control layers to manage data access based on module or user roles, ensuring that each part of the system accesses only the data it needs for operation. This model simplifies data management, enhances security through centralized control mechanisms, and facilitates easier updates and integrations. This model can be improved with having accounts database as a separate component, and keeping the rest of the databases central. In this way accounts data will be secure, and the rest of the systems will access accounts data anonymously via ids. Manage permissions for eacsh tycoon, on which info they can access (they shouldn't be able to connect name to bank account). In this way we can keep everything in the same place, but each tycoon api will have specificed access protocols. Tycoons can only update timetables and prices.
 
-We can keep bookings data a DaaS, since it needs to be updated regularly and concurrently. Rest can be a server based database. Since we can cache routes we don't want cloud services for these. 
+We can keep bookings data a DaaS, since it needs to be updated regularly and concurrently. The rest can be a server based database. Since we can cache routes we don't want cloud services for these. 
 
 \subsubsection*{Pros}
 \begin{itemize}[noitemsep]
@@ -108,20 +105,25 @@ We can keep bookings data a DaaS, since it needs to be updated regularly and con
 
 \subsection*{Option 3: Database per tycoon}
 
+This option involves creating separate databases for each tycoon, allowing tailored data management and access controls specific to the needs and permissions of each tycoon. The aim is to provide a customized data storage solution that respects the autonomy and specific requirements of each railway tycoon, facilitating efficient and secure data handling.
+
 \subsubsection*{Pros}
-\begin{itemize}[noitemsep]
-    \item \textbf{Tycoon specific features} 
-    \item \textbf{Tycoon access permissions are automatically managed} 
+\begin{itemize}
+    \item \textbf{Customization:} Each tycoon can have database features and structures tailored to their specific operational and data analysis needs, enhancing performance and usability.
+    \item \textbf{Access Control:} Tycoon-specific databases simplify permission management, as each tycoon has access only to their relevant database, thereby automatically managing access permissions and minimizing the risk of unauthorized data access.
 \end{itemize}
 
 \subsubsection*{Cons}
-\begin{itemize}[noitemsep]
-    \item \textbf{Hard to manage the database} 
-    \item \textbf{Shared data is potentially doubled} 
+\begin{itemize}
+    \item \textbf{Management Overhead:} Maintaining separate databases for each tycoon increases the complexity of the system's architecture, requiring more resources for database management, synchronization, and ensuring consistency across databases.
+    \item \textbf{Data Redundancy:} Shared data that is relevant to multiple tycoons, such as inter-tycoon route connections or passenger information, may need to be duplicated across databases, increasing storage requirements and complicating data synchronization.
 \end{itemize}
 
+This option was considered to provide high levels of customization and security by isolating each tycoon's data. However, it introduces significant challenges in terms of system complexity and data management efficiency. The requirement for tailored solutions for each tycoon, while beneficial for customization and security, potentially complicates the integration and consistent operation of the TrIP system as a whole.
+
+
 \subsection*{Option 4: Hybrid cloud storage}
-Crucial data stored in cloud (timetables, and prices and bookings). Non-crucial data (accounts, payments) gets stored in non-cloud database one per tycoon, such that they can only access their own customer data.
+Less sensitive data can be stored in public cloud (timetables, and prices and bookings). Sensitive data (accounts, payments) gets stored in non-cloud databases, possibly one per tycoon, to avoid illegal data access.
 
 \subsubsection*{Pros}
 \begin{itemize}[noitemsep]
@@ -137,18 +139,21 @@ Crucial data stored in cloud (timetables, and prices and bookings). Non-crucial 
 \end{itemize}
 
 \subsection*{Decision}
-We choose Options 1 and 4, using a Hybrid cloud storage System for the deployment, but separate databases accessible by one related service.
-The goal is to achive high Availability, which is crucial after Event 2, which requirees less stringent Maintainability and cost requirements. Maintainability and performance are increased by choosing database-per-service instead of a single database.
-Cloud solutions can be expensive for data storage.
+
+In adopting a hybrid cloud storage strategy (Option 4), we remain committed to the database-per-service pattern (Option 1), ensuring a modular and scalable system architecture. The majority of our data, including timetables, prices, and bookings, will be stored in public cloud services to benefit from their scalability and operational efficiency. Sensitive information, such as passenger and payment data, will be secured in private servers, maintaining strict adherence to security and compliance standards. This dual approach, combining the use of public cloud and private servers, aligns with our commitment to both security and efficiency. It also preserves the modularity and service-specific scalability afforded by the database-per-service pattern. Detailed deployment strategies and justifications are further elaborated in the deployment viewpoint documentation.
+The goal is to achive high availability, which is crucial after Event 2, which requires less stringent maintainability and cost requirements. Maintainability and performance are increased by choosing database-per-service instead of a single database.
 
 \subsection*{Consequences}
+
 \textbf{Positive Consequences:}
 \begin{itemize}
-    \item \textbf{database as a service}: Single point of failure is reduced, scalable.
+    \item Enhanced security for sensitive data by utilizing private servers, aligning with strict compliance and privacy standards.
+    \item Improved scalability and operational efficiency for non-sensitive data through the use of public cloud services.
+    \item Retained system modularity and ease of maintenance via the database-per-service pattern, facilitating targeted optimizations and updates.
 \end{itemize}
+
 \textbf{Negative Consequences:}
 \begin{itemize}
-    \item \textbf{Tycoon permission management} : More complexity, we need to restrict access for each tycoon.
-    \item \textbf{Single point of failure} : If database fails, everything fails.(bad for availablity)[maybe a solution is backup database].
-    \item \textbf{database as a service}: Expensive.
+    \item Potential complexity in managing a hybrid cloud environment, requiring robust synchronization and data management practices.
+    \item Increased operational demands for ensuring seamless integration and security protocols between public cloud services and private servers.
 \end{itemize}

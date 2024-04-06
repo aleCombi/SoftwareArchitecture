@@ -1,4 +1,4 @@
-\subsection{Decision 5: Concurrent payments / booking management}
+\subsection{Decision 4: Concurrent payments and booking management}
 
 \subsection*{Status}
 Accepted
@@ -6,11 +6,11 @@ Accepted
 \subsection*{Architectural Summary}
 \begin{tabular}{|p{3.5cm}|p{10.5cm}|}
     \hline
-    \textbf{In the context of} & managing high volumes of booking requests for a train, \\
+    \textbf{In the context of} & Managing high volumes of booking requests for a train, \\
     \hline
-    \textbf{Facing} & the challenge of avoiding overbookings, \\
+    \textbf{Facing} & The challenge of avoiding overbookings, \\
     \hline
-    \textbf{To achieve} & high performance, minimal system overload and data consistency, prevention of passengers complaints, \\
+    \textbf{To achieve} & High performance, minimal system overload and data consistency, prevention of passengers complaints, \\
     \hline
     \textbf{We considered} & Option 1: Lock the Seats Before Payment; Option 2: Lock the Seats After Payment, FCFS, Refuse Payments if Seat is Booked; Option 3: Real-time Seat Availability with Dynamic Allocation, Option 4: 2PC Protocol\\
     \hline
@@ -24,7 +24,7 @@ Accepted
 
 \subsection*{Concern}
 Ensuring a high level of usability and availability in the ticketing system is paramount. System operators and railroad tycoons aim to minimize customer service issues arising from passengers' frustrations with paying for unavailable routes.
-\begin{itemize}
+\begin{itemize}[noitemsep]
     \item \userStoryFifteen,
     \item \userStoryTwentySix,
     \item \userStoryTwentySeven,
@@ -46,7 +46,7 @@ The following outlines a Quality Attribute (QA) scenario focusing on the real-ti
 \end{itemize}
 
 \subsection*{Criteria}
-\begin{itemize}
+\begin{itemize}[noitemsep]
     \item \textit{Scalability}: Minimize excessive requests to tycoon systems, avoiding system overload.
     \item Ensure high \textit{performance} to prevent a negative user experience.
     \item \textit{Functionality}: Prevent multiple passengers from paying for the same seat, ensuring fairness in ticket sales.
@@ -57,8 +57,6 @@ We should maintain a database where info about scheduled trains is stored.
 We should also a booking management module that updates the database about booked seats or booking cancellations.
 
 This database should be updated when a ticket has been bought at a terminal. The database should ask periodically for updates on schedules from the tycoon systems. When a user selects that they want to pay for a specific ticket, that ticket should be locked, so that no one else can buy it. If the payment is not ultimated, it can be unlocked. Note that it can still happen that due to maintenance, a train is cancelled last minute. 
-
-% TODO: What happens with the customer service? Should we add it to the context view? They will for sure need info from us, like who paid and how much. These should be two future decisions (how to deal with customer service in case of train disruptions, how to keep up to date about disruptions).
 
 \subsubsection*{Pros}
 \begin{itemize}[noitemsep]
@@ -152,9 +150,9 @@ Option 4 can be useful if the system is decentralized, but introduces unwanted c
     \item Reduced customer service issues related to overbooking and ticket availability.
     \item Enhanced system resilience against peak demand scenarios.
 \end{itemize}
-\textbf{Negative Consequences:}% TODO: I think these are not negative consequences of option 1
-\begin{itemize}
-    \item Potential increase in system complexity and operational costs.
-    \item Challenges in accurately forecasting demand for dynamic seat allocation or overbooking strategies.
-    \item Possible passenger dissatisfaction in cases of overbooking or changes in train schedules.
+\textbf{Negative Consequences:}
+\begin{itemize}[noitemsep]
+    \item \textbf{Increased System Complexity:} Implementing a seat lock mechanism requires sophisticated logic and system resources, potentially complicating the system architecture and the user interface.
+    \item \textbf{Potential for Seats Hoarding:} Customers might lock seats without completing the purchase, reducing the availability for other passengers and possibly decreasing the overall seat utilization rate.
+    \item \textbf{Operational Costs:} The development, implementation, and maintenance of the locking mechanism and associated features could lead to increased operational expenses.
 \end{itemize}

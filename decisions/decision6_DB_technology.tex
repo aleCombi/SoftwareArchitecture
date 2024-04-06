@@ -1,16 +1,16 @@
-\subsection{Decision 2: Database technology}
+\subsection{Decision 6: Database technology}
 
 \subsection*{Status}
-Accepted.
+Accepted. Reviewed after Event 4 (Data Leaks) with higher focus on security. 
 
 \subsection*{Architectural Summary}
 \begin{tabular}{|p{3.5cm}|p{10.5cm}|}
     \hline
-    \textbf{In the context of} & choosing appropriate database technology to store information about travels and payments, \\
+    \textbf{In the context of} & Choosing appropriate database technology to store information about travels and payments, \\
     \hline
-    \textbf{Facing} & the challenge of storing data coming from different tycoons systems in a cost-effective manner, \\
+    \textbf{Facing} & The challenge of storing data coming from different tycoons systems in a cost-effective manner, \\
     \hline
-    \textbf{To achieve} & \textit{Mainteinability}, \textit{security}, \textit{cost efficiency}, \textit{performance} and \textit{scalability} \\
+    \textbf{To achieve} & Mainteinability, security, cost efficiency, performance and scalability \\
     \hline
     \textbf{We considered} & Option 1: SQL Database (e.g., PostgreSQL); Option 2: NoSQL Database (e.g., MongoDB); \\
     \hline
@@ -27,7 +27,7 @@ The main staleholder's concerns related to this decision are the passengers requ
 
 Related user stories are listed here:
 
-\begin{itemize}
+\begin{itemize}[noitemsep]
     \item \userStoryEighteen,
     \item \userStoryTwentyNine,
     \item \userStoryThirty,
@@ -40,7 +40,7 @@ The database must handle a wide array of data, including user subscriptions, far
 The architecture might include more than one databases, depending on the needs that will arise during later decisions.
 
 \subsection*{Criteria}
-\begin{itemize}
+\begin{itemize}[noitemsep]
     \item \textit{Cost efficiency} and \textit{mainteinability}.
     \item Comprehensive \textit{security} features to safeguard sensitive data.
     \item Data integrity and transactional consistency for financial transactions.
@@ -72,11 +72,7 @@ A distributed database system designed for scalability and flexibility, suitable
 \end{itemize}
 
 \subsection*{Decision}
-After thorough consideration, the decision is to implement an \textbf{SQL database}, specifically PostgreSQL for it being open source, for the TrIP system. This decision is underpinned by the SQL database's unmatched data integrity, support for complex transactions, and relational data modeling capabilities, which are crucial for the financial transactions and data relationships inherent in the TrIP system. Furthermore, train payment data are by nature very structured, don't give much creativity to the passengers, thus a relational database seems a more natural choice. Given the higher familiarity of developers, this choice is good for the QAs favoured by the TrIP owner, such as:
-\begin{itemize}
-    \item Maintainability (priority 2). The owner wants a minimum amount of effort to maintain and build the system
-    \item Operational costs (priority 2). The operational costs of the system should be as low as possible.
-\end{itemize}
+After thorough consideration, the decision is to implement an \textbf{SQL database}, specifically PostgreSQL for it being open source, for the TrIP system. This decision is underpinned by the SQL database's unmatched data integrity, support for complex transactions, and relational data modeling capabilities, which are crucial for the financial transactions and data relationships inherent in the TrIP system. Furthermore, train payment data are by nature very structured, don't give much creativity to the passengers, thus a relational database seems a more natural choice. Given the higher familiarity of developers, this choice addresses well the mainteinability required by the TrIP owner.
 
 \subsection*{Consequences}
 \textbf{Positive Consequences:}
@@ -91,4 +87,3 @@ After thorough consideration, the decision is to implement an \textbf{SQL databa
     \item Could necessitate more intensive resource management and optimization to ensure performance at scale.
     \item A less flexible data model.
 \end{itemize}
-Choosing an SQL database aligns with the TrIP system's core requirements for data integrity, relational data handling, and transactional consistency. This foundation will support the system's initial functionality and long-term growth, with a focus on maintaining data accuracy and trustworthiness.

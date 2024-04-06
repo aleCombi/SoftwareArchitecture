@@ -1,7 +1,7 @@
-\subsection{Decision 4: Account and Subscriptions management}
+\subsection{Decision 3: Account and Subscriptions management}
 
 \subsection*{Status}
-Accepted.
+Accepted. Reviewed to consider Event 1 (tycoon default) and to add the possibility of outsourcing subscription management.
 
 \subsection*{Architectural Summary}
 \begin{tabular}{|p{3.5cm}|p{10.5cm}|}
@@ -26,7 +26,7 @@ Accepted.
 A passenger wants to traver around the network using its subscription(s) instead of always having to buy a single fare.
 Tycoons have explicitely requested to maintain their own subscriptions separated.
 The following user stories are tied to this decision:
-\begin{itemize}
+\begin{itemize}[noitemsep]
     \item \userStorySixteen,
     \item \userStoryTwentyThree,
     \item \userStoryThirty,
@@ -46,7 +46,7 @@ The terminal has to communicate with the tycoon systems to verify subscriptions 
 Alternatively, if passengers have active subscriptions to a tycoon, they should be allowed onboard the train without a ticket. 
 
 \subsection*{Criteria}
-\begin{itemize}
+\begin{itemize}[noitemsep]
     \item \textit{Usability}: Ease of use for the passenger.
     \item \textit{Functionality}: Multiple route and subscriptions options for the passenger without excessive effort.
     \item \textit{Functionality}: The system returns to the passenger usable options based on price/time/availability/subscription.
@@ -107,12 +107,44 @@ an anonymous user ID if it is not.
 Its temporary nature though causes different needs for information storage and flow, as updates for single tickets occurs often.
 Hence the need for a separated module and a related database.
 
+\subsection*{Pros}
+\begin{itemize}[noitemsep]
+    \item Efficient management specific to single-ticket purchases, improving usability for occasional travellers.
+    \item Dedicated module enhances system's ability to handle frequent updates inherent to temporary accounts.
+    \item Improved usability for less tech-savy passengers.
+\end{itemize}
+
+\subsection*{Cons}
+\begin{itemize}[noitemsep]
+    \item Adds complexity to the system, requiring sophisticated integration with other components.
+    \item Potential for fragmented customer experience when navigating between single-ticket and subscription services.
+\end{itemize}
+
+\subsection*{Option 4: Complete outsourcing of the subscription management}
+The system could be implemented as only taking care of payments, letting some other system or the tycoons themselves tell our system who has which subscription and how subscription changes pricing and rights.
+
+\subsection*{Pros}
+\begin{itemize}[noitemsep]
+    \item Simplifies the system's responsibilities, focusing on payment processing.
+    \item Reduces internal system complexity by leveraging external expertise for subscription management.
+    \item Potentially lowers initial development and maintenance costs by relying on tycoons' existing infrastructure.
+\end{itemize}
+
+\subsection*{Cons}
+\begin{itemize}[noitemsep]
+    \item Introduces dependencies on external systems, potentially affecting reliability and response times.
+    \item Limits control over the subscription management experience, impacting the ability to implement customized features.
+    \item Raises integration challenges, especially in achieving real-time data synchronization and maintaining data consistency.
+    \item May complicate the user experience due to interactions with multiple systems for subscription management and payments.
+\end{itemize}
+
 \subsection*{Decision}
-We decided to pick Option 1. The increased concern for scalability, caused by event 1, points clearly to the listed pros of this option. Furthermore, the focus on modularity
+We decided to pick Option 1. The increased concern for scalability, caused by Event 1, points clearly to the listed pros of this option. Furthermore, the focus on modularity
 gives us easy maintainability, which is important for the TrIP owner.
 Performance in this case doesn't seem to be that central, as optimization of routes should be precomputed and cached, given that timetables should not change often and that subscription have relatively long lasting periods.
 With our option, we still have the flexibility to assign more computational or data access resources to the module who needs them the most.
 We also include Option 3, as we think Single Tickets remain central to achieve the Usability required by stakeholders who are less familiar with technology such as smartphone apps or are travelling only occasionally.
+We decided to discard Option 4, as we believe integration among tycoon systems is central in the mandate of the TrIP system, and the integrability concerns of the tycoons cannot be addressed properly without providing proper subscription management.
 
 \subsection*{Consequences}
 \subsection*{Positive Consequences}
@@ -131,6 +163,3 @@ We also include Option 3, as we think Single Tickets remain central to achieve t
     \item \textbf{Higher Initial Costs:} Development and maintenance of separate modules may lead to higher initial and operational costs.
     \item \textbf{Data Consistency Challenges:} Requires robust synchronization mechanisms to ensure data consistency across modules.
 \end{itemize}
-
-The account management module is included in the functional view of the system, communicating with the tycoons to updated them on new subscriptions, with the database to keep the account data up to date and with the terminal to allow 
-the purchase of new subscriptions and the verification via magnetic card or other means.
