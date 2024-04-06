@@ -93,7 +93,7 @@ Implementing a hybrid system that uses a combination of serverless architecture 
 As the focus on security have increased after Event 4 and the TrIP owner is more prone on spending, we pick option 3. This way, all the privacy-critical operations and data storages will be done in private clouds, while operations and storages of public data (such as the timetables),
 will be on public data, guaranteeing cost-effectiveness and less maintenance concerns.
 We choose to store and operate with accounts in the system identifying them via an account ID. The mapping between this account IDs and the account private information (such as name, contacts, etc.) should be stored in a in-house private server.
-Communication with this database need to be encrypted to guarantee compliance with GDPR, write access to it can only be done by passengers while managing their accounts and read writes can be guaranteed only to officials verifying tickets onboard trains.
+Communication with this database need to be encrypted to guarantee compliance with GDPR, write access to it can only be done by passengers while managing their accounts and read rights can be guaranteed only to officials verifying tickets onboard trains.
 Note that credit card data are stored in the system as tockens, so they are not considered sensitive information.
 
 \subsection*{Consequences}
