@@ -63,11 +63,11 @@ In the TRIP SYSTEM, the Passenger starts the process at the Ticket Machine, choo
 \end{table}
 
 \subsubsection{Analysis on Perspectives}
-\paragraph{Scenarios}
+\textbf{Scenarios}
 
 \scenarioThreeConcurrency
 
-\textbf{Ticket Purchasing Process:} \\
+\noindent \textbf{Ticket Purchasing Process:} \\
 The sequence begins with the passenger selecting a route and payment method via the Ticket Machine. This process is crucial for performance, as it demands a fast and seamless operation to prevent queues and delays. Once the payment method is chosen, the Terminal communicates with the Payment Module to process the transaction. The Payment Module's role here is two-fold: to ensure the safety of the transaction by validating payment with the bank and to maintain the system's performance by providing quick feedback to the Terminal. If the bank authorizes the payment, the Payment Module prompts the Ticket Machine to dispense a ticket, showcasing the system's availability to complete transactions without delay. In case of a denial, the passenger is promptly informed, allowing them to take alternative actions, which is vital for maintaining system usability and ensuring the passenger's experience remains positive. \\
 \subsection{View: Scanning procedure}
 \subsubsection{Model}
@@ -110,7 +110,7 @@ This process ensures that the system can function and provide decisions autonomo
     \end{tabularx}
 \end{table}
 \subsubsection{Analysis on Perspectives}
-\paragraph{Scenarios}
+\textbf{Scenarios}
 
 \scenarioOneConcurrency
 \scenarioTwoConcurrency

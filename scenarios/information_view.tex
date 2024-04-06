@@ -57,3 +57,22 @@
     \label{table:tycoon_access_control}
 \end{table}
 }
+
+\newcommand{\scenarioFourInformation}{
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} lX @{}}
+    \toprule
+    \textbf{Aspect} & \textbf{Details} \\
+    \midrule
+    Source & Passenger approaches the turnstile with a scannable (NFC or QR) to access the train platform. \\
+    Stimulus & Passenger scans the scannable at the turnstile. \\
+    Artifact & Tokenization module within the TRIP system’s turnstile interface. \\
+    Response & The TRIP system's tokenization module converts the scannable data into a token. This token is then used by the Passenger State module to validate entry without exposing sensitive information. The turnstile receives authorization to allow or deny access based on the tokenized data. \\
+    Measure & System logs and passenger feedback indicate successful entry authorization with no reports of security breaches or data misuse. Efficiency is measured by the time taken from scanning to turnstile opening, with 99\% of transactions completed within 2 seconds, ensuring a smooth passenger flow. \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Scenario for Tokenization at Turnstiles in the TrIP System}
+    \label{table:tokenization_turnstile_interaction}
+\end{table}
+}

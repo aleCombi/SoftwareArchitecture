@@ -81,12 +81,12 @@ The Routes component uses the Optimized Routes DB to give passengers the best tr
 \end{table}
 
 \subsubsection{Analysis on Perspectives}
-\paragraph{Scenarios}
+\textbf{Scenarios}
 \scenarioOneInformation
 \scenarioTwoInformation
 \scenarioThreeInformation
 
-The Information View of the TrIP system provides a comprehensive architecture designed to handle and safeguard data movement and storage, ensuring the system's integrity and security.
+\noindent The Information View of the TrIP system provides a comprehensive architecture designed to handle and safeguard data movement and storage, ensuring the system's integrity and security.
 
 The design segregates data across specialized databases, including those for Timetables + Prices + Bookings, Optimized Routes, Accounts/Subs, Tickets, and Payments. This segregation follows best practices in database security, preventing any single point of compromise and ensuring each database only holds data relevant to its function. Access to these databases is strictly regulated, with the system enforcing robust authentication and authorization mechanisms to verify and control interactions.
 
@@ -127,5 +127,8 @@ The TrIP SYSTEM's scanning procedure is a sequence that starts with the Passenge
 \end{table}
 
 \subsubsection{Analysis on Perspectives}
+\textbf{Scenarios}
+\scenarioFourInformation
 
 
+\noindent The information view scanning procedure ensures the passenger data is secure and performant during the scanning proecedure. The TrIP system ensures security by tokenization. By tokenization the TrIP system ensure no sensitive data is stored but only the tokens representing it, which transfers the security risk and the compliance requirements to specialized companies. Also, by recording the user state the system ensures a quick scanning process.
