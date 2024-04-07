@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="ZQF833xw1EoGUe7-4v3m" name="Page-1">
-        <mxGraphModel dx="1774" dy="801" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="420" dy="419" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -121,7 +121,7 @@
                 <mxCell id="224" value="" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;absoluteArcSize=1;arcSize=20;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;" parent="1" vertex="1">
                     <mxGeometry x="1080" y="220" width="120" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="225" value="User state" style="whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;" parent="224" vertex="1">
+                <mxCell id="225" value="Passenger state" style="whiteSpace=wrap;connectable=0;html=1;shape=mxgraph.basic.rect;size=10;rectStyle=rounded;bottomRightStyle=square;bottomLeftStyle=square;part=1;" parent="224" vertex="1">
                     <mxGeometry width="120" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="226" value="Authorizes" style="shape=mxgraph.bpmn.task;part=1;taskMarker=abstract;connectable=0;whiteSpace=wrap;html=1;" parent="224" vertex="1">
@@ -230,7 +230,7 @@
                 <mxCell id="459" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;&lt;b style=&quot;&quot;&gt;X&lt;/b&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="1260" y="245" width="50" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="507" value="&lt;h1&gt;Concurrency View - Scanning Procedure&lt;/h1&gt;" style="text;strokeColor=none;align=left;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="507" value="&lt;h1&gt;Concurrency View - Scanning Procedure&lt;/h1&gt;" style="text;strokeColor=none;align=left;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="40" y="40" width="670" height="30" as="geometry"/>
                 </mxCell>
             </root>

@@ -4,8 +4,16 @@
 We start discussing the deployment viewpoint by analyzing stakeholder concerns that need to be addressed.
 We individuated the following user stories:
 \begin{itemize}
-    \item User stories TODO
-\end{itemize}
+    \setlength{\itemsep}{0pt}
+    \item \userStoryOne % As a frequent traveler, I want a comprehensive monthly pass.
+    \item \userStoryFifteen % As an occasional passenger, I want the system to prevent payments for blocked routes.
+    \item \userStoryTwentyThree % As a tycoon, I want the payment system to integrate with minimal disruption.
+    \item \userStoryTwentySix % As a maintenance team member, I want the system to allow for fare adjustments.
+    \item \userStoryTwentySeven % As a network maintenance planner, I want the system to integrate with maintenance tools.
+    \item \userStoryThirtyNine % As a passenger, I expect ticket validation to work seamlessly.
+    \item \userStoryFortyOne % As the TrIP owner, I want a service-based architecture for easy maintenance.
+  \end{itemize}
+  
 
 As a consequence, we decided to prioritize Quality Attributes for this view as indicated in Table~\ref{tab:deployment_view}.
 \begin{table}[h!]
@@ -76,7 +84,7 @@ Payment processing, crucial for managing Passenger State and payments, is secure
 \end{table}
 \subsubsection{Analysis on Perspectives}
 
-\textit{Scenarios}
+\textbf{Scenarios}
 \scenarioOneDeployment
 \scenarioTwoDeployment
 

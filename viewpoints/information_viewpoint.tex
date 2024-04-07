@@ -4,8 +4,13 @@
 We start discussing the Information Viewpoint by analyzing stakeholder concerns that need to be addressed.
 We individuated the following user stories:
 \begin{itemize}
-    \item User stories TODO
-\end{itemize}
+    \setlength{\itemsep}{0pt}
+    \item \userStoryTwo
+    \item \userStoryThree
+    \item \userStoryFour
+    \item \userStoryEighteen
+  \end{itemize}
+  
 
 As a consequence, we decided to prioritize Quality Attributes for this view as indicated in Table~\ref{tab:information_view}.
 
@@ -18,7 +23,7 @@ As a consequence, we decided to prioritize Quality Attributes for this view as i
       \hline
       Information View & 
        & % Usability
-       & % Performance
+      \cellcolor{gray!60}X & % Performance (2nd priority)
       \cellcolor{gray!90}X & % Security (1st priority)
        & % Modifiability
        & % Cost Efficiency
@@ -43,7 +48,7 @@ As a consequence, we decided to prioritize Quality Attributes for this view as i
 \end{figure}
 
 \subsubsection{Description}
-The Information View of the TrIP SYSTEM is about how data moves and is stored. The system uses several databases. The Timetable + Prices + Bookings DB keeps track of schedules, prices, and reservations. The Optimized Routes DB has data on the best travel paths. The Accounts/Subs DB holds information on user accounts and subscriptions. The Tickets DB records ticket purchases, and the Payments DB keeps a record of all payments.
+The Information View of the TrIP SYSTEM is about how data moves and is stored. The system uses several databases. The Timetable + Prices + Bookings DB keeps track of schedules, prices, and reservations. The Optimized Routes DB has data on the best travel paths. The Accounts/Subs DB holds information on passenger accounts and subscriptions. The Tickets DB records ticket purchases, and the Payments DB keeps a record of all payments.
 
 Tycoons use the Tycoon API to put in and get data. Passengers use terminals, apps, or websites to book travel and select routes. This choice and payment info go into the databases, updating the system.
 
@@ -63,14 +68,14 @@ The Routes component uses the Optimized Routes DB to give passengers the best tr
     Tycoon API & Tycoon's way of interacting to the TrIP system. \\
     Timetable + Prices + bookings DB & Stores data regarding travel schedules, pricing, and booking information. \\
     Optimized routes DB & Contains information on the most efficient travel routes that have been calculated and stored. \\
-    Accounts/Subs DB & Maintains records of user accounts and their subscriptions for travel services. \\
+    Accounts/Subs DB & Maintains records of passenger accounts and their subscriptions for travel services. \\
     Tickets DB & A database that logs ticket purchases and holds ticket-related information. \\
     Payments DB & Records and processes transactions related to payments within the system. \\
     Passenger & The end-user or customer who utilizes the system for travel services. \\
     Bookings & The system component or interface that passengers interact with to manage and view their bookings. \\
     Terminal / App / Website & The various platforms through which passengers can access the system for services. \\
     Routes & Involves the determination and selection of travel routes within the system. \\
-    Accounts (Subs) & Manages the subscription details associated with user accounts. \\
+    Accounts (Subs) & Manages the subscription details associated with passenger accounts. \\
     Single-Ticket & A system or interface that deals with the purchase of individual travel tickets. \\
     Periodic payments & Manages recurring payments, typically for subscription services. \\
     Payments & Processes transactions related to immediate payments within the system. \\
@@ -107,7 +112,7 @@ Using the scenarios provided, we can see how the system's design and technology 
 \end{figure}
 
 \subsubsection{Description}
-The TrIP SYSTEM's scanning procedure is a sequence that starts with the Passenger, who scans at the Turnstile to gain entry. This triggers the Update/Authorize process, updating the Passenger State with the user's access rights. The Passenger State reflects the user's current permissions within the TRIP SYSTEM. Each user’s information is recorded in the Passenger State DB, a database that tracks and manages user statuses.
+The TrIP SYSTEM's scanning procedure is a sequence that starts with the Passenger, who scans at the Turnstile to gain entry. This triggers the Update/Authorize process, updating the Passenger State with the passenger's access rights. The Passenger State reflects the passenger's current permissions within the TRIP SYSTEM. Each passenger information is recorded in the Passenger State DB, a database that tracks and manages passenger statuses.
 
 \begin{table}[H]
     \centering
@@ -131,4 +136,4 @@ The TrIP SYSTEM's scanning procedure is a sequence that starts with the Passenge
 \scenarioFourInformation
 
 
-\noindent The information view scanning procedure ensures the passenger data is secure and performant during the scanning proecedure. The TrIP system ensures security by tokenization. By tokenization the TrIP system ensure no sensitive data is stored but only the tokens representing it, which transfers the security risk and the compliance requirements to specialized companies. Also, by recording the user state the system ensures a quick scanning process.
+\noindent The information view scanning procedure ensures the passenger data is secure and performant during the scanning proecedure. The TrIP system ensures security by tokenization. By tokenization the TrIP system ensure no sensitive data is stored but only the tokens representing it, which transfers the security risk and the compliance requirements to specialized companies. Also, by recording the passenger state the system ensures a quick scanning process.

@@ -4,9 +4,16 @@
 We start discussing the information viewpoint by analyzing stakeholder concerns that need to be addressed.
 We individuated the following user stories:
 \begin{itemize}
-    \item User stories TODO
-\end{itemize}
-
+    \setlength{\itemsep}{0pt}
+    \item \userStoryOne % As a frequent traveler, I want to subscribe to a comprehensive monthly pass that includes all three networks so that I can save money on my regular commutes.
+    \item \userStoryFifteen % As an occasional passenger, I want the system to prevent payments for temporarily blocked routes.
+    \item \userStoryTwentyThree % As a tycoon, I want the payment system to integrate with my existing infrastructure with minimal disruption.
+    \item \userStoryTwentySix % As a maintenance team member, I want the system to allow for temporary fare adjustments.
+    \item \userStoryTwentySeven % As a network maintenance planner, I want the system to integrate with maintenance scheduling tools.
+    \item \userStoryThirtyNine % As a passenger, I expect ticket validation to work seamlessly, even during network outages.
+    \item \userStoryFortyOne % As the TrIP owner, I want to use a service-based architecture for easy maintenance and update.
+  \end{itemize}
+  
 As a consequence, we decided to prioritize Quality Attributes for this view as indicated in Table~\ref{tab:concurrency_view}.
 \begin{table}[h!]
     \centering
@@ -83,10 +90,10 @@ The diagram depicts a turnstile access procedure with conditional paths based on
 
 \begin{enumerate}
     \item If the Turnstile is unable to connect to the Network (no response), it defaults to a local decision. In this case, the turnstile can still potentially authorize the passenger to proceed based on offline data or preconfigured rules.
-    \item If the Turnstile connects to the Network (network responds), it then requests authorization from the User State. The User State, after evaluating the request, either grants or denies authorization:
+    \item If the Turnstile connects to the Network (network responds), it then requests authorization from the Passenger State. The Passenger State, after evaluating the request, either grants or denies authorization:
     \begin{itemize}
-        \item If the User State authorizes the request, the Turnstile receives a signal to open the gate, allowing the Passenger to pass.
-        \item If the User State denies the request, the Turnstile will not open, and the Passenger is not allowed to proceed.
+        \item If the Passenger State authorizes the request, the Turnstile receives a signal to open the gate, allowing the Passenger to pass.
+        \item If the Passenger State denies the request, the Turnstile will not open, and the Passenger is not allowed to proceed.
     \end{itemize}
 \end{enumerate}
 
@@ -115,7 +122,7 @@ This process ensures that the system can function and provide decisions autonomo
 \scenarioOneConcurrency
 \scenarioTwoConcurrency
 \noindent \textbf{Turnstile Access Control:} \\
-The second aspect of concurrency comes into play at the turnstiles, where passengers scan their tickets or cards to gain access to the transport services. In this operation, the system's availability and safety are the primary concerns. The Turnstile must quickly authorize entry to avoid creating bottlenecks, which it does by pinging the Network to retrieve the User State information. If the Network is unresponsive, the Turnstile uses locally cached data to make an authorization decision, ensuring continuous operation and thus maintaining high availability. When the Network responds, the User State determines access permission. This dual approach ensures that access control is robust against network issues, preserving the integrity of operations and passenger safety by preventing unauthorized access. \\
+The second aspect of concurrency comes into play at the turnstiles, where passengers scan their tickets or cards to gain access to the transport services. In this operation, the system's availability and safety are the primary concerns. The Turnstile must quickly authorize entry to avoid creating bottlenecks, which it does by pinging the Network to retrieve the Passenger State information. If the Network is unresponsive, the Turnstile uses locally cached data to make an authorization decision, ensuring continuous operation and thus maintaining high availability. When the Network responds, the Passenger State determines access permission. This dual approach ensures that access control is robust against network issues, preserving the integrity of operations and passenger safety by preventing unauthorized access. \\
 \subsection{View: Tycoon data updates}
 \subsubsection{Model}
 
@@ -128,6 +135,8 @@ The second aspect of concurrency comes into play at the turnstiles, where passen
 
 \subsubsection{Description}
 This process outlines how timetable updates and route optimization are handled in the system. It begins with the Tycoon, an administrative role, who updates timetables through the Tycoon API. These updates are then applied to the Timetables DB. Following this update, the Route Optimizer initiates the optimization process, which takes the updated timetable data to determine the most efficient routes. These optimized routes are then stored in the Optimized Routes DB, completing the cycle of updating and optimizing the route information available to the system and its users.
+
+\subsubsection{Glossary of Elements}
 
 \begin{table}[H]
     \centering
@@ -145,11 +154,10 @@ This process outlines how timetable updates and route optimization are handled i
     \bottomrule
     \end{tabularx}
 \end{table}
-\subsubsection{Glossary of Elements}
 
 \subsubsection{Analysis on Perspectives}
 
-The Concurrency Viewpoint is central to the TRiP system's architecture, focusing on ensuring that user interactions with the system occur smoothly and without delay, even when multiple operations are executed simultaneously. This viewpoint addresses the system's capacity to manage concurrent actions effectively, with a particular emphasis on maintaining performance, safety, and availability. \\
+The Concurrency Viewpoint is central to the TRiP system's architecture, focusing on ensuring that passenger interactions with the system occur smoothly and without delay, even when multiple operations are executed simultaneously. This viewpoint addresses the system's capacity to manage concurrent actions effectively, with a particular emphasis on maintaining performance, safety, and availability. \\
 
 \noindent \textbf{Route Optimization Updates:} \\
 Finally, the system’s capacity to update and optimize routes through the Tycoon API and Route Optimizer reflects its modifiability and performance attributes. Tycoons can update timetables, which are then processed to optimize routes, and these optimizations are stored in the Optimized Routes DB for quick retrieval. This ensures that passengers receive up-to-date and efficient routing information, which is especially important during peak traffic conditions. \\

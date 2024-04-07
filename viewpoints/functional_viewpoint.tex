@@ -4,9 +4,22 @@
 
 We start discussing the Functional Viewpoint by analyzing stakeholder concerns that need to be addressed.
 We individuated the following user stories:
-\begin{itemize}
-    \item User stories TODO
-\end{itemize}
+\begin{itemize}[noitemsep]
+    \item \userStoryOne
+    \item \userStoryFour
+    \item \userStorySix
+    \item \userStorySeven
+    \item \userStoryNine
+    \item \userStoryTen
+    \item \userStoryTwelve
+    \item \userStorySixteen
+    \item \userStoryTwenty
+    \item \userStoryTwentySix
+    \item \userStoryTwentySeven
+    \item \userStoryThirtyNine
+    \item \userStoryFortyOne
+  \end{itemize}
+  
 
 As a consequence, we decided to prioritize Quality Attributes for this view as indicated in Table~\ref{tab:functional_view}.
 \begin{table}[h!]
@@ -46,10 +59,10 @@ As a consequence, we decided to prioritize Quality Attributes for this view as i
 
 \subsubsection{Description}
 The functional view diagram of the TrIP system illustrates the major functions of the system and how they interact with each other. The diagram features boxes representing different functions, connected by arrows that represent interactions.
-The system starts with the user, who can interact with the system through various interfaces, such as terminals, apps, or websites. The user can input their departure and arrival stations, and the system will then display a list of available routes. The user can then select a route and proceed to payment.
-The payment system can handle various payment methods, including single tickets, subscriptions, and fillable cards. If the user has a subscription, the system will automatically check if the subscription is valid for the selected route. This is done by the Account and Subscription Management module, which communicates with the tycoon systems to verify the subscription. If the subscription is not valid, the user will be prompted to purchase a single ticket or top up their fillable card.
-Once the payment is processed, the system will generate a ticket or update the user's travel card. The user can then scan their ticket or card at the turnstile to gain access to the train platform. The turnstile communicates with the Account and Subscription Management module to verify the ticket or card and update the passenger's state.
-The system also includes a number of other functions, such as a booking system, a route optimization system, and a customer service system. The booking system allows users to reserve seats on trains. The route optimization system helps users find the most efficient routes between their departure and arrival stations. The customer service system provides support to passengers with inquiries and complaints.
+The system starts with the passenger, who can interact with the system through various interfaces, such as terminals, apps, or websites. The user can input their departure and arrival stations, and the system will then display a list of available routes. The passenger can then select a route and proceed to payment.
+The payment system can handle various payment methods, including single tickets, subscriptions, and fillable cards. If the passenger has a subscription, the system will automatically check if the subscription is valid for the selected route. This is done by the Account and Subscription Management module, which communicates with the tycoon systems to verify the subscription. If the subscription is not valid, the passenger will be prompted to purchase a single ticket or top up their fillable card.
+Once the payment is processed, the system will generate a ticket or update the passenger's travel card.
+The system also includes a number of other functions, such as a booking system, a route optimization system, and a customer service system. The booking system allows passengers to reserve seats on trains. The route optimization system helps passengers find the most efficient routes between their departure and arrival stations. The customer service system provides support to passengers with inquiries and complaints.
 The system is designed to be scalable and flexible, so that it can be easily adapted to accommodate new tycoons and changing business models. The system is also designed to be secure, so that passenger data is protected from unauthorized access.
 
 \subsubsection{Glossary of Elements}
@@ -99,7 +112,7 @@ Event 3, which focused on traffic jams, raised the importance of optimizing syst
 \end{figure}
 
 \subsubsection{Description}
-The scanning procedure within the TRIP SYSTEM encapsulates the interactions between the passenger and the system's access control mechanisms. It begins with the user presenting a valid form of transit access—such as a card or mobile device—to a scanning device like a turnstile or bus scanner. This device then consults the User state, a repository of the passenger's authorization status, to allow or deny entry. In parallel, the Ticket Checker function verifies the user's credentials against the Accounts subsystem, which manages detailed account information and subscriptions. Any changes to the user's status are updated in real time in the central Database, ensuring accurate tracking of access and travel history. This process ensures a secure, streamlined experience for passengers while providing the system with the necessary oversight to prevent unauthorized access
+The scanning procedure within the TRIP SYSTEM encapsulates the interactions between the passenger and the system's access control mechanisms. It begins with the passenger presenting a valid form of transit access—such as a card or mobile device—to a scanning device like a turnstile or bus scanner. This device then consults the Passenger State, a repository of the passenger's authorization status, to allow or deny entry. In parallel, the Ticket Checker function verifies the passenger's credentials against the Accounts subsystem, which manages detailed account information and subscriptions. Any changes to the passenger's state are updated in real time in the central Database, ensuring accurate tracking of access and travel history. This process ensures a secure, streamlined experience for passengers while providing the system with the necessary oversight to prevent unauthorized access
 
 \subsubsection{Glossary of Elements}
 \begin{table}[H]
@@ -125,8 +138,9 @@ The scanning procedure within the TRIP SYSTEM encapsulates the interactions betw
 In addressing the Quality Attribute (QA) priorities highlighted by users, our ticket scanning view incorporates several key decisions designed to enhance usability, maintainability, scalability, and performance efficiency.
 
 The introduction of multiple payment methods, including fillable cards, credit cards, and single tickets, significantly simplifies passenger interaction with the TrIP system. The integration of accounts and subscriptions further facilitates seamless travel across multiple tycoon networks, enabling passengers to efficiently manage and use their subscriptions.
-
-\paragraph{Scenarios}
+\newline
+\newline
+\noindent \textbf{Scenarios}
 \scenarioThreeFunctional
 
 In summary, the functional viewpoint of our system meticulously addresses the initial QA priorities, along with the challenges presented by new tycoon integration (Event 1) and traffic jams (Event 3). These decisions collectively ensure a user-friendly, scalable, and high-performing TrIP system for passengers, tycoons, and the TrIP owner alike.
